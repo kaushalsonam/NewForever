@@ -18,7 +18,7 @@ public class PrefrenceShared extends MultiDexApplication implements LifecycleObs
 
     private static PrefrenceShared prefrenceSharedInstance;
     private PreferenceData preferenceData;
-    private FirebaseAnalytics firebaseAnalytics;
+//    private FirebaseAnalytics firebaseAnalytics;
     public boolean activityInForground = false;
     private Activity mCurrentActivity = null;
     private String NotificationCount;
