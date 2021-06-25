@@ -62,7 +62,7 @@ public class PrefrenceShared extends MultiDexApplication implements LifecycleObs
 //    }
 
 
-    private Gson gson = null;
+//    private Gson gson = null;
 
     public Gson getGson() {
         if (gson == null) {
