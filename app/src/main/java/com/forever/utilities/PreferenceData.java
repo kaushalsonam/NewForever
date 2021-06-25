@@ -8,7 +8,9 @@ public class PreferenceData {
     private SharedPreferences preferences;
 
     public PreferenceData(Context context) {
+
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
+
     }
 
     public String getValueFromKey(String key) {
