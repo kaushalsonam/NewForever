@@ -57,9 +57,9 @@ public class PrefrenceShared extends MultiDexApplication implements LifecycleObs
     }
 
     @NonNull
-    public FirebaseAnalytics getFirebaseAnalytics() {
-        return firebaseAnalytics;
-    }
+//    public FirebaseAnalytics getFirebaseAnalytics() {
+//        return firebaseAnalytics;
+//    }
 
 
     private Gson gson = null;
