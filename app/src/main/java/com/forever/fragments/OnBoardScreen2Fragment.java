@@ -1,28 +1,35 @@
 package com.forever.fragments;
 
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.forever.R;
-import com.forever.adapter.SwipeFragmentViewPagerAdapter;
 
 import org.jetbrains.annotations.NotNull;
 
+public class OnBoardScreen2Fragment extends Fragment implements View.OnClickListener {
 
-public class OnBoardingFragments extends Fragment {
+    private TextView skip_btn,text1;
 
-    private Context context;
-    private ViewPager swipe_view_pager;
-    private SwipeFragmentViewPagerAdapter adapter;
+    public static OnBoardScreen2Fragment newInstance(String text) {
+
+        OnBoardScreen2Fragment f = new OnBoardScreen2Fragment();
+        Bundle b = new Bundle();
+        b.putString("msg", text);
+
+        f.setArguments(b);
+
+        return f;
+    }
+
 
 
     @Override
@@ -37,14 +44,12 @@ public class OnBoardingFragments extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_on_boarding_fragments, container, false);
+        return inflater.inflate(R.layout.fragment_on_board_screen2, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        context = getActivity();
 
         bindView(view);
         viewSetup();
@@ -52,15 +57,28 @@ public class OnBoardingFragments extends Fragment {
 
     private void bindView(View view) {
 
-        swipe_view_pager = view.findViewById(R.id.swipe_view_pager);
-
+        skip_btn=view.findViewById(R.id.skip_btn);
 
     }
 
     private void viewSetup() {
 
-        adapter = new SwipeFragmentViewPagerAdapter(getChildFragmentManager());
-        swipe_view_pager.setAdapter(adapter);
+        skip_btn.setOnClickListener(this);
+//        text1.setText(getArguments().getString("msg"));
+
+
+    }
+
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()){
+
+            case R.id.skip_btn:
+
+                break;
+        }
 
     }
 }

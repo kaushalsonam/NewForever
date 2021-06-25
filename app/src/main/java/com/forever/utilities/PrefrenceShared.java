@@ -37,7 +37,7 @@ public class PrefrenceShared extends MultiDexApplication implements LifecycleObs
             // Obtain the FirebaseAnalytics instance.
             firebaseAnalytics = FirebaseAnalytics.getInstance(this);
             //firebaseAnalytics.setAnalyticsCollectionEnabled(BuildConfig.ANALYTICS);
-            FirebaseMessaging.getInstance().setAutoInitEnabled(true);
+//            FirebaseMessaging.getInstance().setAutoInitEnabled(true);
         }
     }
 

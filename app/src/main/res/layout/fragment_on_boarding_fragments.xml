@@ -5,6 +5,12 @@
     android:layout_height="match_parent"
     tools:context=".fragments.OnBoardingFragments">
 
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/swipe_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
 
 
 </RelativeLayout>
