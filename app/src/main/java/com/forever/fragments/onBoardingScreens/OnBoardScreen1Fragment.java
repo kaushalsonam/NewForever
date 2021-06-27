@@ -1,6 +1,5 @@
-package com.forever.fragments;
+package com.forever.fragments.onBoardingScreens;
 
-import android.bluetooth.le.ScanRecord;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -8,7 +7,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +15,6 @@ import android.widget.TextView;
 import com.forever.R;
 import com.forever.activities.LoginActivity;
 import com.forever.activities.MainActivity;
-import com.forever.utilities.KeyClass;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -82,7 +79,9 @@ public class OnBoardScreen1Fragment extends Fragment implements View.OnClickList
 
             case R.id.skip_btn:
 
-//                Intent intent= new Intent(OnBoardScreen1Fragment.this, LoginActivity.class);
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                ((MainActivity) getActivity()).startActivity(intent);
+                ((MainActivity)getActivity()).finish();
 
 
 

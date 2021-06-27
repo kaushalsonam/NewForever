@@ -4,9 +4,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.forever.fragments.OnBoardScreen1Fragment;
-import com.forever.fragments.OnBoardScreen2Fragment;
-import com.forever.fragments.OnBoardScreen3Fragment;
+import com.forever.fragments.onBoardingScreens.OnBoardScreen1Fragment;
+import com.forever.fragments.onBoardingScreens.OnBoardScreen2Fragment;
+import com.forever.fragments.onBoardingScreens.OnBoardScreen3Fragment;
 
 public class SwipeFragmentViewPagerAdapter extends FragmentPagerAdapter  {
 

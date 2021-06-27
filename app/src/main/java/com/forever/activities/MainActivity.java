@@ -10,8 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.forever.R;
-import com.forever.fragments.OnBoardScreen1Fragment;
-import com.forever.fragments.OnBoardingFragments;
+import com.forever.fragments.onBoardingScreens.OnBoardingFragments;
 import com.forever.utilities.KeyClass;
 
 public class MainActivity extends AppCompatActivity {

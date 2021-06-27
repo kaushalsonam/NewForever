@@ -1,5 +1,6 @@
-package com.forever.fragments;
+package com.forever.fragments.onBoardingScreens;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,9 +13,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.forever.R;
+import com.forever.activities.LoginActivity;
+import com.forever.activities.MainActivity;
 
 import org.jetbrains.annotations.NotNull;
-import org.w3c.dom.Text;
 
 
 public class OnBoardScreen3Fragment extends Fragment implements View.OnClickListener {
@@ -76,6 +78,10 @@ public class OnBoardScreen3Fragment extends Fragment implements View.OnClickList
         switch (v.getId()){
 
             case R.id.done_btn:
+
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                ((MainActivity) getActivity()).startActivity(intent);
+                ((MainActivity)getActivity()).finish();
 
                 break;
         }

@@ -1,4 +1,4 @@
-package com.forever.fragments;
+package com.forever.fragments.onBoardingScreens;
 
 import android.content.Context;
 import android.os.Bundle;
