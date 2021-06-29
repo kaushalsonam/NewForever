@@ -43,6 +43,28 @@
     <string name="enter_code">Enter 4-digit \nrecovery code</string>
     <string name="recover_code_string">The recovery code was sent to your mobile number. Please enter the code:</string>
     <string name="change_password">Your Password is \nchanged!</string>
+    <string name="terms"><![CDATA[TERMS & PRIVACY]]></string>
+    <string name="terms_privacy_string">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="error">Please Select contact.</string>
+    <string name="gender">Gender</string>
+    <string name="save">Save</string>
+    <string name="selec_gender">Select your gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="non_binary">Non Binary</string>
+    <string name="status">STATUS</string>
+    <string name="explore_reward">Explore rewards</string>
+    <string name="status_string">How quickly to achieve \nnext status if going at same pace</string>
+    <string name="platinum">Platinum</string>
+    <string name="weekly_points">3000/4500 Points</string>
+    <string name="earned_points">3000 points earned this year</string>
+    <string name="see_all">See all</string>
+    <string name="total_step">Total Steps</string>
+    <string name="totalstep">60000</string>
+    <string name="total_points">Total Points</string>
+    <string name="out_of">Out of 10000</string>
+    <string name="point">3</string>
+    <string name="txt_point">Points</string>
 
 
     <string-array name="countryCodes">

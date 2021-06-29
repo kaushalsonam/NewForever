@@ -15,4 +15,7 @@
     <color name="et_bg_green">#85BB75</color>
     <color name="home_screen_card_color">#F1FEFF</color>
     <color name="dark_pink">#FE4F76</color>
+    <color name="female_gender">#FE85A0</color>
+    <color name="non_binary">#828282</color>
+    <color name="sky_blue_light">#F1FEFF</color>
 </resources>

@@ -12,6 +12,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 
 import com.forever.R;
+import com.forever.fragments.Terms_PrivacyFragment;
 import com.forever.fragments.home.HomeFragment;
 import com.forever.fragments.loginSignup.LoginFragment;
 import com.forever.utilities.KeyClass;

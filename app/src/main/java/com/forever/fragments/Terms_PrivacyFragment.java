@@ -1,7 +1,5 @@
-package com.forever.fragments.home;
+package com.forever.fragments;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,19 +11,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.forever.R;
-import com.forever.activities.LevelBadgeStatusActivity;
 
 import org.jetbrains.annotations.NotNull;
 
+public class Terms_PrivacyFragment extends Fragment implements View.OnClickListener {
 
-public class HomeFragment extends Fragment implements View.OnClickListener {
+    private ImageView back_btn,close_btn;
+    private TextView terms_and_condition;
 
-    private Context context;
-    private ImageView level_badge, share_btn;
-    private TextView txt_day;
 
 
     @Override
@@ -40,15 +35,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.fragment_terms__privacy, container, false);
     }
-
 
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        context = getActivity();
 
         bindView(view);
         viewSetup();
@@ -56,51 +48,31 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private void bindView(View view) {
 
-        //image view
-        level_badge = view.findViewById(R.id.level_badge);
-        share_btn = view.findViewById(R.id.share_btn);
-
-        //TextView
-        txt_day = view.findViewById(R.id.txt_day);
-
-
+        back_btn=view.findViewById(R.id.back_btn);
+        close_btn=view.findViewById(R.id.close_btn);
+        terms_and_condition=view.findViewById(R.id.terms_and_condition);
 
     }
 
     private void viewSetup() {
 
-
-
-        level_badge.setOnClickListener(this);
-        share_btn.setOnClickListener(this);
+        back_btn.setOnClickListener(this);
+        close_btn.setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View v) {
 
-        switch (v.getId()) {
+        switch (v.getId()){
 
-            case R.id.level_badge:
+            case R.id.back_btn:
+            case R.id.close_btn:
 
-
-                Intent intent= new Intent(getActivity(), LevelBadgeStatusActivity.class);
-                startActivity(intent);
-
-
+                getActivity().onBackPressed();
 
                 break;
-
-            case R.id.share_btn:
-
-                Toast.makeText(context, "Share", Toast.LENGTH_SHORT).show();
-
-                break;
-
         }
 
     }
-
-
-
 }

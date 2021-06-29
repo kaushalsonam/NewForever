@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.home.HomeFragment">
+
 
     <RelativeLayout
         android:id="@+id/header_rl"
@@ -19,9 +20,9 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_centerVertical="true"
-            app:elevation="@dimen/dp20"
             android:layout_margin="@dimen/dp20"
-            android:src="@drawable/ic_badge_level" />
+            android:src="@drawable/ic_badge_level"
+            app:elevation="@dimen/dp20" />
 
 
         <TextView
@@ -52,11 +53,11 @@
 
 
     <RelativeLayout
+        android:id="@+id/heart_rl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/dp20"
-       >
+        android:layout_marginTop="@dimen/dp20">
 
 
         <ImageView
@@ -113,8 +114,316 @@
 
     </RelativeLayout>
 
+    <View
+        android:id="@+id/view_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp1"
+        android:layout_below="@+id/heart_rl"
+        android:layout_marginTop="-50dp"
+        android:background="@color/et_bg_color"
+        android:elevation="@dimen/dp4" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/earned_point_cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/heart_rl"
+        android:layout_marginLeft="@dimen/dp40"
+        android:layout_marginTop="-70dp"
+        android:layout_marginRight="@dimen/dp40"
+        app:cardCornerRadius="@dimen/dp20"
+        app:cardElevation="@dimen/dp4">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp10"
+
+
+            >
+
+            <ImageView
+                android:id="@+id/start_icon"
+                android:layout_width="@dimen/dp25"
+                android:layout_height="@dimen/dp25"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp10"
+                android:src="@drawable/ic_star_with_cicle" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_toRightOf="@id/start_icon"
+                android:text="@string/earned_points"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_sp18" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/earned_point_cv">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:id="@+id/see_all_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp40"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp40">
+
+                <TextView
+                    android:id="@+id/txt_days"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/today"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_sp16"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/txt_see_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/see_all"
+                    android:textColor="@color/dotcolor"
+                    android:textSize="@dimen/textsize_sp16" />
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/total_points_step_cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/see_all_rl"
+                android:layout_margin="@dimen/dp15"
+                app:cardCornerRadius="@dimen/dp10"
+                app:cardElevation="@dimen/dp6">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/sky_blue_light">
+
+                    <RelativeLayout
+                        android:id="@+id/step_icon_rl"
+                        android:layout_width="@dimen/dp60"
+                        android:layout_height="@dimen/dp60"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_marginTop="-5dp"
+                        android:background="@drawable/sky_blue_circle">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp40"
+                            android:layout_height="@dimen/dp40"
+                            android:layout_centerInParent="true"
+                            android:padding="@dimen/dp5"
+                            android:src="@drawable/ic_footsteps" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/star_icon_rl"
+                        android:layout_width="@dimen/dp60"
+                        android:layout_height="@dimen/dp60"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="-5dp"
+                        android:layout_marginRight="-5dp"
+                        android:background="@drawable/sky_blue_right_circle">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp40"
+                            android:layout_height="@dimen/dp40"
+                            android:layout_centerInParent="true"
+                            android:padding="@dimen/dp5"
+                            android:src="@drawable/ic_star" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/txt_total_step"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp20"
+                        android:layout_marginTop="@dimen/dp20"
+                        android:layout_toRightOf="@id/step_icon_rl"
+                        android:text="@string/total_step"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_sp16" />
+
+                    <RelativeLayout
+                        android:id="@+id/total_steps_rl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_total_step"
+                        android:layout_marginLeft="@dimen/dp45"
+                        android:layout_marginTop="@dimen/dp5"
+                        android:layout_marginBottom="@dimen/dp10">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp130"
+                            android:layout_height="@dimen/dp130"
+                            android:src="@drawable/ic_total_steps_graph" />
+
+                        <TextView
+                            android:id="@+id/num_of_steps"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/dp30"
+                            android:text="@string/totalstep"
+                            android:textColor="@color/dotcolor"
+                            android:textSize="@dimen/textsize_sp22"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/num_of_steps"
+                            android:layout_centerHorizontal="true"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/out_of"
+                                android:textColor="@color/black" />
+
+                            <ImageView
+                                android:layout_width="@dimen/dp15"
+                                android:layout_height="@dimen/dp15"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/dp5"
+                                android:src="@drawable/ic_circular_next" />
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/txt_total_points"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp20"
+                        android:layout_marginRight="@dimen/dp20"
+                        android:layout_toLeftOf="@id/star_icon_rl"
+                        android:text="@string/total_points"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_sp16" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/total_points_rl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_total_points"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/dp5"
+                        android:layout_marginRight="@dimen/dp80">
+
+
+                        <TextView
+                            android:id="@+id/points"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/dp30"
+                            android:text="@string/point"
+                            android:textColor="@color/dotcolor"
+                            android:textSize="@dimen/textsize_sp22"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/points"
+                            android:layout_centerHorizontal="true"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/txt_point"
+                                android:textColor="@color/black" />
+
+                            <ImageView
+                                android:layout_width="@dimen/dp15"
+                                android:layout_height="@dimen/dp15"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/dp5"
+                                android:src="@drawable/ic_circular_next" />
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="@dimen/dp1"
+                        android:layout_height="@dimen/dp130"
+                        android:layout_marginLeft="@dimen/dp10"
+                        android:layout_marginTop="@dimen/dp20"
+                        android:layout_toRightOf="@+id/total_steps_rl"
+                        android:background="@color/et_hint_color" />
+
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <RelativeLayout
+                android:id="@+id/txt_this_week_see_all_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/total_points_step_cv"
+                android:layout_marginLeft="@dimen/dp40"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp40">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/this_week"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_sp18"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/txt_this_week_see_all_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/see_all"
+                    android:textColor="@color/dotcolor"
+                    android:textSize="@dimen/textsize_sp16" />
+
+            </RelativeLayout>
 
 
 
+
+        </RelativeLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
 
 </RelativeLayout>
