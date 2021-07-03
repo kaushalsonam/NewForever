@@ -8,13 +8,13 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
 
 import com.forever.R;
-import com.forever.fragments.Terms_PrivacyFragment;
+import com.forever.fragments.Profile.ProfileFragment;
 import com.forever.fragments.home.HomeFragment;
-import com.forever.fragments.loginSignup.LoginFragment;
+import com.forever.fragments.home.NotificationsFragment;
+import com.forever.fragments.home.RewardFragment;
 import com.forever.utilities.KeyClass;
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -91,19 +91,34 @@ public class HomeActivity extends AppCompatActivity {
 
                 case R.id.nav_home:
 
+                    replaceFragment(new HomeFragment(),false,KeyClass.FRAGMENT_HOME,
+                            KeyClass.FRAGMENT_HOME);
+
 
 
                     break;
 
                 case R.id.nav_rewards:
 
+                    replaceFragment(new RewardFragment(),false,KeyClass.FRAGMENT_REWARD,
+                            KeyClass.FRAGMENT_REWARD);
+
                     break;
 
                 case R.id.nav_notifications:
 
+                    replaceFragment(new NotificationsFragment(),false,KeyClass.FRAGMENT_NOTIFICATIONS,
+                            KeyClass.FRAGMENT_NOTIFICATIONS);
+
                     break;
 
                 case R.id.nav_user:
+
+                    replaceFragment(new ProfileFragment(),false,KeyClass.FRAGMENT_PROFILE,
+                            KeyClass.FRAGMENT_PROFILE);
+
+//                    Intent intent_profile= new Intent(context,ProfileActivity.class);
+//                    startActivity(intent_profile);
 
                     break;
 

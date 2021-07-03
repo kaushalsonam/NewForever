@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.loginSignup.SignupFragment">
 
     <ImageView
@@ -15,10 +15,10 @@
         android:src="@drawable/ic_app_icon" />
 
     <RelativeLayout
+        android:id="@+id/form_data_rl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/app_icon"
-        android:id="@+id/form_data_rl"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="@dimen/dp40"
         android:layout_marginTop="@dimen/dp20"
@@ -45,7 +45,7 @@
 
             <EditText
                 android:id="@+id/full_name"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_margin="@dimen/dp5"
@@ -53,6 +53,15 @@
                 android:hint="@string/full_name"
                 android:padding="@dimen/dp6"
                 android:textSize="@dimen/textsize_sp16" />
+
+            <TextView
+                android:id="@+id/full_name_astric"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/full_name"
+                android:hint="*"
+                android:textColorHint="@android:color/holo_red_dark" />
 
 
         </RelativeLayout>
@@ -69,36 +78,51 @@
                 android:id="@+id/countryCodePicker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:showFlag="false"
                 android:background="@drawable/rounded_corner_grey_bg"
                 app:hideNameCode="true"
-                />
+                app:showFlag="false" />
 
-<!--            <TextView-->
-<!--                android:id="@+id/cuntry_code"-->
-<!--                android:layout_width="@dimen/dp60"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_centerVertical="true"-->
-<!--                android:layout_margin="@dimen/dp5"-->
-<!--                android:background="@drawable/rounded_corner_grey_bg"-->
-<!--                android:padding="@dimen/dp6"-->
-<!--                android:text="+91"-->
-<!--                android:gravity="center"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textSize="@dimen/textsize_sp16" />-->
+            <!--            <TextView-->
+            <!--                android:id="@+id/cuntry_code"-->
+            <!--                android:layout_width="@dimen/dp60"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_centerVertical="true"-->
+            <!--                android:layout_margin="@dimen/dp5"-->
+            <!--                android:background="@drawable/rounded_corner_grey_bg"-->
+            <!--                android:padding="@dimen/dp6"-->
+            <!--                android:text="+91"-->
+            <!--                android:gravity="center"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:textSize="@dimen/textsize_sp16" />-->
 
-
-            <EditText
-                android:id="@+id/mobile_num"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/countryCodePicker"
-                android:background="@drawable/rounded_corner_grey_bg"
                 android:layout_marginLeft="@dimen/dp5"
-                android:hint="@string/Mobile_num"
-                android:padding="@dimen/dp8"
-                android:textSize="@dimen/textsize_sp16" />
+                android:layout_toRightOf="@+id/countryCodePicker"
+                android:background="@drawable/rounded_corner_grey_bg">
+
+
+                <EditText
+                    android:id="@+id/mobile_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Mobile_num"
+                    android:background="@null"
+                    android:padding="@dimen/dp8"
+                    android:textSize="@dimen/textsize_sp16" />
+
+                <TextView
+                    android:id="@+id/mobile_num_astric"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/mobile_num"
+                    android:hint="*"
+                    android:textColorHint="@android:color/holo_red_dark" />
+
+            </RelativeLayout>
 
 
         </RelativeLayout>
@@ -114,24 +138,33 @@
 
             <EditText
                 android:id="@+id/et_password"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_margin="@dimen/dp5"
-                android:layout_toLeftOf="@id/hide_password"
                 android:background="@null"
                 android:hint="@string/password"
                 android:padding="@dimen/dp6"
                 android:textSize="@dimen/textsize_sp16" />
 
+            <TextView
+                android:id="@+id/password_astric"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/et_password"
+                android:hint="*"
+                android:textColorHint="@android:color/holo_red_dark" />
+
+
             <ImageView
                 android:id="@+id/hide_password"
                 android:layout_width="@dimen/dp20"
                 android:layout_height="@dimen/dp20"
+                android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="20dp"
-                android:layout_alignParentTop="true"
                 android:background="@android:color/transparent"
                 android:src="@drawable/ic_password_hide" />
 
@@ -148,24 +181,32 @@
 
             <EditText
                 android:id="@+id/et_confirm_password"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_margin="@dimen/dp5"
-                android:layout_toLeftOf="@id/hide_confirm_password"
                 android:background="@null"
                 android:hint="@string/confirm_password"
                 android:padding="@dimen/dp6"
                 android:textSize="@dimen/textsize_sp16" />
 
+            <TextView
+                android:id="@+id/confirm_password_astric"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/et_confirm_password"
+                android:hint="*"
+                android:textColorHint="@android:color/holo_red_dark" />
+
             <ImageView
                 android:id="@+id/hide_confirm_password"
                 android:layout_width="@dimen/dp20"
                 android:layout_height="@dimen/dp20"
+                android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="20dp"
-                android:layout_alignParentTop="true"
                 android:background="@android:color/transparent"
                 android:src="@drawable/ic_password_hide" />
 

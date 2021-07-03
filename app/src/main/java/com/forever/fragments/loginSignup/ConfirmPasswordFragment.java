@@ -125,14 +125,7 @@ public class ConfirmPasswordFragment extends Fragment implements View.OnClickLis
             otp_et_4.clearFocus();
 
         }
-//        else {
-//
-//            otp_et_1.requestFocus();
-//            otp_et_2.clearFocus();
-//            otp_et_3.clearFocus();
-//            otp_et_4.clearFocus();
-//
-//        }
+
         if (otp_et_2.getText().toString().length() == 1) {
 
             otp_et_1.clearFocus();
@@ -141,14 +134,7 @@ public class ConfirmPasswordFragment extends Fragment implements View.OnClickLis
             otp_et_4.clearFocus();
 
         }
-//        else {
-//
-//            otp_et_1.clearFocus();
-//            otp_et_2.requestFocus();
-//            otp_et_3.clearFocus();
-//            otp_et_4.clearFocus();
-//
-//        }
+
         if (otp_et_3.getText().toString().length() == 1) {
 
             otp_et_1.clearFocus();
@@ -157,13 +143,6 @@ public class ConfirmPasswordFragment extends Fragment implements View.OnClickLis
             otp_et_4.requestFocus();
 
         }
-//        else {
-//
-//            otp_et_1.clearFocus();
-//            otp_et_2.clearFocus();
-//            otp_et_3.requestFocus();
-//            otp_et_4.clearFocus();
-//        }
 
     }
 

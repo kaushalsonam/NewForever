@@ -39,4 +39,17 @@
     <dimen name="dp130">130dp</dimen>
     <dimen name="dp45">45dp</dimen>
     <dimen name="dp55">55dp</dimen>
+    <dimen name="dp12">12dp</dimen>
+    <dimen name="dp250">250dp</dimen>
+    <dimen name="dp400">400dp</dimen>
+    <dimen name="dp500">500dp</dimen>
+    <dimen name="textsize_sp40">40sp</dimen>
+    <dimen name="textsize_sp80">80sp</dimen>
+    <dimen name="dp140">140dp</dimen>
+    <dimen name="dp330">330dp</dimen>
+    <dimen name="dp310">310dp</dimen>
+    <dimen name="dp13">13dp</dimen>
+    <dimen name="dp160">160dp</dimen>
+    <dimen name="dp170">170dp</dimen>
+    <dimen name="dp240">240dp</dimen>
 </resources>

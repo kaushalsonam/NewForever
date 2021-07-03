@@ -13,15 +13,15 @@
         android:layout_alignParentRight="true"
         android:layout_margin="20dp"
         android:text="@string/skip"
-        android:textStyle="bold"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/screen_img_1"
         android:layout_width="300dp"
         android:layout_height="400dp"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/skip_btn"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:src="@drawable/screen1" />
 
@@ -40,32 +40,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/text1"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="-70dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="-70dp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="horizontal"
         android:padding="@dimen/dp10">
 
         <TextView
+            android:id="@+id/dot1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="."
-            android:textSize="120sp"
-            android:textColor="@color/dotcolor"/>
+            android:textColor="@color/dotcolor"
+            android:textSize="120sp" />
 
         <TextView
+            android:id="@+id/dot2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="."
-            android:textSize="120sp"
-            android:textColor="@color/dotcolorlight"/>
+            android:textColor="@color/dotcolorlight"
+            android:textSize="120sp" />
 
         <TextView
+            android:id="@+id/dot3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="."
-            android:textSize="120sp"
-            android:textColor="@color/dotcolorlight"/>
+            android:textColor="@color/dotcolorlight"
+            android:textSize="120sp" />
 
     </LinearLayout>
 

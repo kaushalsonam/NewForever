@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.forever.R;
 import com.forever.activities.HomeActivity;
 import com.forever.activities.LoginActivity;
+import com.forever.fragments.onBoardingScreens.OnBoardScreen3Fragment;
 import com.forever.utilities.KeyClass;
 
 import org.jetbrains.annotations.NotNull;
@@ -35,6 +36,15 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     private ImageView fb_login, google_login, apple_login, hide_password, email_correction;
     private LinearLayout reset_ll, txt_create_one_ll;
 
+
+    public static LoginFragment newInstance() {
+
+        LoginFragment loginFragment = new LoginFragment();
+        Bundle b = new Bundle();
+        loginFragment.setArguments(b);
+
+        return loginFragment;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

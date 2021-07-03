@@ -10,7 +10,7 @@
         android:layout_width="@dimen/dp150"
         android:layout_height="@dimen/dp150"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/dp60"
+        android:layout_marginTop="@dimen/dp40"
         android:src="@drawable/ic_app_icon" />
 
     <TextView
@@ -146,7 +146,7 @@
         android:layout_below="@+id/forget_reset_ll"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="@dimen/dp100"
-        android:layout_marginTop="@dimen/dp40"
+        android:layout_marginTop="@dimen/dp30"
         android:layout_marginRight="@dimen/dp100"
         android:background="@drawable/rounded_corner_btn"
         android:gravity="center"
@@ -161,7 +161,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/login_btn"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/dp40"
+        android:layout_marginTop="@dimen/dp30"
         android:text="@string/social_media_login"
         android:textColor="@color/black"
         android:textSize="@dimen/textsize_sp14" />
@@ -180,26 +180,27 @@
 
         <ImageView
             android:id="@+id/fb_login"
-            android:layout_width="@dimen/dp20"
-            android:layout_height="@dimen/dp20"
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:src="@drawable/ic_facebook_id" />
 
         <ImageView
             android:id="@+id/google_login"
-            android:layout_width="@dimen/dp20"
-            android:layout_height="@dimen/dp20"
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:src="@drawable/ic_google_plus" />
 
         <ImageView
             android:id="@+id/apple_login"
-            android:layout_width="@dimen/dp20"
-            android:layout_height="@dimen/dp20"
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:visibility="gone"
             android:src="@drawable/ic_apple_id" />
 
 
@@ -211,7 +212,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/dp40"
+        android:layout_marginBottom="@dimen/dp30"
         android:gravity="center"
         android:orientation="horizontal">
 

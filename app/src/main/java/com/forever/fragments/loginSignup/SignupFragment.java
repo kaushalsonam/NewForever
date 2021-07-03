@@ -86,9 +86,12 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
 
             case R.id.signup_btn:
 
-                Intent intent = new Intent(getActivity(), HomeActivity.class);
-                ((LoginActivity) getActivity()).startActivity(intent);
-                ((LoginActivity) getActivity()).finish();
+//                Intent intent = new Intent(getActivity(), HomeActivity.class);
+//                ((LoginActivity) getActivity()).startActivity(intent);
+//                ((LoginActivity) getActivity()).finish();
+
+                ((LoginActivity) getActivity()).replaceFragment(new SignupOtp_ConfirmationFragment(), true,
+                        KeyClass.FRAGMENT_SIGN_UP_OTP_CONFIRMATION, KeyClass.FRAGMENT_SIGN_UP_OTP_CONFIRMATION);
 
 
                 break;

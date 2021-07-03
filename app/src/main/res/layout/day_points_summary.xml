@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp70">
+
+        <TextView
+            android:id="@+id/_active_point"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/dp40"
+            android:layout_marginRight="@dimen/dp40"
+            android:gravity="center"
+            android:text="@string/active_points_calculation"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_sp16" />
+
+        <ImageView
+            android:id="@+id/close_btn"
+            android:layout_width="@dimen/dp20"
+            android:layout_height="@dimen/dp20"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp10"
+            android:src="@drawable/ic_close"
+            app:tint="@color/dotcolor" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/dp20"
+            android:layout_height="@dimen/dp20"
+            android:layout_marginLeft="@dimen/dp30"
+            android:src="@drawable/ic_steps" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/steps"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_sp16" />
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/et_bg_color"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dp20"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/steps1_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp50"
+                android:text="@string/steps1"
+                android:textColor="@color/et_hint_color"
+                android:textSize="@dimen/textsize_sp16" />
+
+
+            <TextView
+                android:id="@+id/steps1_points_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/dp60"
+                android:layout_marginRight="@dimen/dp30"
+                android:text="@string/points1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_sp16" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10">
+
+
+            <TextView
+                android:id="@+id/steps2_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp50"
+                android:text="@string/steps2"
+                android:textColor="@color/et_hint_color"
+                android:textSize="@dimen/textsize_sp16" />
+
+
+            <TextView
+                android:id="@+id/steps2_points_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/dp60"
+                android:layout_marginRight="@dimen/dp30"
+                android:text="@string/points2"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_sp16" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp10">
+
+
+            <TextView
+                android:id="@+id/steps3_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp50"
+                android:text="@string/steps3"
+                android:textColor="@color/et_hint_color"
+                android:textSize="@dimen/textsize_sp16" />
+
+
+            <TextView
+                android:id="@+id/steps3_points_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/dp60"
+                android:layout_marginRight="@dimen/dp30"
+                android:text="@string/points3"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_sp16" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/dp20"
+            android:layout_height="@dimen/dp20"
+            android:layout_marginLeft="@dimen/dp30"
+            android:src="@drawable/ic_gym_swipes" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gym_swipe"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_sp16" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/et_bg_color"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dp20"
+            android:layout_marginBottom="@dimen/dp20"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/gym1_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp50"
+                android:text="@string/gym"
+                android:textColor="@color/et_hint_color"
+                android:textSize="@dimen/textsize_sp16" />
+
+
+            <TextView
+                android:id="@+id/gym1_points_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/dp60"
+                android:layout_marginRight="@dimen/dp30"
+                android:text="@string/points1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_sp16" />
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/dp20"
+            android:layout_height="@dimen/dp20"
+            android:layout_marginLeft="@dimen/dp30"
+            android:src="@drawable/ic_healthy_food" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/food"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_sp16" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/et_bg_color"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dp20"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/food1_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp50"
+                android:text="@string/food1"
+                android:textColor="@color/et_hint_color"
+                android:textSize="@dimen/textsize_sp16" />
+
+
+            <TextView
+                android:id="@+id/food1_points_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/dp60"
+                android:layout_marginRight="@dimen/dp30"
+                android:text="@string/points2"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_sp16" />
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp10">
+
+
+            <TextView
+                android:id="@+id/food2_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp50"
+                android:text="@string/food2"
+                android:textColor="@color/et_hint_color"
+                android:textSize="@dimen/textsize_sp16" />
+
+
+            <TextView
+                android:id="@+id/food2_points_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/dp60"
+                android:layout_marginRight="@dimen/dp30"
+                android:text="@string/points1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_sp16" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/dp20"
+            android:layout_height="@dimen/dp20"
+            android:layout_marginLeft="@dimen/dp30"
+            android:src="@drawable/ic_heart_rate" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/food"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_sp16" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/et_bg_color"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dp20"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/heart1_et"
+                android:layout_width="@dimen/dp200"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp50"
+                android:text="@string/heart1"
+                android:textColor="@color/et_hint_color"
+                android:textSize="@dimen/textsize_sp16" />
+
+
+            <TextView
+                android:id="@+id/heart1_points_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/dp60"
+                android:layout_marginRight="@dimen/dp30"
+                android:text="@string/points1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_sp16" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10">
+
+
+            <TextView
+                android:id="@+id/heart2_et"
+                android:layout_width="@dimen/dp200"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp50"
+                android:text="@string/heart2"
+                android:textColor="@color/et_hint_color"
+                android:textSize="@dimen/textsize_sp16" />
+
+
+            <TextView
+                android:id="@+id/heart2_points_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/dp60"
+                android:layout_marginRight="@dimen/dp30"
+                android:text="@string/points1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_sp16" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp10">
+
+
+            <TextView
+                android:id="@+id/heart3_et"
+                android:layout_width="@dimen/dp200"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp50"
+                android:text="@string/heart3"
+                android:textColor="@color/et_hint_color"
+                android:textSize="@dimen/textsize_sp16" />
+
+
+            <TextView
+                android:id="@+id/heart3_points_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/dp60"
+                android:layout_marginRight="@dimen/dp30"
+                android:text="@string/points2"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_sp16" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

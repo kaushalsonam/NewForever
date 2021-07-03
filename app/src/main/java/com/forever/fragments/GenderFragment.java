@@ -15,6 +15,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.forever.R;
+import com.forever.activities.LoginActivity;
+import com.forever.fragments.loginSignup.SignupFragment;
+import com.forever.utilities.KeyClass;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -23,8 +26,9 @@ public class GenderFragment extends Fragment implements View.OnClickListener {
 
 
     private ImageView male_icon,female_icon,non_binary_icon,back_btn;
-    private TextView txt_male,txt_female,txt_non_binary,txt_skip_btn;
+    private TextView txt_male,txt_female,txt_non_binary,txt_skip_btn,txt_error;
     private CardView save_btn;
+    private Boolean gender_flag=false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,6 +66,7 @@ public class GenderFragment extends Fragment implements View.OnClickListener {
         txt_female=view.findViewById(R.id.txt_female);
         txt_non_binary=view.findViewById(R.id.txt_non_binary);
         txt_skip_btn=view.findViewById(R.id.txt_skip_btn);
+        txt_error=view.findViewById(R.id.txt_error);
 
         save_btn=view.findViewById(R.id.save_btn);
 
@@ -85,6 +90,8 @@ public class GenderFragment extends Fragment implements View.OnClickListener {
 
             case R.id.male_icon:
 
+                gender_flag=true;
+
                 male_icon.setColorFilter(getResources().getColor(R.color.white));
                 male_icon.setBackgroundColor(getResources().getColor(R.color.dotcolor));
 
@@ -99,10 +106,12 @@ public class GenderFragment extends Fragment implements View.OnClickListener {
                 txt_non_binary.setTextColor(getResources().getColor(R.color.non_binary));
 
 
+
                 break;
 
             case R.id.female_icon:
 
+                gender_flag=true;
 
                 female_icon.setColorFilter(getResources().getColor(R.color.white));
                 female_icon.setBackgroundColor(getResources().getColor(R.color.female_gender));
@@ -120,6 +129,7 @@ public class GenderFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.non_binary_icon:
+                gender_flag=true;
 
                 non_binary_icon.setColorFilter(getResources().getColor(R.color.white));
                 non_binary_icon.setBackgroundColor(getResources().getColor(R.color.non_binary));
@@ -139,18 +149,27 @@ public class GenderFragment extends Fragment implements View.OnClickListener {
 
             case R.id.back_btn:
 
-                getActivity().onBackPressed();
+                ((LoginActivity)getActivity()).replaceFragment(new SignupFragment(),true,
+                        KeyClass.FRAGMENT_SIGNUP,KeyClass.FRAGMENT_SIGNUP);
 
                 break;
 
                 
             case R.id.txt_skip_btn:
 
-                Toast.makeText(getActivity(), "skip", Toast.LENGTH_SHORT).show();
-                
+                ((LoginActivity)getActivity()).replaceFragment(new LocationFragment(),true,
+                KeyClass.FRAGMENT_LOCATION,KeyClass.FRAGMENT_LOCATION);
+
                 break;
 
             case R.id.save_btn:
+
+                if(!gender_flag){
+
+                    txt_error.setVisibility(View.VISIBLE);
+
+
+                }
 
                 Toast.makeText(getActivity(), "save", Toast.LENGTH_SHORT).show();
 

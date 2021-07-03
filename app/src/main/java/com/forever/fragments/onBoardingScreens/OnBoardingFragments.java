@@ -11,11 +11,17 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.forever.R;
 import com.forever.adapter.SwipeFragmentViewPagerAdapter;
+import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
+import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
 
 
 public class OnBoardingFragments extends Fragment {
@@ -23,6 +29,7 @@ public class OnBoardingFragments extends Fragment {
     private Context context;
     private ViewPager swipe_view_pager;
     private SwipeFragmentViewPagerAdapter adapter;
+    private SpringDotsIndicator dots_indicator;
 
 
     @Override
@@ -53,6 +60,7 @@ public class OnBoardingFragments extends Fragment {
     private void bindView(View view) {
 
         swipe_view_pager = view.findViewById(R.id.swipe_view_pager);
+        dots_indicator =  view.findViewById(R.id.dots_indicator);
 
 
     }
@@ -61,6 +69,7 @@ public class OnBoardingFragments extends Fragment {
 
         adapter = new SwipeFragmentViewPagerAdapter(getChildFragmentManager());
         swipe_view_pager.setAdapter(adapter);
-
+        dots_indicator.setViewPager(swipe_view_pager);
     }
+
 }
