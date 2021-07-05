@@ -11,6 +11,7 @@ import android.widget.FrameLayout;
 
 import com.forever.R;
 import com.forever.fragments.loginSignup.LoginFragment;
+import com.forever.fragments.loginSignup.LoginWithPhoneFragment;
 import com.forever.utilities.KeyClass;
 
 public class LoginActivity extends AppCompatActivity {
@@ -41,8 +42,8 @@ public class LoginActivity extends AppCompatActivity {
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
-        replaceFragment(new LoginFragment(),false, KeyClass.FRAGMENT_LOGIN,
-                KeyClass.FRAGMENT_LOGIN);
+        replaceFragment(new LoginWithPhoneFragment(),false, KeyClass.FRAGMENT_LOGIN_WITH_PHONE,
+                KeyClass.FRAGMENT_LOGIN_WITH_PHONE);
 
     }
 

@@ -3,6 +3,7 @@ package com.forever.customView;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,6 +13,7 @@ import com.forever.R;
 public class Changed_password_Dialog extends Dialog {
 
 
+    public RelativeLayout reset_rl;
 
 
     public Changed_password_Dialog(@NonNull Context context) {
@@ -32,5 +34,9 @@ public class Changed_password_Dialog extends Dialog {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.changes_password_dialog_layout);
+
+        reset_rl=findViewById(R.id.reset_rl);
+
+
     }
 }

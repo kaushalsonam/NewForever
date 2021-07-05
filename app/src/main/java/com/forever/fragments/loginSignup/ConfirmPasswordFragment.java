@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 import com.forever.R;
 import com.forever.activities.LoginActivity;
 import com.forever.customView.Changed_password_Dialog;
+import com.forever.utilities.KeyClass;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -73,7 +75,7 @@ public class ConfirmPasswordFragment extends Fragment implements View.OnClickLis
 
     private void viewSetup() {
 
-        changed_password_dialog= new Changed_password_Dialog(LoginActivity.context,R.style.DialogDim);
+        changed_password_dialog = new Changed_password_Dialog(LoginActivity.context, R.style.DialogDim);
 
         back_btn.setOnClickListener(this);
         next_btn.setOnClickListener(this);
@@ -99,8 +101,16 @@ public class ConfirmPasswordFragment extends Fragment implements View.OnClickLis
 
             case R.id.next_btn:
 
-//                Toast.makeText(getContext(), "next", Toast.LENGTH_SHORT).show();
                 openDialog();
+
+                break;
+
+            case R.id.reset_rl:
+
+                ((LoginActivity) getActivity()).replaceFragment(new LoginFragment(), false,
+                        KeyClass.FRAGMENT_LOGIN, KeyClass.FRAGMENT_LOCATION);
+
+                changed_password_dialog.dismiss();
 
                 break;
         }
@@ -210,5 +220,9 @@ public class ConfirmPasswordFragment extends Fragment implements View.OnClickLis
         window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         window.setGravity(Gravity.CENTER);
         changed_password_dialog.setCanceledOnTouchOutside(true);
+
+        changed_password_dialog.reset_rl.setOnClickListener(this);
+
+
     }
 }

@@ -6,29 +6,40 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.forever.Model.PhoneSignupResponseModel;
 import com.forever.R;
+import com.forever.ViewModel.OnBoardingViewModel;
+import com.forever.ViewModel.PhoneSignupViewModel;
 import com.forever.activities.HomeActivity;
 import com.forever.activities.LoginActivity;
+import com.forever.utilities.Constant;
 import com.forever.utilities.KeyClass;
+import com.google.gson.JsonObject;
 import com.hbb20.CountryCodePicker;
 
 import org.jetbrains.annotations.NotNull;
 
 
-public class SignupFragment extends Fragment implements View.OnClickListener {
+public class SignupFragment extends Fragment implements View.OnClickListener, Observer<PhoneSignupResponseModel>, TextWatcher {
 
-    private EditText full_name, mobile_num, et_password, et_confirm_password;
+    private EditText full_name, mobile_num, et_password, et_confirm_password, et_email;
     private CountryCodePicker countryCodePicker;
-    private TextView signup_btn;
+    private TextView signup_btn, full_name_astric, mobile_num_astric, email_astric, password_astric, confirm_password_astric;
     private LinearLayout txt_already_have_one;
+    private PhoneSignupViewModel phoneSignupViewModel;
 
 
     @Override
@@ -37,6 +48,8 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
         if (getArguments() != null) {
 
         }
+
+        viewModelSetup();
     }
 
     @Override
@@ -61,10 +74,18 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
         mobile_num = view.findViewById(R.id.mobile_num);
         et_password = view.findViewById(R.id.et_password);
         et_confirm_password = view.findViewById(R.id.et_confirm_password);
+        et_email = view.findViewById(R.id.et_email);
+
 
         countryCodePicker = view.findViewById(R.id.countryCodePicker);
 
         signup_btn = view.findViewById(R.id.signup_btn);
+
+        full_name_astric = view.findViewById(R.id.full_name_astric);
+        mobile_num_astric = view.findViewById(R.id.mobile_num_astric);
+        email_astric = view.findViewById(R.id.email_astric);
+        password_astric = view.findViewById(R.id.password_astric);
+        confirm_password_astric = view.findViewById(R.id.confirm_password_astric);
 
 
         txt_already_have_one = view.findViewById(R.id.txt_already_have_one);
@@ -76,6 +97,19 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
         signup_btn.setOnClickListener(this);
         txt_already_have_one.setOnClickListener(this);
 
+        full_name.addTextChangedListener(this);
+        mobile_num.addTextChangedListener(this);
+        et_password.addTextChangedListener(this);
+        et_confirm_password.addTextChangedListener(this);
+        et_email.addTextChangedListener(this);
+
+
+    }
+
+    private void viewModelSetup() {
+
+        phoneSignupViewModel = new ViewModelProvider(this).get(PhoneSignupViewModel.class);
+        phoneSignupViewModel.signupwithphone.observe(this, this);
 
     }
 
@@ -86,12 +120,52 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
 
             case R.id.signup_btn:
 
-//                Intent intent = new Intent(getActivity(), HomeActivity.class);
-//                ((LoginActivity) getActivity()).startActivity(intent);
-//                ((LoginActivity) getActivity()).finish();
 
-                ((LoginActivity) getActivity()).replaceFragment(new SignupOtp_ConfirmationFragment(), true,
-                        KeyClass.FRAGMENT_SIGN_UP_OTP_CONFIRMATION, KeyClass.FRAGMENT_SIGN_UP_OTP_CONFIRMATION);
+                if (!full_name.getText().toString().isEmpty()) {
+
+                    if (countryCodePicker != null) {
+
+                        if (!mobile_num.getText().toString().isEmpty()) {
+
+                            if (!et_email.getText().toString().isEmpty()) {
+
+                                if (!et_password.getText().toString().isEmpty()) {
+
+                                    if (!et_confirm_password.getText().toString().isEmpty()) {
+
+
+                                        JsonObject data = new JsonObject();
+                                        data.addProperty(Constant.full_name, full_name.getText().toString());
+                                        data.addProperty(Constant.phone_code, "91");
+                                        data.addProperty(Constant.phone_number, mobile_num.getText().toString());
+                                        data.addProperty(Constant.email, et_email.getText().toString());
+                                        data.addProperty(Constant.password, et_password.getText().toString());
+                                        data.addProperty(Constant.device_type,"a");
+                                        data.addProperty(Constant.device_token,"f1tmwBMuEwo:APA91bHBeF_X0MBCn-wtKhg4OvckXxNvoKk1vmhYzuCoGiZtlZOPXyJGcPDJPetCW0VMiV2UXZzEM89LesSbwdV9e-yiRIQH8JNJn1mkdPiH2G6Fj37CBu8wrZeuogcztp9qe-6a_Ubb");
+
+
+                                        phoneSignupViewModel.phoneSignup(data, getActivity());
+
+
+                                        ((LoginActivity) getActivity()).replaceFragment(new SignupOtp_ConfirmationFragment(), true,
+                                                KeyClass.FRAGMENT_SIGN_UP_OTP_CONFIRMATION, KeyClass.FRAGMENT_SIGN_UP_OTP_CONFIRMATION);
+
+                                    }
+
+
+                                }
+                            }
+                        }
+
+                    }
+
+                }else {
+
+                    Toast.makeText(getActivity(), "Feilds Cannot empty", Toast.LENGTH_SHORT).show();
+                }
+
+
+
 
 
                 break;
@@ -103,6 +177,66 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
 
                 break;
         }
+
+    }
+
+
+    @Override
+    public void onChanged(PhoneSignupResponseModel phoneSignupResponseModel) {
+
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        if (full_name.getText().toString().length() > 0) {
+
+            full_name_astric.setVisibility(View.GONE);
+        } else {
+
+            full_name_astric.setVisibility(View.VISIBLE);
+        }
+        if (mobile_num.getText().toString().length() > 0) {
+
+            mobile_num_astric.setVisibility(View.GONE);
+
+        } else {
+
+            mobile_num_astric.setVisibility(View.VISIBLE);
+        }
+
+        if (et_email.getText().toString().length() > 0) {
+
+            email_astric.setVisibility(View.GONE);
+        } else {
+
+            email_astric.setVisibility(View.VISIBLE);
+        }
+        if (et_password.getText().toString().length() > 0) {
+
+            password_astric.setVisibility(View.GONE);
+        } else {
+
+            password_astric.setVisibility(View.VISIBLE);
+
+        }
+        if (et_confirm_password.getText().toString().length() > 0) {
+
+            confirm_password_astric.setVisibility(View.GONE);
+        } else {
+
+            confirm_password_astric.setVisibility(View.VISIBLE);
+        }
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
 
     }
 }

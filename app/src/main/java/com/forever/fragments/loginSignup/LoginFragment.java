@@ -6,9 +6,13 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.service.autofill.OnClickAction;
+import android.text.Editable;
 import android.text.InputType;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +23,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.forever.Model.ExistsPhoneEmailModel;
+import com.forever.Model.OnBoardingModel;
 import com.forever.R;
+import com.forever.ViewModel.EmailExistsViewModel;
+import com.forever.ViewModel.OnBoardingViewModel;
 import com.forever.activities.HomeActivity;
 import com.forever.activities.LoginActivity;
 import com.forever.fragments.onBoardingScreens.OnBoardScreen3Fragment;
@@ -28,13 +36,14 @@ import com.forever.utilities.KeyClass;
 import org.jetbrains.annotations.NotNull;
 
 
-public class LoginFragment extends Fragment implements View.OnClickListener {
+public class LoginFragment extends Fragment implements View.OnClickListener, Observer<ExistsPhoneEmailModel>, TextWatcher {
 
     private EditText et_email, et_password;
     private RelativeLayout et_email_rl, et_password_rl;
     private TextView login_btn;
     private ImageView fb_login, google_login, apple_login, hide_password, email_correction;
     private LinearLayout reset_ll, txt_create_one_ll;
+    private EmailExistsViewModel emailExistsViewModel;
 
 
     public static LoginFragment newInstance() {
@@ -52,6 +61,14 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         if (getArguments() != null) {
 
         }
+        viewModelSetup();
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+
     }
 
     @Override
@@ -103,6 +120,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         txt_create_one_ll.setOnClickListener(this);
         hide_password.setOnClickListener(this);
 
+        et_email.addTextChangedListener(this);
+
 //       if(et_email.requestFocus()){
 //
 //           et_email_rl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_green_bg));
@@ -110,11 +129,18 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 //
 //       }if(et_password.requestFocus()) {
 //
-//            et_password.setBackground(getResources().getDrawable(R.drawable.rounded_corner_green_bg));
-//           et_email_rl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_grey_bg));
+//            et_password_rl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_green_bg));
+//            et_password_rl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_grey_bg));
 //
 //
 //       }
+
+    }
+
+    private void viewModelSetup() {
+
+        emailExistsViewModel = new ViewModelProvider(this).get(EmailExistsViewModel.class);
+        emailExistsViewModel.emailExists.observe(this, this);
 
     }
 
@@ -136,6 +162,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 //                    }
 //
 //                }else {
+
+                emailExistsViewModel.EmailExists(getActivity(),et_email.getText().toString());
 
 
                 Intent intent = new Intent(getActivity(), HomeActivity.class);
@@ -188,6 +216,40 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
                 break;
         }
+
+    }
+
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        if (et_email.getText().toString().length() > 0) {
+
+            et_email_rl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_green_bg));
+//            et_password_rl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_grey_bg));
+
+        }
+        if(et_password.getText().toString().length()>0){
+
+            et_password_rl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_green_bg));
+
+        }
+
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
+    }
+
+    @Override
+    public void onChanged(ExistsPhoneEmailModel existsPhoneEmailModel) {
 
     }
 }
