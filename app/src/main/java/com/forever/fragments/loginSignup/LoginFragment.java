@@ -163,7 +163,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener, Obs
 //
 //                }else {
 
-                emailExistsViewModel.EmailExists(getActivity(),et_email.getText().toString());
+//                emailExistsViewModel.EmailExists(getActivity(),et_email.getText().toString());
 
 
                 Intent intent = new Intent(getActivity(), HomeActivity.class);

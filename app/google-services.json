@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "519411625152",
+    "project_id": "forever-10260",
+    "storage_bucket": "forever-10260.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:519411625152:android:3028339a7b9f6a65e81125",
+        "android_client_info": {
+          "package_name": "com.forever"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "519411625152-q0l66p1rc7s9dq93ek2ium5hhbsc245k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNN8pRFF23HXc1DsoICt6EJNpULtAVQkc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "519411625152-q0l66p1rc7s9dq93ek2ium5hhbsc245k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

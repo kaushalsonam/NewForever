@@ -11,7 +11,7 @@
         android:layout_width="@dimen/dp150"
         android:layout_height="@dimen/dp150"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/dp60"
+        android:layout_marginTop="@dimen/dp30"
         android:src="@drawable/ic_app_icon" />
 
     <RelativeLayout
@@ -21,7 +21,7 @@
         android:layout_below="@id/app_icon"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="@dimen/dp40"
-        android:layout_marginTop="@dimen/dp20"
+        android:layout_marginTop="@dimen/dp10"
         android:layout_marginRight="@dimen/dp40"
         android:padding="@dimen/dp10">
 
@@ -40,12 +40,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_create_one"
-            android:layout_marginTop="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp10"
             android:background="@drawable/rounded_corner_grey_bg">
 
             <EditText
                 android:id="@+id/full_name"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_margin="@dimen/dp5"
@@ -62,8 +62,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/full_name"
                 android:hint="*"
+                android:layout_marginLeft="@dimen/dp100"
                 android:textColorHint="@android:color/holo_red_dark" />
 
 
@@ -74,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_full_name_rl"
-            android:layout_marginTop="@dimen/dp10">
+            android:layout_marginTop="@dimen/dp8">
 
 
             <com.hbb20.CountryCodePicker
@@ -97,7 +97,7 @@
 
                 <EditText
                     android:id="@+id/mobile_num"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:hint="@string/Mobile_num"
@@ -113,8 +113,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/mobile_num"
                     android:hint="*"
+                    android:layout_marginLeft="@dimen/dp130"
                     android:textColorHint="@android:color/holo_red_dark" />
 
             </RelativeLayout>
@@ -128,12 +128,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/mobile_rl"
-            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp8"
             android:background="@drawable/rounded_corner_grey_bg">
 
             <EditText
                 android:id="@+id/et_email"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_margin="@dimen/dp5"
@@ -146,14 +146,6 @@
                 android:maxLength="50"
                 android:textSize="@dimen/textsize_sp16" />
 
-            <TextView
-                android:id="@+id/email_astric"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/et_email"
-                android:hint="*"
-                android:textColorHint="@android:color/holo_red_dark" />
 
         </RelativeLayout>
 
@@ -163,12 +155,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/et_email_rl"
-            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp8"
             android:background="@drawable/rounded_corner_grey_bg">
 
             <EditText
                 android:id="@+id/et_password"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_margin="@dimen/dp5"
@@ -186,7 +178,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/et_password"
+                android:layout_marginLeft="@dimen/dp100"
                 android:hint="*"
                 android:textColorHint="@android:color/holo_red_dark" />
 
@@ -210,7 +202,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/et_password_rl"
-            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp8"
             android:background="@drawable/rounded_corner_grey_bg">
 
             <EditText
@@ -233,7 +225,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/et_confirm_password"
+                android:layout_marginLeft="@dimen/dp150"
                 android:hint="*"
                 android:textColorHint="@android:color/holo_red_dark" />
 
@@ -260,7 +252,7 @@
         android:layout_below="@+id/form_data_rl"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="@dimen/dp100"
-        android:layout_marginTop="@dimen/dp40"
+        android:layout_marginTop="@dimen/dp20"
         android:layout_marginRight="@dimen/dp100"
         android:background="@drawable/rounded_corner_btn"
         android:gravity="center"
@@ -276,7 +268,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/dp40"
+        android:layout_marginBottom="@dimen/dp20"
         android:gravity="center"
         android:orientation="horizontal">
 

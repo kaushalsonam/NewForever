@@ -2,6 +2,7 @@ package com.forever.network;
 
 
 import com.forever.Model.ExistsPhoneEmailModel;
+import com.forever.Model.LoginModel;
 import com.forever.Model.OnBoardingModel;
 import com.forever.Model.PhoneSignupResponseModel;
 import com.google.gson.JsonObject;
@@ -20,14 +21,17 @@ public interface BaseApiMethods {
     @GET("api/app/settings")
     Call<OnBoardingModel> onBoarding();
 
-    @GET("user/email-exists{input}")
-    Call<ExistsPhoneEmailModel> emailExist(@Path(value = "input") String email);
+    @POST("api/user/phone-exists")
+    Call<ExistsPhoneEmailModel>existPhone(@Body JsonObject jsonObject);
+
+//    @GET("user/email-exists")
+//    Call<ExistsPhoneEmailModel> emailExist(@Query("email") String email);
 
     @POST("api/user/signup")
     Call<PhoneSignupResponseModel> phoneSignup(@Body JsonObject object);
 
-//    @POST("api/user/signin")
-//    Call<PhoneSignupResponseModel> phoneSignup(@Body JsonObject object);
+    @POST("api/user/signin")
+    Call<LoginModel> loginwithPhone(@Body JsonObject object);
 
 
 

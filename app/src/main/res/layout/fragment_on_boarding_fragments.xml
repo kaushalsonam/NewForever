@@ -9,7 +9,8 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/swipe_view_pager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp60"/>
 
 
     <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
@@ -20,9 +21,9 @@
         app:dotsCornerRadius="8dp"
         app:dotsSize="16dp"
         app:dotsSpacing="4dp"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@id/swipe_view_pager"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/dp120"
+        android:layout_marginTop="-65dp"
         app:selectedDotColor="@color/dotcolor"
         />
 

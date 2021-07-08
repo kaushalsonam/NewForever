@@ -121,6 +121,8 @@
     <string name="more_reward">Earn more rewards</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="txt_user_name">User name</string>
+    <string name="device_type">a</string>
+    <string name="tocken">f1tmwBMuEwo:APA91bHBeF_X0MBCn-wtKhg4OvckXxNvoKk1vmhYzuCoGiZtlZOPXyJGcPDJPetCW0VMiV2UXZzEM89LesSbwdV9e-yiRIQH8JNJn1mkdPiH2G6Fj37CBu8wrZeuogcztp9qe-6a_Ubb</string>
 
 
     <string-array name="countryCodes">

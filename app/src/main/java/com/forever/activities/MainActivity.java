@@ -1,6 +1,7 @@
 package com.forever.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
@@ -11,12 +12,16 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.forever.R;
 import com.forever.fragments.onBoardingScreens.OnBoardingFragments;
+import com.forever.utilities.Constant;
 import com.forever.utilities.KeyClass;
+import com.forever.utilities.PrefrenceShared;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
     public static FrameLayout mcontainer;
     public static Context context;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void bindView() {
 
+        firebaseAuth=FirebaseAuth.getInstance();
         mcontainer = findViewById(R.id.mcontainer);
 
     }
@@ -42,6 +48,30 @@ public class MainActivity extends AppCompatActivity {
         replaceFragment(new OnBoardingFragments(), false, KeyClass.FRAGMENT_ONBOARDING, KeyClass.FRAGMENT_ONBOARDING);
 
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if(PrefrenceShared.getInstance().getPreferenceData().getValueFromKey(Constant.loginflag)!=null){
+
+            if(PrefrenceShared.getInstance().getPreferenceData().getValueFromKey(Constant.loginflag).equalsIgnoreCase("True")){
+
+                Intent intent= new Intent(MainActivity.this,HomeActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
+
+        }
+
+//        if(firebaseAuth.getCurrentUser()!=null){
+//
+//            finish();
+//            startActivity(new Intent(MainActivity.this,HomeActivity.class));
+//
+//        }else {}
     }
 
     public void replaceFragment(Fragment fragment, boolean addToBackStack, String transactionName, String tag) {

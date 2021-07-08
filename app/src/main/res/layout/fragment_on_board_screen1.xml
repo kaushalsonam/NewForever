@@ -22,7 +22,7 @@
         android:layout_height="400dp"
         android:layout_below="@id/skip_btn"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:src="@drawable/screen1" />
 
     <TextView
@@ -43,9 +43,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="-70dp"
         android:gravity="center"
-        android:visibility="gone"
         android:orientation="horizontal"
-        android:padding="@dimen/dp10">
+        android:padding="@dimen/dp10"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/dot1"

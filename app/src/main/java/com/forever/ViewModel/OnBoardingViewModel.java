@@ -48,7 +48,7 @@ public class OnBoardingViewModel extends ViewModel {
             @Override
             public void onFailure(Call<OnBoardingModel> call, Throwable t) {
 
-                Toast.makeText(context, t.getMessage(), Toast.LENGTH_LONG).show();
+//                Toast.makeText(context, t.getMessage(), Toast.LENGTH_LONG).show();
 
             }
         });
