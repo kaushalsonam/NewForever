@@ -118,10 +118,11 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
         google_login = view.findViewById(R.id.google_login);
         hide_password = view.findViewById(R.id.hide_password);
 
-//        FacebookSdk.sdkInitialize(getActivity());
-//        callbackManager = CallbackManager.Factory.create();
+        FacebookSdk.sdkInitialize(getActivity());
+        callbackManager = CallbackManager.Factory.create();
 
 
+        facbookLogin();
 
 
         GoogleSignInOptions gso = new GoogleSignInOptions
@@ -212,6 +213,9 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
             case R.id.fb_login:
 
 //                facbookLogin();
+
+                LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile,email"));
+
 
                 break;
 
@@ -343,8 +347,13 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
 
 //                            Toast.makeText(getActivity(), "success", Toast.LENGTH_SHORT).show();
 
-                            ((LoginActivity)getActivity()).replaceFragment(new HomeFragment(),false,
-                                    KeyClass.FRAGMENT_HOME,KeyClass.FRAGMENT_HOME);
+//                            ((LoginActivity)getActivity()).replaceFragment(new HomeFragment(),false,
+//                                    KeyClass.FRAGMENT_HOME,KeyClass.FRAGMENT_HOME);
+
+                            Intent intent= new Intent(getActivity(),HomeActivity.class);
+                            startActivity(intent);
+                            getActivity().finish();
+
 
                         } else {
                             // If sign in fails, display a message to the user.
@@ -396,7 +405,7 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
 
     public void facbookLogin(){
 
-        LoginManager.getInstance().logInWithReadPermissions(getActivity(), Arrays.asList("email","public_profile"));
+//        LoginManager.getInstance().logInWithReadPermissions(getActivity(), Arrays.asList("email","public_profile"));
 
         LoginManager.getInstance().registerCallback(callbackManager,
                 new FacebookCallback<LoginResult>() {
