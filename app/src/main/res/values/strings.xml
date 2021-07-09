@@ -131,6 +131,9 @@
     <string name="txt_user_name">User name</string>
     <string name="device_type">a</string>
     <string name="tocken">f1tmwBMuEwo:APA91bHBeF_X0MBCn-wtKhg4OvckXxNvoKk1vmhYzuCoGiZtlZOPXyJGcPDJPetCW0VMiV2UXZzEM89LesSbwdV9e-yiRIQH8JNJn1mkdPiH2G6Fj37CBu8wrZeuogcztp9qe-6a_Ubb</string>
+    <string name="rewards">Rewards</string>
+    <string name="search">Search...</string>
+    <string name="new_arrival">New Arrivals</string>
 
 
     <string-array name="countryCodes">

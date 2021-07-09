@@ -62,6 +62,12 @@ public class HomeActivity extends AppCompatActivity {
         replaceFragment(new HomeFragment(), false, KeyClass.FRAGMENT_HOME,
                 KeyClass.FRAGMENT_HOME);
 
+
+
+
+
+
+
     }
 
 
@@ -95,7 +101,6 @@ public class HomeActivity extends AppCompatActivity {
                             KeyClass.FRAGMENT_HOME);
 
 
-
                     break;
 
                 case R.id.nav_rewards:
@@ -109,6 +114,7 @@ public class HomeActivity extends AppCompatActivity {
 
                     replaceFragment(new NotificationsFragment(),false,KeyClass.FRAGMENT_NOTIFICATIONS,
                             KeyClass.FRAGMENT_NOTIFICATIONS);
+
 
                     break;
 
@@ -125,6 +131,14 @@ public class HomeActivity extends AppCompatActivity {
 
             }
             return false;
+
+
+
+
+
         }
     };
+
+
+
 }

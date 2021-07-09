@@ -115,4 +115,9 @@ dependencies {
 
     //seekbar
     implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
+
+
+
+
+
 }
