@@ -48,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
+
     public void replaceFragment(Fragment fragment, boolean addToBackStack, String transactionName, String tag) {
         try {
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();

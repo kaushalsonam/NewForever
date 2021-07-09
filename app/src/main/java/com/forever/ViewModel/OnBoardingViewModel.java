@@ -37,7 +37,7 @@ public class OnBoardingViewModel extends ViewModel {
                     if (response.body() != null) {
 
                         onBoarding.postValue(model);
-                        Toast.makeText(context, "success", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(context, "success", Toast.LENGTH_SHORT).show();
                     }
 
                 }

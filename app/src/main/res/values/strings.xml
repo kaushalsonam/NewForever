@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">Forever</string>
+
+
+<!--    facebook app id-->
+    <string name="facebook_app_id">230703825551952</string>
+    <string name="fb_login_protocol_scheme">fb230703825551952</string>
+
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="skip">Skip</string>

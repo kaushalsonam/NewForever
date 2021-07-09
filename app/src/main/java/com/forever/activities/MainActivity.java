@@ -66,12 +66,12 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-//        if(firebaseAuth.getCurrentUser()!=null){
-//
-//            finish();
-//            startActivity(new Intent(MainActivity.this,HomeActivity.class));
-//
-//        }else {}
+        if(firebaseAuth.getCurrentUser()!=null){
+
+            finish();
+            startActivity(new Intent(MainActivity.this,HomeActivity.class));
+
+        }
     }
 
     public void replaceFragment(Fragment fragment, boolean addToBackStack, String transactionName, String tag) {
