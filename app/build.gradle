@@ -117,7 +117,8 @@ dependencies {
     implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
 
 
-
+    //circular imageview
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
 
 }

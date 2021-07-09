@@ -134,6 +134,11 @@
     <string name="rewards">Rewards</string>
     <string name="search">Search...</string>
     <string name="new_arrival">New Arrivals</string>
+    <string name="demo_string">Lorem Ipsum is simply dummy \ntext of the printing.</string>
+    <string name="expired">Expired</string>
+    <string name="date">Feb 22, 2021</string>
+    <string name="terms_apply"><![CDATA[Terms & Condition Apply]]></string>
+    <string name="txt_share">Share</string>
 
 
     <string-array name="countryCodes">
