@@ -38,6 +38,7 @@ public class NewArrivalRecyclerAdapter extends RecyclerView.Adapter<NewArrivalRe
             @Override
             public void onClick(View v) {
                 context.startActivity(new Intent(context, OfferDetailsActivity.class));
+
             }
         });
 
