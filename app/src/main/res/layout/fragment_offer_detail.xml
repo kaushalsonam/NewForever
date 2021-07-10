@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/et_bg_color"
+    tools:context=".fragments.reward.OfferDetailFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/back_cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/dp20">
+
+        <RelativeLayout
+            android:id="@+id/back_rl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp70">
+
+
+            <ImageView
+                android:id="@+id/back_btn"
+                android:layout_width="@dimen/dp20"
+                android:layout_height="@dimen/dp20"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp30"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/txt_offer_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/offer_details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_sp18"
+
+                />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/toggle_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp50"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp10"
+                android:textColor="@color/dotcolor"
+                android:textOn="2100"
+                android:thumb="@drawable/button_selector"
+                app:switchMinWidth="@dimen/dp40"
+
+                />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_offer_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/back_cv"
+        android:layout_margin="@dimen/dp20"
+        android:background="@drawable/dashed_rounde_corner"
+        android:elevation="@dimen/dp10">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp4"
+            android:background="@drawable/white_rounded_corner_white_bg"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/icon_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/logo_image"
+                    android:layout_width="@dimen/dp100"
+                    android:layout_height="@dimen/dp100"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/dp15"
+                    android:src="@mipmap/app_logo"
+                    app:civ_border_color="@color/black"
+                    app:civ_border_width="@dimen/dp2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/dp10"
+                    android:gravity="center_horizontal"
+                    android:text="@string/demo_string"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_sp16" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp35"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center_vertical"
+                    android:text="@string/txt_Discount"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp35"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:text="$200"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp35"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center_vertical"
+                    android:text="@string/txt_Price"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp35"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:text="$1999"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp15">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp35"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center_vertical"
+                    android:text="@string/privacy"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginRight="@dimen/dp15">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center_vertical"
+                    android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                    android:textColor="@color/black"
+                    android:textSize="11dp" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginBottom="@dimen/dp40">
+
+                <TextView
+                    android:id="@+id/share_btn"
+                    android:layout_width="@dimen/dp120"
+                    android:layout_height="@dimen/dp35"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/dp20"
+                    android:background="@drawable/rounded_corner_btn"
+                    android:gravity="center"
+                    android:text="@string/txt_share"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_sp18" />
+
+                <TextView
+                    android:id="@+id/redeem_btn"
+                    android:layout_width="@dimen/dp120"
+                    android:layout_height="@dimen/dp35"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp20"
+                    android:background="@drawable/rounded_corner_btn"
+                    android:gravity="center"
+                    android:text="@string/redeem"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_sp18" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

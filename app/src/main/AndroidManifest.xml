@@ -15,7 +15,6 @@
         android:testOnly="false"
         android:theme="@style/Theme.Forever"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.OfferDetailsActivity"></activity>
         <activity android:name=".activities.PointsSummaryActivity" />
         <activity android:name=".activities.ActivityPoints" />
         <activity android:name=".activities.ActivitySummary" />

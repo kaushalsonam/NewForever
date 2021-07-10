@@ -2,10 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/dp10"
+    android:layout_height="@dimen/dp80"
+    android:layout_marginLeft="@dimen/dp20"
+    android:layout_marginRight="@dimen/dp20"
+    android:layout_marginTop="@dimen/dp5"
+    android:layout_marginBottom="@dimen/dp5"
     android:orientation="vertical"
-    android:padding="@dimen/dp10">
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,8 +16,8 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/logo_img"
-            android:layout_width="@dimen/dp40"
-            android:layout_height="@dimen/dp40"
+            android:layout_width="@dimen/dp30"
+            android:layout_height="@dimen/dp30"
             android:layout_centerVertical="true"
             android:src="@mipmap/app_logo"
              />
@@ -26,7 +29,6 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dp5"
             android:layout_toRightOf="@id/logo_img"
-            android:padding="@dimen/dp5"
             android:text="@string/sport"
             android:textColor="@color/notification_text"
             android:textSize="@dimen/textsize_sp16" />
@@ -50,9 +52,10 @@
         android:id="@+id/notification_heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/dp5"
         android:text="@string/notification_title"
         android:textColor="@color/black"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginLeft="@dimen/dp5"
         android:textSize="@dimen/textsize_sp14"
         android:textStyle="bold" />
 
@@ -63,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:paddingLeft="@dimen/dp5"
+        android:layout_marginLeft="@dimen/dp5"
         android:text="@string/notification_offer"
         android:textColor="@color/notification_text"
         android:textSize="@dimen/textsize_sp10" />
@@ -71,7 +74,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp2"
-        android:layout_marginTop="@dimen/dp20"
+        android:layout_marginTop="@dimen/dp10"
         android:background="@color/view_color"/>
 
 </LinearLayout>

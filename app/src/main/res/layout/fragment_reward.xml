@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/et_bg_color"
-    tools:context=".fragments.home.RewardFragment">
+    tools:context=".fragments.reward.RewardFragment">
 
 
     <androidx.cardview.widget.CardView
@@ -21,8 +21,8 @@
 
             <ImageView
                 android:id="@+id/filter_ic"
-                android:layout_width="@dimen/dp30"
-                android:layout_height="@dimen/dp30"
+                android:layout_width="@dimen/dp25"
+                android:layout_height="@dimen/dp25"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dp30"
                 android:src="@drawable/ic_filter" />
@@ -62,15 +62,14 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/header_rl"
-       >
+        android:layout_below="@+id/header_rl">
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginTop="@dimen/dp30"
-            android:orientation="vertical"
             android:layout_marginBottom="@dimen/dp60"
-            android:layout_height="match_parent">
+            android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/search_cv"
@@ -95,6 +94,7 @@
 
 
                     <EditText
+                        android:id="@+id/search_et"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -115,47 +115,77 @@
                         android:layout_centerVertical="true"
                         android:layout_marginRight="@dimen/dp15"
                         android:paddingBottom="@dimen/dp5"
-                        android:src="@drawable/ic_map" />
+                        android:src="@drawable/ic_map"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/cut_btn"
+                        android:layout_width="@dimen/dp10"
+                        android:layout_height="@dimen/dp10"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dp15"
+                        android:src="@drawable/ic_close"
+                        android:visibility="gone"
+                        app:tint="@color/black" />
+
 
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
 
 
-            <RelativeLayout
-                android:id="@+id/txt_new_arrival_rl"
+            <LinearLayout
+                android:id="@+id/main_data_ll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/dp40"
-                android:layout_marginTop="@dimen/dp20"
-                android:layout_marginRight="@dimen/dp40">
+                android:orientation="vertical"
+                android:visibility="visible">
 
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:id="@+id/txt_new_arrival_rl"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="@string/new_arrival"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/textsize_sp18" />
+                    android:layout_marginLeft="@dimen/dp40"
+                    android:layout_marginTop="@dimen/dp20"
+                    android:layout_marginRight="@dimen/dp40">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:text="@string/see_all"
-                    android:textColor="@color/dotcolor"
-                    android:textSize="@dimen/textsize_sp16" />
 
-            </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/new_arrival"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_sp18" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/see_all"
+                        android:textColor="@color/dotcolor"
+                        android:textSize="@dimen/textsize_sp16" />
+
+                </RelativeLayout>
 
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/new_arrival_recycler"
                     android:layout_width="match_parent"
-                    android:layout_below="@+id/txt_new_arrival_rl"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_new_arrival_rl"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginBottom="@dimen/dp10" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mega_offer_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_new_arrival_rl"
                     android:layout_marginTop="@dimen/dp10"
                     android:layout_marginBottom="@dimen/dp10" />
 
@@ -174,6 +204,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:text="@string/recommended"
+                        android:textStyle="bold"
                         android:textColor="@color/black"
                         android:textSize="@dimen/textsize_sp18" />
 
@@ -190,13 +221,46 @@
                 </RelativeLayout>
 
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recommeded_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recommeded_recycler"
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/empty_rewards_ll"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp10"
-                 />
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp40"
+                android:gravity="center"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:layout_width="@dimen/dp300"
+                    android:layout_height="@dimen/dp300"
+                    android:src="@drawable/ic_empty_rewards" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dp50"
+                    android:layout_marginTop="-30dp"
+                    android:layout_marginRight="@dimen/dp50"
+                    android:gravity="center"
+                    android:padding="@dimen/dp15"
+                    android:text="@string/empty_rewards_string"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_sp16" />
+
+
+            </LinearLayout>
 
 
         </LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/et_bg_color"
+    tools:context=".fragments.Profile.ProfileRedeemFragment">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/header_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/dp20">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp70">
+
+
+            <ImageView
+                android:id="@+id/ic_back"
+                android:layout_width="@dimen/dp20"
+                android:layout_height="@dimen/dp20"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp30"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/txt_redeem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/redeemed"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_sp18"
+
+                />
+
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/toggle_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp50"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp10"
+                android:textColor="@color/dotcolor"
+                android:textOn="2100"
+                android:thumb="@drawable/button_selector"
+                app:switchMinWidth="@dimen/dp40"
+
+                />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/redeem_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dp20"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header_rl" />
+
+
+</RelativeLayout>

@@ -148,6 +148,10 @@
     <string name="spend_time">45m ago</string>
     <string name="notification_title">This Deal is truly unreal.</string>
     <string name="notification_offer">Buy 1 style, get 2 free - 1 hour only!</string>
+    <string name="empty_rewards_string">Sorry, this is not an active partner at this present time. Please try searching again or choose from the list of rewards.</string>
+    <string name="reload">Reload</string>
+    <string name="search_by_loaction">Search by location</string>
+    <string name="see_more">See more</string>
 
     <string-array name="countryCodes">
         <item>93,AF</item>

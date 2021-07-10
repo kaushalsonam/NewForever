@@ -23,4 +23,6 @@
     <color name="shadow_color">#D8D8DA</color>
     <color name="notification_text">#3E3E3E</color>
     <color name="view_color">#E2E2E2</color>
+    <color name="orage">#FFA31A</color>
+    <color name="pink">#F65175</color>
 </resources>

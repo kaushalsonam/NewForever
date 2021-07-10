@@ -23,6 +23,10 @@ public final class KeyClass {
     public static final String FRAGMENT_PROFILE = "Proile fragment";
     public static final String FRAGMENT_COMPLETE_PROFILE = "Complete profile fragment";
     public static final String FRAGMENT_LOGIN_WITH_PHONE = "Login with phone fragment";
-    public static final String FRAGMENT_TERMS_AND_PRIVACY="Terms and privacy fragment";
+    public static final String FRAGMENT_TERMS_AND_PRIVACY = "Terms and privacy fragment";
+    public static final String FRAGMENT_OFFER_DETAILS = "offer details fragment";
+    public static final String FRAGMENT_REDEEM_CODE = "Redeem code fragment";
+    public static final String FRAGMENT_SEARCH_BY_LOCATION = "Search by location fragment";
+    public static final String FRAGMENT_PROFILE_REDEEM = "Profile Redeem fragment";
 
 }

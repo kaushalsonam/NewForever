@@ -2,38 +2,39 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/dp180"
+    android:layout_height="@dimen/dp160"
     android:layout_margin="@dimen/dp12"
-    android:elevation="@dimen/dp10"
-    android:background="@drawable/dashed_rounde_corner">
+    android:background="@drawable/dashed_rounde_corner"
+    android:elevation="@dimen/dp10">
 
     <RelativeLayout
+        android:id="@+id/bg_color_rl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/dp4"
-        android:id="@+id/bg_color_rl"
         android:background="@drawable/white_rounded_corner_white_bg">
 
         <RelativeLayout
             android:id="@+id/icon_rl"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-5dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/logo_image"
-                android:layout_width="@dimen/dp60"
-                android:layout_height="@dimen/dp60"
+                android:layout_width="@dimen/dp40"
+                android:layout_height="@dimen/dp40"
                 android:layout_centerVertical="true"
                 android:layout_margin="@dimen/dp15"
-                android:src="@mipmap/app_logo"
-                app:civ_border_color="@color/black"
-                app:civ_border_width="@dimen/dp2" />
+                android:src="@mipmap/app_logo" />
 
             <TextView
+                android:id="@+id/txt_offer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginTop="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp20"
                 android:layout_toRightOf="@+id/logo_image"
                 android:text="@string/demo_string"
                 android:textColor="@color/black"
@@ -57,7 +58,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/next_btn"
-            android:layout_marginLeft="@dimen/dp15">
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginTop="-10dp">
 
             <LinearLayout
                 android:id="@+id/terms_and_condition_ll"
@@ -79,7 +81,7 @@
                     android:id="@+id/txt_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/dp4"
+                    android:padding="@dimen/dp2"
                     android:text="@string/date"
                     android:textColor="@color/black"
                     android:textSize="@dimen/textsize_sp18"
@@ -101,7 +103,7 @@
                 android:layout_width="@dimen/dp120"
                 android:layout_height="@dimen/dp35"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="@dimen/dp40"
+                android:layout_marginTop="@dimen/dp30"
                 android:layout_marginRight="@dimen/dp20"
                 android:background="@drawable/rounded_corner_btn"
                 android:gravity="center"

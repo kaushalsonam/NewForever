@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.forever.R;
+import com.forever.activities.ActivityPoints;
 import com.forever.activities.HomeActivity;
 import com.forever.activities.LevelBadgeStatusActivity;
 import com.forever.utilities.KeyClass;
@@ -25,9 +26,9 @@ import java.security.Key;
 
 public class ProfileFragment extends Fragment implements View.OnClickListener {
 
-    private RelativeLayout redeemed_rl,total_points_rl;
+    private RelativeLayout redeemed_rl, total_points_rl;
     private ImageView setting_icon;
-    private TextView complete_profile_btn,view_detail_btn;
+    private TextView complete_profile_btn, view_detail_btn;
 
     private BottomNavigationView navigationView;
 
@@ -57,19 +58,18 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     private void bindView(View view) {
 
-        navigationView=getActivity().findViewById(R.id.bottom_navigation);
+        navigationView = getActivity().findViewById(R.id.bottom_navigation);
 
 
-        redeemed_rl=view.findViewById(R.id.redeemed_rl);
-        total_points_rl=view.findViewById(R.id.total_points_rl);
+        redeemed_rl = view.findViewById(R.id.redeemed_rl);
+        total_points_rl = view.findViewById(R.id.total_points_rl);
 
 
-        setting_icon=view.findViewById(R.id.setting_icon);
+        setting_icon = view.findViewById(R.id.setting_icon);
 
 
-        complete_profile_btn=view.findViewById(R.id.complete_profile_btn);
-        view_detail_btn=view.findViewById(R.id.view_detail_btn);
-
+        complete_profile_btn = view.findViewById(R.id.complete_profile_btn);
+        view_detail_btn = view.findViewById(R.id.view_detail_btn);
 
 
     }
@@ -85,19 +85,24 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         view_detail_btn.setOnClickListener(this);
 
 
-
     }
 
     @Override
     public void onClick(View v) {
 
-        switch (v.getId()){
+        switch (v.getId()) {
 
             case R.id.redeemed_rl:
+
+                ((HomeActivity) getActivity()).replaceFragment(new ProfileRedeemFragment(), true,
+                        KeyClass.FRAGMENT_PROFILE_REDEEM, KeyClass.FRAGMENT_PROFILE_REDEEM);
 
                 break;
 
             case R.id.total_points_rl:
+
+                Intent intentpoints = new Intent(getActivity(), ActivityPoints.class);
+                startActivity(intentpoints);
 
                 break;
 
@@ -107,7 +112,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
             case R.id.complete_profile_btn:
 
-                ((HomeActivity)getActivity()).replaceFragment(new CompleteProfileFragment(),true,
+                ((HomeActivity) getActivity()).replaceFragment(new CompleteProfileFragment(), true,
                         KeyClass.FRAGMENT_COMPLETE_PROFILE, KeyClass.FRAGMENT_COMPLETE_PROFILE);
 
 
@@ -115,7 +120,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
             case R.id.view_detail_btn:
 
-                Intent intent= new Intent(getActivity(), LevelBadgeStatusActivity.class);
+                Intent intent = new Intent(getActivity(), LevelBadgeStatusActivity.class);
                 startActivity(intent);
 
                 break;

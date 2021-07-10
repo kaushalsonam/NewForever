@@ -38,6 +38,7 @@
         android:id="@+id/notification_recycler"
         android:layout_width="match_parent"
         android:layout_below="@+id/header_rl"
+        tools:listitem="@layout/notification_recycler_item"
         android:layout_height="wrap_content" />
 
 

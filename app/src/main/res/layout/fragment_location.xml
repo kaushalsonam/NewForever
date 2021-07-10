@@ -150,7 +150,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dp30"
-                android:text="@string/next"
+                android:text="@string/save"
                 android:textColor="@color/black"
                 android:textSize="@dimen/textsize_sp18" />
 
