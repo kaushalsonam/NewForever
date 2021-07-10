@@ -2,10 +2,9 @@
     <string name="app_name">Forever</string>
 
 
-<!--    facebook app id-->
+    <!--    facebook app id-->
     <string name="facebook_app_id">230703825551952</string>
     <string name="fb_login_protocol_scheme">fb230703825551952</string>
-
 
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -123,6 +122,7 @@
     <string name="txt_points">2100</string>
     <string name="view_history">View History</string>
     <string name="redeemed">Redeemed</string>
+    <string name="redeem">Redeem</string>
     <string name="txt_redeemed">900</string>
     <string name="redeemed_history">Redeemed Hostory</string>
     <string name="share">Share with Friends</string>
@@ -139,7 +139,10 @@
     <string name="date">Feb 22, 2021</string>
     <string name="terms_apply"><![CDATA[Terms & Condition Apply]]></string>
     <string name="txt_share">Share</string>
-
+    <string name="txt_Discount">Discount</string>
+    <string name="txt_Price">Price</string>
+    <string name="offer_details">OFFER DETAILS</string>
+    <string name="privacy">Privacy &amp; Policy</string>
 
     <string-array name="countryCodes">
         <item>93,AF</item>

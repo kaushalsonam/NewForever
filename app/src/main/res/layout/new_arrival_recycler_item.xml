@@ -11,6 +11,7 @@
 
 
     <RelativeLayout
+        android:id="@+id/rl_offer_details"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp180"
         android:background="@drawable/dashed_rounde_corner">
