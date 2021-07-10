@@ -4,14 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.forever.R;
 import com.forever.utilities.Constant;
 
-public class PointsSummaryActivity extends AppCompatActivity {
+public class PointsSummaryActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView txt_day,txt_week;
+    private TextView txt_day,txt_week,txt_month;
     private String type;
 
     @Override
@@ -32,6 +33,7 @@ public class PointsSummaryActivity extends AppCompatActivity {
 
         txt_day=findViewById(R.id.txt_day);
         txt_week=findViewById(R.id.txt_week);
+        txt_month=findViewById(R.id.txt_month);
 
     }
 
@@ -64,6 +66,11 @@ public class PointsSummaryActivity extends AppCompatActivity {
             }
 
         }
+
+    }
+
+    @Override
+    public void onClick(View v) {
 
     }
 }

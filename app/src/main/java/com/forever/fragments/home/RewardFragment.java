@@ -16,9 +16,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.forever.R;
+import com.forever.activities.HomeActivity;
 import com.forever.adapter.CategoryListAdapter;
 import com.forever.adapter.FilterItemListAdapter;
 import com.forever.adapter.NewArrivalRecyclerAdapter;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
@@ -30,11 +32,12 @@ import java.util.List;
 public class RewardFragment extends Fragment implements View.OnClickListener {
 
     private NewArrivalRecyclerAdapter adapter;
-    private RecyclerView new_arrival_recycler;
+    private RecyclerView new_arrival_recycler,recommeded_recycler;
     private ImageView filter_ic;
     private Context mCtx;
     private List<String> category;
     private List<String> item;
+    private BottomNavigationView bottomNavigationView;
 
 
 
@@ -68,7 +71,9 @@ public class RewardFragment extends Fragment implements View.OnClickListener {
     private void bindView(View view) {
 
         new_arrival_recycler=view.findViewById(R.id.new_arrival_recycler);
+        recommeded_recycler=view.findViewById(R.id.recommeded_recycler);
         filter_ic = view.findViewById(R.id.filter_ic);
+        bottomNavigationView=getActivity().findViewById(R.id.bottom_navigation);
 
         category = new ArrayList<>();
         category.add("Category");
@@ -87,9 +92,14 @@ public class RewardFragment extends Fragment implements View.OnClickListener {
 
     private void viewSetup() {
 
-        adapter= new NewArrivalRecyclerAdapter(getActivity());
+        bottomNavigationView.setVisibility(View.VISIBLE);
+
+        adapter= new NewArrivalRecyclerAdapter(HomeActivity.context);
         new_arrival_recycler.setLayoutManager(new LinearLayoutManager(mCtx));
         new_arrival_recycler.setAdapter(adapter);
+
+        recommeded_recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recommeded_recycler.setAdapter(adapter);
 
         filter_ic.setOnClickListener(this);
 

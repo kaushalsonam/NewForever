@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp10"
+    android:orientation="vertical"
+    android:padding="@dimen/dp10">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/logo_img"
+            android:layout_width="@dimen/dp40"
+            android:layout_height="@dimen/dp40"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/app_logo"
+             />
+
+        <TextView
+            android:id="@+id/txt_type_of_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_toRightOf="@id/logo_img"
+            android:padding="@dimen/dp5"
+            android:text="@string/sport"
+            android:textColor="@color/notification_text"
+            android:textSize="@dimen/textsize_sp16" />
+
+
+        <TextView
+            android:id="@+id/used_time_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/dp5"
+            android:text="@string/spend_time"
+            android:textColor="@color/notification_text"
+            android:textSize="@dimen/textsize_sp14" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/notification_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp5"
+        android:text="@string/notification_title"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textsize_sp14"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/notification_offer_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:paddingLeft="@dimen/dp5"
+        android:text="@string/notification_offer"
+        android:textColor="@color/notification_text"
+        android:textSize="@dimen/textsize_sp10" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp2"
+        android:layout_marginTop="@dimen/dp20"
+        android:background="@color/view_color"/>
+
+</LinearLayout>

@@ -23,5 +23,6 @@ public final class KeyClass {
     public static final String FRAGMENT_PROFILE = "Proile fragment";
     public static final String FRAGMENT_COMPLETE_PROFILE = "Complete profile fragment";
     public static final String FRAGMENT_LOGIN_WITH_PHONE = "Login with phone fragment";
+    public static final String FRAGMENT_TERMS_AND_PRIVACY="Terms and privacy fragment";
 
 }

@@ -59,4 +59,5 @@
     <dimen name="textsize_sp8">8sp</dimen>
     <dimen name="textsize_sp40">40sp</dimen>
     <dimen name="textsize_sp80">80sp</dimen>
+    <dimen name="dp16">16dp</dimen>
 </resources>

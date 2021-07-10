@@ -3,8 +3,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.home.NotificationsFragment">
+    android:background="@color/et_bg_color"
+    tools:context=".fragments.notifications.NotificationsFragment">
 
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/header_rl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp70"
+        android:elevation="@dimen/dp20">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/nav_notification"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_sp18" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notification_recycler"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/header_rl"
+        android:layout_height="wrap_content" />
 
 
 </RelativeLayout>

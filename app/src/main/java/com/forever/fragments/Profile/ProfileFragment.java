@@ -76,6 +76,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     private void viewSetup() {
 
+        navigationView.setVisibility(View.VISIBLE);
+
         redeemed_rl.setOnClickListener(this);
         total_points_rl.setOnClickListener(this);
         setting_icon.setOnClickListener(this);
@@ -83,7 +85,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         view_detail_btn.setOnClickListener(this);
 
 
-//        navigationView.setVisibility(View.GONE);
 
     }
 

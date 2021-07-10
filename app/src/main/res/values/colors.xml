@@ -20,4 +20,7 @@
     <color name="sky_blue_light">#F1FEFF</color>
     <color name="golden_yellow">#D5A021</color>
     <color name="light_yellow">#FFF39E</color>
+    <color name="shadow_color">#D8D8DA</color>
+    <color name="notification_text">#3E3E3E</color>
+    <color name="view_color">#E2E2E2</color>
 </resources>

@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.forever.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -20,6 +21,7 @@ public class Terms_PrivacyFragment extends Fragment implements View.OnClickListe
 
     private ImageView back_btn,close_btn;
     private TextView terms_and_condition;
+    private BottomNavigationView bottomNavigationView;
 
 
 
@@ -51,6 +53,7 @@ public class Terms_PrivacyFragment extends Fragment implements View.OnClickListe
         back_btn=view.findViewById(R.id.back_btn);
         close_btn=view.findViewById(R.id.close_btn);
         terms_and_condition=view.findViewById(R.id.terms_and_condition);
+        bottomNavigationView=getActivity().findViewById(R.id.bottom_navigation);
 
     }
 
@@ -58,6 +61,8 @@ public class Terms_PrivacyFragment extends Fragment implements View.OnClickListe
 
         back_btn.setOnClickListener(this);
         close_btn.setOnClickListener(this);
+
+        bottomNavigationView.setVisibility(View.GONE);
 
     }
 

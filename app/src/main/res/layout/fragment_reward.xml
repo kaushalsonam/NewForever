@@ -59,107 +59,149 @@
 
     </androidx.cardview.widget.CardView>
 
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/search_cv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/header_rl"
-        android:layout_marginLeft="@dimen/dp40"
-        android:layout_marginTop="@dimen/dp40"
-        android:layout_marginRight="@dimen/dp40"
-        app:cardCornerRadius="@dimen/dp10"
-        app:cardElevation="@dimen/dp6">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp50">
-
-            <ImageView
-                android:id="@+id/magnifier_img"
-                android:layout_width="@dimen/dp15"
-                android:layout_height="@dimen/dp15"
-                android:layout_centerVertical="true"
-                android:layout_margin="@dimen/dp10"
-                android:src="@drawable/ic_magnifier" />
-
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="@dimen/dp5"
-                android:layout_toRightOf="@id/magnifier_img"
-                android:background="@null"
-                android:hint="@string/search"
-                android:padding="@dimen/dp5"
-                android:textColor="@color/black"
-                android:textColorHint="@color/et_hint_color"
-                android:textSize="@dimen/textsize_sp14" />
-
-            <ImageView
-                android:id="@+id/map_img"
-                android:layout_width="@dimen/dp30"
-                android:layout_height="@dimen/dp30"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="@dimen/dp15"
-                android:paddingBottom="@dimen/dp5"
-                android:src="@drawable/ic_map" />
-
-        </RelativeLayout>
-
-    </androidx.cardview.widget.CardView>
-
-
-    <RelativeLayout
-        android:id="@+id/txt_new_arrival_rl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/search_cv"
-        android:layout_marginLeft="@dimen/dp40"
-        android:layout_marginTop="@dimen/dp20"
-        android:layout_marginRight="@dimen/dp40">
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="@string/new_arrival"
-            android:textColor="@color/black"
-            android:textSize="@dimen/textsize_sp18" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:text="@string/see_all"
-            android:textColor="@color/dotcolor"
-            android:textSize="@dimen/textsize_sp16" />
-
-    </RelativeLayout>
-
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/txt_new_arrival_rl"
-        android:layout_marginTop="@dimen/dp10">
+        android:layout_below="@+id/header_rl"
+       >
 
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/new_arrival_recycler"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:elevation="@dimen/dp10"
-            android:layout_height="wrap_content"
-            tools:listitem="@layout/new_arrival_recycler_item" />
+            android:layout_marginTop="@dimen/dp30"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/dp60"
+            android:layout_height="match_parent">
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/search_cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp40"
+                android:layout_marginRight="@dimen/dp40"
+                app:cardCornerRadius="@dimen/dp10"
+                app:cardElevation="@dimen/dp6">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp50">
+
+                    <ImageView
+                        android:id="@+id/magnifier_img"
+                        android:layout_width="@dimen/dp15"
+                        android:layout_height="@dimen/dp15"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/dp10"
+                        android:src="@drawable/ic_magnifier" />
+
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp5"
+                        android:layout_toRightOf="@id/magnifier_img"
+                        android:background="@null"
+                        android:hint="@string/search"
+                        android:padding="@dimen/dp5"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/et_hint_color"
+                        android:textSize="@dimen/textsize_sp14" />
+
+                    <ImageView
+                        android:id="@+id/map_img"
+                        android:layout_width="@dimen/dp30"
+                        android:layout_height="@dimen/dp30"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dp15"
+                        android:paddingBottom="@dimen/dp5"
+                        android:src="@drawable/ic_map" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <RelativeLayout
+                android:id="@+id/txt_new_arrival_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp40"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp40">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/new_arrival"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_sp18" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/see_all"
+                    android:textColor="@color/dotcolor"
+                    android:textSize="@dimen/textsize_sp16" />
+
+            </RelativeLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/new_arrival_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/txt_new_arrival_rl"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginBottom="@dimen/dp10" />
+
+
+                <RelativeLayout
+                    android:id="@+id/txt_recommended_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp40"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginRight="@dimen/dp40">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/recommended"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_sp18" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:text="@string/see_all"
+                        android:textColor="@color/dotcolor"
+                        android:textSize="@dimen/textsize_sp16" />
+
+                </RelativeLayout>
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recommeded_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp10"
+                 />
+
+
+        </LinearLayout>
 
 
     </androidx.core.widget.NestedScrollView>
-
 
 </RelativeLayout>

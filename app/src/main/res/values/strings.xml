@@ -143,6 +143,11 @@
     <string name="txt_Price">Price</string>
     <string name="offer_details">OFFER DETAILS</string>
     <string name="privacy">Privacy &amp; Policy</string>
+    <string name="recommended">Recommended</string>
+    <string name="sport">Sport Shoes</string>
+    <string name="spend_time">45m ago</string>
+    <string name="notification_title">This Deal is truly unreal.</string>
+    <string name="notification_offer">Buy 1 style, get 2 free - 1 hour only!</string>
 
     <string-array name="countryCodes">
         <item>93,AF</item>

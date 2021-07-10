@@ -13,7 +13,7 @@ import android.widget.FrameLayout;
 import com.forever.R;
 import com.forever.fragments.Profile.ProfileFragment;
 import com.forever.fragments.home.HomeFragment;
-import com.forever.fragments.home.NotificationsFragment;
+import com.forever.fragments.notifications.NotificationsFragment;
 import com.forever.fragments.home.RewardFragment;
 import com.forever.utilities.KeyClass;
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
