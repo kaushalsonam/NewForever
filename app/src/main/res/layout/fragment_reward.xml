@@ -148,11 +148,15 @@
         android:layout_below="@id/txt_new_arrival_rl"
         android:layout_marginTop="@dimen/dp10">
 
+
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/new_arrival_recycler"
             android:layout_width="match_parent"
+            android:elevation="@dimen/dp10"
             android:layout_height="wrap_content"
             tools:listitem="@layout/new_arrival_recycler_item" />
+
 
 
     </androidx.core.widget.NestedScrollView>
