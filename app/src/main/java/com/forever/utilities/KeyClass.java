@@ -28,5 +28,8 @@ public final class KeyClass {
     public static final String FRAGMENT_REDEEM_CODE = "Redeem code fragment";
     public static final String FRAGMENT_SEARCH_BY_LOCATION = "Search by location fragment";
     public static final String FRAGMENT_PROFILE_REDEEM = "Profile Redeem fragment";
+    public static final String FRAGMENT_PREFRENCE="prefrence fragment";
+    public static final String FRAGMENT_HELP_CENTER="Help center fragment";
+    public static final String FRAGMENT_ABOUT_US="About us fragment";
 
 }

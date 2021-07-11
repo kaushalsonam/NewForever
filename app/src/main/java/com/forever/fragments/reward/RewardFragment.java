@@ -49,7 +49,6 @@ public class RewardFragment extends Fragment implements View.OnClickListener, Te
     private Context mCtx;
     private List<String> category;
     private List<String> item;
-    private BottomNavigationView bottomNavigationView;
     private EditText search_et;
     private LinearLayout main_data_ll, empty_rewards_ll;
     private SwitchCompat toggle_btn;
@@ -104,7 +103,6 @@ public class RewardFragment extends Fragment implements View.OnClickListener, Te
         toggle_btn = view.findViewById(R.id.toggle_btn);
 
 
-        bottomNavigationView = getActivity().findViewById(R.id.bottom_navigation);
 
         category = new ArrayList<>();
         category.add("Category");
@@ -123,9 +121,8 @@ public class RewardFragment extends Fragment implements View.OnClickListener, Te
 
     private void viewSetup() {
 
-        bottom_navigation.setVisibility(View.VISIBLE);
 
-        bottomNavigationView.setVisibility(View.VISIBLE);
+        bottom_navigation.setVisibility(View.VISIBLE);
 
 
         filter_ic.setOnClickListener(this);

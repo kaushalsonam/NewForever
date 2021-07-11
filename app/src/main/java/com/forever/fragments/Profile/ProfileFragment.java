@@ -17,20 +17,28 @@ import com.forever.R;
 import com.forever.activities.ActivityPoints;
 import com.forever.activities.HomeActivity;
 import com.forever.activities.LevelBadgeStatusActivity;
+import com.forever.activities.LoginActivity;
+import com.forever.fragments.Terms_PrivacyFragment;
+import com.forever.fragments.loginSignup.ResetPasswordFragment;
+import com.forever.utilities.Constant;
 import com.forever.utilities.KeyClass;
+import com.forever.utilities.PrefrenceShared;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.security.Key;
-
 public class ProfileFragment extends Fragment implements View.OnClickListener {
 
-    private RelativeLayout redeemed_rl, total_points_rl;
+    private RelativeLayout redeemed_rl, total_points_rl, edit_profile_rl, prefrence_rl, terms_condition_rl,
+            help_center_rl, about_rl,password_rl,logout_btn_rl;
     private ImageView setting_icon;
     private TextView complete_profile_btn, view_detail_btn;
-
+    private BottomSheetDialog bottomSheerDialog;
     private BottomNavigationView navigationView;
+    private Boolean logoutFlag=true;
+    private FirebaseAuth firebaseAuth;
 
 
     @Override
@@ -71,6 +79,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         complete_profile_btn = view.findViewById(R.id.complete_profile_btn);
         view_detail_btn = view.findViewById(R.id.view_detail_btn);
 
+        firebaseAuth=FirebaseAuth.getInstance();
 
     }
 
@@ -107,10 +116,13 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.setting_icon:
+                settingDialog();
+
 
                 break;
 
             case R.id.complete_profile_btn:
+
 
                 ((HomeActivity) getActivity()).replaceFragment(new CompleteProfileFragment(), true,
                         KeyClass.FRAGMENT_COMPLETE_PROFILE, KeyClass.FRAGMENT_COMPLETE_PROFILE);
@@ -124,7 +136,106 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 startActivity(intent);
 
                 break;
+
+
+            case R.id.about_rl:
+
+                bottomSheerDialog.dismiss();
+                ((HomeActivity)getActivity()).replaceFragment(new AboutUsFragment(),true,
+                        KeyClass.FRAGMENT_ABOUT_US,KeyClass.FRAGMENT_ABOUT_US);
+
+                break;
+
+            case R.id.edit_profile_rl:
+
+                bottomSheerDialog.dismiss();
+
+                ((HomeActivity) getActivity()).replaceFragment(new CompleteProfileFragment(), true,
+                        KeyClass.FRAGMENT_COMPLETE_PROFILE, KeyClass.FRAGMENT_COMPLETE_PROFILE);
+
+                break;
+            case R.id.prefrence_rl:
+
+                bottomSheerDialog.dismiss();
+
+                ((HomeActivity) getActivity()).replaceFragment(new PrefrenceFragment(), true,
+                        KeyClass.FRAGMENT_PREFRENCE, KeyClass.FRAGMENT_PREFRENCE);
+
+                break;
+            case R.id.terms_condition_rl:
+
+                bottomSheerDialog.dismiss();
+                ((HomeActivity) getActivity()).replaceFragment(new Terms_PrivacyFragment(), true,
+                        KeyClass.FRAGMENT_TERMS_AND_PRIVACY, KeyClass.FRAGMENT_TERMS_AND_PRIVACY);
+
+                break;
+            case R.id.help_center_rl:
+
+                bottomSheerDialog.dismiss();
+                ((HomeActivity) getActivity()).replaceFragment(new HelpCenterFragment(), true,
+                        KeyClass.FRAGMENT_HELP_CENTER, KeyClass.FRAGMENT_HELP_CENTER);
+
+                break;
+            case R.id.password_rl:
+
+                bottomSheerDialog.dismiss();
+                ((HomeActivity)getActivity()).replaceFragment(new ResetPasswordFragment(),true,
+                        KeyClass.FRAGMENT_RESET_PASSWORD,KeyClass.FRAGMENT_RESET_PASSWORD);
+
+                break;
+
+            case R.id.logout_btn_rl:
+
+                bottomSheerDialog.dismiss();
+
+                logoutFlag=false;
+
+                PrefrenceShared.getInstance().getPreferenceData().setValue(Constant.loginflag, String.valueOf(logoutFlag));
+
+                if(firebaseAuth.getCurrentUser()!=null){
+
+                    firebaseAuth.signOut();
+                }
+                Intent logout= new Intent(getActivity(), LoginActivity.class);
+                startActivity(logout);
+                getActivity().finish();
+
+                break;
+
+
+
+
         }
+
+    }
+
+
+    private void settingDialog() {
+
+
+        bottomSheerDialog = new BottomSheetDialog(getActivity());
+        View parentView = getLayoutInflater().inflate(R.layout.bottom_sheet_profile_setting, null);
+        bottomSheerDialog.setContentView(parentView);
+
+        edit_profile_rl = parentView.findViewById(R.id.edit_profile_rl);
+        prefrence_rl = parentView.findViewById(R.id.prefrence_rl);
+        terms_condition_rl = parentView.findViewById(R.id.terms_condition_rl);
+        help_center_rl = parentView.findViewById(R.id.help_center_rl);
+        about_rl = parentView.findViewById(R.id.about_rl);
+        password_rl = parentView.findViewById(R.id.password_rl);
+        logout_btn_rl = parentView.findViewById(R.id.logout_btn_rl);
+
+
+        edit_profile_rl.setOnClickListener(this);
+        prefrence_rl.setOnClickListener(this);
+        terms_condition_rl.setOnClickListener(this);
+        help_center_rl.setOnClickListener(this);
+        about_rl.setOnClickListener(this);
+        password_rl.setOnClickListener(this);
+        logout_btn_rl.setOnClickListener(this);
+
+
+        bottomSheerDialog.show();
 
     }
 }

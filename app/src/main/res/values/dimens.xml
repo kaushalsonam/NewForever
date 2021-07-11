@@ -62,4 +62,5 @@
     <dimen name="dp16">16dp</dimen>
     <dimen name="dp600">600dp</dimen>
     <dimen name="dp450">450dp</dimen>
+    <dimen name="textsize_sp24">24sp</dimen>
 </resources>

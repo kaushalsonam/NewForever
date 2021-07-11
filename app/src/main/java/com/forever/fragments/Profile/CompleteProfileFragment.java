@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -32,6 +33,7 @@ public class CompleteProfileFragment extends Fragment implements View.OnClickLis
     private String[] arrGender = {"Male", "Female", "Non Binary"};
     private TextView txt_gender, txt_age;
     private BottomNavigationView bottomNavigationView;
+    private ImageView back_btn;
 
 
     @Override
@@ -67,6 +69,8 @@ public class CompleteProfileFragment extends Fragment implements View.OnClickLis
         txt_gender = view.findViewById(R.id.txt_gender);
         txt_age = view.findViewById(R.id.txt_age);
 
+        back_btn = view.findViewById(R.id.back_btn);
+
 
     }
 
@@ -79,6 +83,7 @@ public class CompleteProfileFragment extends Fragment implements View.OnClickLis
 
         txt_gender.setOnClickListener(this);
         txt_age.setOnClickListener(this);
+        back_btn.setOnClickListener(this);
 
 
         //gender spinner setup
@@ -124,6 +129,11 @@ public class CompleteProfileFragment extends Fragment implements View.OnClickLis
 
                 break;
 
+            case R.id.back_btn:
+
+                getActivity().onBackPressed();
+
+                break;
 
         }
     }
