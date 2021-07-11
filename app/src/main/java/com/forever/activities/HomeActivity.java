@@ -8,7 +8,10 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.forever.R;
 import com.forever.fragments.Profile.ProfileFragment;
@@ -26,6 +29,7 @@ public class HomeActivity extends AppCompatActivity {
     public static FrameLayout container;
     public static Context context;
     public static BottomNavigationView bottom_navigation;
+    private RelativeLayout rl_upload;
 
 
     @Override
@@ -45,6 +49,7 @@ public class HomeActivity extends AppCompatActivity {
 
         //bottom navigation
         bottom_navigation = findViewById(R.id.bottom_navigation);
+        rl_upload = findViewById(R.id.rl_upload);
 
 
     }
@@ -96,7 +101,7 @@ public class HomeActivity extends AppCompatActivity {
             switch (item.getItemId()) {
 
                 case R.id.nav_home:
-
+                    rl_upload.setVisibility(View.VISIBLE);
                     replaceFragment(new HomeFragment(),false,KeyClass.FRAGMENT_HOME,
                             KeyClass.FRAGMENT_HOME);
 
@@ -104,14 +109,14 @@ public class HomeActivity extends AppCompatActivity {
                     break;
 
                 case R.id.nav_rewards:
-
+                    rl_upload.setVisibility(View.GONE);
                     replaceFragment(new RewardFragment(),false,KeyClass.FRAGMENT_REWARD,
                             KeyClass.FRAGMENT_REWARD);
 
                     break;
 
                 case R.id.nav_notifications:
-
+                    rl_upload.setVisibility(View.GONE);
                     replaceFragment(new NotificationsFragment(),false,KeyClass.FRAGMENT_NOTIFICATIONS,
                             KeyClass.FRAGMENT_NOTIFICATIONS);
 
@@ -119,7 +124,7 @@ public class HomeActivity extends AppCompatActivity {
                     break;
 
                 case R.id.nav_user:
-
+                    rl_upload.setVisibility(View.GONE);
                     replaceFragment(new ProfileFragment(),false,KeyClass.FRAGMENT_PROFILE,
                             KeyClass.FRAGMENT_PROFILE);
 
