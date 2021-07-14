@@ -1,31 +1,34 @@
-package com.forever.fragments.loginSignup;
+package com.forever.fragments.home;
 
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.forever.R;
-import com.forever.activities.LoginActivity;
+import com.forever.activities.HomeActivity;
 import com.forever.utilities.KeyClass;
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 
 import org.jetbrains.annotations.NotNull;
 
-public class ResetPasswordFragment extends Fragment implements View.OnClickListener {
+
+public class UploadReceiptsFragment extends Fragment implements View.OnClickListener {
 
     private ImageView back_btn;
-    private CardView next_btn;
+    private RelativeLayout uplod_rl,browse_rl;
+    private TextView send_btn;
     private BottomNavigationView bottom_navigation;
-
+    private RelativeLayout rl_upload;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,7 +42,7 @@ public class ResetPasswordFragment extends Fragment implements View.OnClickListe
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_reset_password, container, false);
+        return inflater.inflate(R.layout.fragment_upload_receipts, container, false);
     }
 
     @Override
@@ -48,25 +51,30 @@ public class ResetPasswordFragment extends Fragment implements View.OnClickListe
 
         bindView(view);
         viewSetup();
-
     }
 
     private void bindView(View view) {
 
         bottom_navigation=getActivity().findViewById(R.id.bottom_navigation);
+        rl_upload=getActivity().findViewById(R.id.rl_upload);
 
         back_btn=view.findViewById(R.id.back_btn);
-        next_btn=view.findViewById(R.id.next_btn);
+        uplod_rl=view.findViewById(R.id.uplod_rl);
+        browse_rl=view.findViewById(R.id.browse_rl);
+        send_btn=view.findViewById(R.id.send_btn);
 
 
     }
 
     private void viewSetup() {
 
-        bottom_navigation.setVisibility(View.GONE);
-
         back_btn.setOnClickListener(this);
-        next_btn.setOnClickListener(this);
+        uplod_rl.setOnClickListener(this);
+        browse_rl.setOnClickListener(this);
+        send_btn.setOnClickListener(this);
+
+        bottom_navigation.setVisibility(View.GONE);
+        rl_upload.setVisibility(View.GONE);
 
     }
 
@@ -81,15 +89,24 @@ public class ResetPasswordFragment extends Fragment implements View.OnClickListe
 
                 break;
 
-            case R.id.next_btn:
+            case R.id.uplod_rl:
 
-                ((LoginActivity)getActivity()).replaceFragment(new ConfirmPasswordFragment(),true,
-                KeyClass.FRAGMENT_CONFIRM_PASSWORD,KeyClass.FRAGMENT_CONFIRM_PASSWORD);
+
 
                 break;
 
+                case R.id.browse_rl:
 
+                    break;
+
+            case R.id.send_btn:
+
+                ((HomeActivity)getActivity()).replaceFragment(new HomeFragment(),true, KeyClass.FRAGMENT_HOME,
+                        KeyClass.FRAGMENT_HOME);
+
+                break;
         }
+
 
     }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.PointsSummaryActivity">
+    tools:context=".fragments.home.PointsSummaryFragment">
 
 
     <androidx.cardview.widget.CardView
@@ -47,6 +47,21 @@
                 android:layout_toRightOf="@id/txt_points_Sammary"
                 android:src="@drawable/ic_info"
                 app:tint="@color/dotcolor" />
+
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/toggle_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp50"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp10"
+                android:textColor="@color/dotcolor"
+                android:textOn="2100"
+                android:thumb="@drawable/button_selector"
+                app:switchMinWidth="@dimen/dp40"
+
+                />
 
         </RelativeLayout>
 

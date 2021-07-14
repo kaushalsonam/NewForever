@@ -31,5 +31,15 @@ public final class KeyClass {
     public static final String FRAGMENT_PREFRENCE="prefrence fragment";
     public static final String FRAGMENT_HELP_CENTER="Help center fragment";
     public static final String FRAGMENT_ABOUT_US="About us fragment";
+    public static final String FRAGMENT_UPLOAD_RECEIPTS="upload receipts fragment";
+    public static final String FRAGMENT_LEVEL_BADGE_STATUS="Level badge status fragment";
+    public static final String FRAGMENT_POINTS_SUMMARY="Point summary fragment";
+    public static final String FRAGMENT_ACTIVITY_POINTS ="Points fragment";
+    public static final String FRAGMENT_ACTIVITY_SUMMARY="Activity summary fragment";
+    public static final String FRAGMENT_ACTIVITY_DETAILS="Activity details fragment";
+    public static final String FRAGMENT_FOOD_ACTIVITY_POINTS="Food activity points fragments";
+
+
+
 
 }

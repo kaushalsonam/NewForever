@@ -163,6 +163,30 @@
     </u></string>
     <string name="logout">Log out</string>
     <string name="version">2.2 Version</string>
+    <string name="aboutus">About us</string>
+    <string name="fullname">Full Name*</string>
+    <string name="issue">Issue</string>
+    <string name="detail">Describe your issue in detail*</string>
+    <string name="send">Send</string>
+    <string name="distance">Distance</string>
+    <string name="km">km</string>
+    <string name="language">Language</string>
+    <string name="eng">ENG</string>
+    <string name="notification">Notifications</string>
+    <string name="reminder">Reminder</string>
+    <string name="txt_time">Time</string>
+    <string name="time">9:45 AM</string>
+    <string name="daily_goals">Daily Goal (Step)</string>
+    <string name="step">150</string>
+    <string name="general_reminder">General Reminder</string>
+    <string name="upload_receipts">Upload receipts</string>
+    <string name="category">Category</string>
+    <string name="healthy_food">Healthy Food</string>
+    <string name="amount_spent">Amount you spend</string>
+    <string name="thb">100 THB</string>
+    <string name="attached_document">Attach Documents</string>
+    <string name="browse_file">Browse files</string>
+    <string name="secure">Secure</string>
 
     <string-array name="countryCodes">
         <item>93,AF</item>

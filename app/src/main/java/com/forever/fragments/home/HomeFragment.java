@@ -1,7 +1,6 @@
 package com.forever.fragments.home;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -19,15 +18,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.forever.R;
-import com.forever.activities.ActivityPoints;
-import com.forever.activities.ActivitySummary;
 import com.forever.activities.HomeActivity;
-import com.forever.activities.LevelBadgeStatusActivity;
-import com.forever.activities.LoginActivity;
-import com.forever.activities.PointsSummaryActivity;
-import com.forever.customView.Changed_password_Dialog;
 import com.forever.customView.DayPointSummary;
 import com.forever.utilities.Constant;
+import com.forever.utilities.KeyClass;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -38,6 +33,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private ImageView level_badge, share_btn;
     private TextView txt_day,txt_see_all,txt_this_week_see_all_tv;
     private RelativeLayout total_steps_rl,total_points_rl;
+    private BottomNavigationView bottom_navigation;
+    private RelativeLayout rl_upload;
 
 
     private DayPointSummary dayPointSummary;
@@ -73,6 +70,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private void bindView(View view) {
 
+        bottom_navigation=getActivity().findViewById(R.id.bottom_navigation);
+        rl_upload=getActivity().findViewById(R.id.rl_upload);
+
         //image view
         level_badge = view.findViewById(R.id.level_badge);
         share_btn = view.findViewById(R.id.share_btn);
@@ -90,6 +90,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     private void viewSetup() {
+
+        bottom_navigation.setVisibility(View.VISIBLE);
+        rl_upload.setVisibility(View.VISIBLE);
+
 
         dayPointSummary= new DayPointSummary(HomeActivity.context,R.style.DialogDim);
 
@@ -111,8 +115,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.level_badge:
 
 
-                Intent levelBadge= new Intent(getActivity(), LevelBadgeStatusActivity.class);
-                startActivity(levelBadge);
+                ((HomeActivity)getActivity()).replaceFragment(new LevelBadgeStatusFragment(),true,
+                        KeyClass.FRAGMENT_LEVEL_BADGE_STATUS,KeyClass.FRAGMENT_LEVEL_BADGE_STATUS);
 
 
 
@@ -127,31 +131,42 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.total_steps_rl:
 
 
-                Intent summary= new Intent(getActivity(), ActivitySummary.class);
-                startActivity(summary);
+
+
+                ((HomeActivity)getActivity()).replaceFragment(new ActivitySummaryFragment(),true,
+                        KeyClass.FRAGMENT_ACTIVITY_SUMMARY,KeyClass.FRAGMENT_ACTIVITY_SUMMARY);
 
                 break;
 
             case R.id.total_points_rl:
 
-                Intent points= new Intent(getActivity(), ActivityPoints.class);
-                startActivity(points);
+
+                ((HomeActivity)getActivity()).replaceFragment(new ActivityPointsFragment(),true,
+                        KeyClass.FRAGMENT_ACTIVITY_POINTS,KeyClass.FRAGMENT_ACTIVITY_POINTS);
 
 
                 break;
 
             case R.id.txt_see_all:
 
-                Intent pointSummaryday= new Intent(getActivity(), PointsSummaryActivity.class);
-                pointSummaryday.putExtra(Constant.Type,Constant.Day);
-                startActivity(pointSummaryday);
+                PointsSummaryFragment pointsSummaryFragment= new PointsSummaryFragment();
+                Bundle args= new Bundle();
+                args.putString(Constant.Type,Constant.Day);
+                pointsSummaryFragment.setArguments(args);
+
+                ((HomeActivity)getActivity()).replaceFragment(pointsSummaryFragment,true,
+                        KeyClass.FRAGMENT_POINTS_SUMMARY,KeyClass.FRAGMENT_POINTS_SUMMARY);
 
                 break;
             case R.id.txt_this_week_see_all_tv:
 
-                Intent pointSummaryWeek= new Intent(getActivity(), PointsSummaryActivity.class);
-                pointSummaryWeek.putExtra(Constant.Type,Constant.Week);
-                startActivity(pointSummaryWeek);
+                PointsSummaryFragment pointsSummary= new PointsSummaryFragment();
+                Bundle bundle= new Bundle();
+                bundle.putString(Constant.Type,Constant.Week);
+                pointsSummary.setArguments(bundle);
+
+                ((HomeActivity)getActivity()).replaceFragment(pointsSummary,true,
+                        KeyClass.FRAGMENT_POINTS_SUMMARY,KeyClass.FRAGMENT_POINTS_SUMMARY);
 
                 break;
 

@@ -18,6 +18,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.forever.R;
+import com.forever.activities.HomeActivity;
+import com.forever.utilities.KeyClass;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.jetbrains.annotations.NotNull;
@@ -31,7 +33,7 @@ public class CompleteProfileFragment extends Fragment implements View.OnClickLis
     private Spinner txt_gender_spinner, txt_age_spinner;
     private ArrayAdapter<String> genderAdapter, ageAdapter;
     private String[] arrGender = {"Male", "Female", "Non Binary"};
-    private TextView txt_gender, txt_age;
+    private TextView txt_gender, txt_age,txt_save_btn;
     private BottomNavigationView bottomNavigationView;
     private ImageView back_btn;
 
@@ -68,6 +70,7 @@ public class CompleteProfileFragment extends Fragment implements View.OnClickLis
 
         txt_gender = view.findViewById(R.id.txt_gender);
         txt_age = view.findViewById(R.id.txt_age);
+        txt_save_btn = view.findViewById(R.id.txt_save_btn);
 
         back_btn = view.findViewById(R.id.back_btn);
 
@@ -84,6 +87,7 @@ public class CompleteProfileFragment extends Fragment implements View.OnClickLis
         txt_gender.setOnClickListener(this);
         txt_age.setOnClickListener(this);
         back_btn.setOnClickListener(this);
+        txt_save_btn.setOnClickListener(this);
 
 
         //gender spinner setup
@@ -132,6 +136,13 @@ public class CompleteProfileFragment extends Fragment implements View.OnClickLis
             case R.id.back_btn:
 
                 getActivity().onBackPressed();
+
+                break;
+
+            case R.id.txt_save_btn:
+
+                ((HomeActivity)getActivity()).replaceFragment(new ProfileFragment(),true,
+                        KeyClass.FRAGMENT_PROFILE,KeyClass.FRAGMENT_PROFILE);
 
                 break;
 

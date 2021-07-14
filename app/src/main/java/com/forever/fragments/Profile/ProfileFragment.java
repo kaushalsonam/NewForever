@@ -14,11 +14,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.forever.R;
-import com.forever.activities.ActivityPoints;
+import com.forever.fragments.home.ActivityPointsFragment;
 import com.forever.activities.HomeActivity;
-import com.forever.activities.LevelBadgeStatusActivity;
 import com.forever.activities.LoginActivity;
 import com.forever.fragments.Terms_PrivacyFragment;
+import com.forever.fragments.home.LevelBadgeStatusFragment;
 import com.forever.fragments.loginSignup.ResetPasswordFragment;
 import com.forever.utilities.Constant;
 import com.forever.utilities.KeyClass;
@@ -32,12 +32,12 @@ import org.jetbrains.annotations.NotNull;
 public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     private RelativeLayout redeemed_rl, total_points_rl, edit_profile_rl, prefrence_rl, terms_condition_rl,
-            help_center_rl, about_rl,password_rl,logout_btn_rl;
+            help_center_rl, about_rl, password_rl, logout_btn_rl;
     private ImageView setting_icon;
     private TextView complete_profile_btn, view_detail_btn;
     private BottomSheetDialog bottomSheerDialog;
     private BottomNavigationView navigationView;
-    private Boolean logoutFlag=true;
+    private Boolean logoutFlag = true, closeflag = true, profileFlag = false;
     private FirebaseAuth firebaseAuth;
 
 
@@ -79,7 +79,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         complete_profile_btn = view.findViewById(R.id.complete_profile_btn);
         view_detail_btn = view.findViewById(R.id.view_detail_btn);
 
-        firebaseAuth=FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
 
     }
 
@@ -110,8 +110,15 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
             case R.id.total_points_rl:
 
-                Intent intentpoints = new Intent(getActivity(), ActivityPoints.class);
-                startActivity(intentpoints);
+
+
+
+//                PrefrenceShared.getInstance().getPreferenceData().setValue(Constant.profileFlag, String.valueOf(profileFlag));
+
+                ((HomeActivity) getActivity()).replaceFragment(new ActivityPointsFragment(), true,
+                        KeyClass.FRAGMENT_ACTIVITY_POINTS, KeyClass.FRAGMENT_ACTIVITY_POINTS);
+
+
 
                 break;
 
@@ -132,8 +139,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
             case R.id.view_detail_btn:
 
-                Intent intent = new Intent(getActivity(), LevelBadgeStatusActivity.class);
-                startActivity(intent);
+                ((HomeActivity) getActivity()).replaceFragment(new LevelBadgeStatusFragment(), true,
+                        KeyClass.FRAGMENT_LEVEL_BADGE_STATUS, KeyClass.FRAGMENT_LEVEL_BADGE_STATUS);
 
                 break;
 
@@ -141,8 +148,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             case R.id.about_rl:
 
                 bottomSheerDialog.dismiss();
-                ((HomeActivity)getActivity()).replaceFragment(new AboutUsFragment(),true,
-                        KeyClass.FRAGMENT_ABOUT_US,KeyClass.FRAGMENT_ABOUT_US);
+                ((HomeActivity) getActivity()).replaceFragment(new AboutUsFragment(), true,
+                        KeyClass.FRAGMENT_ABOUT_US, KeyClass.FRAGMENT_ABOUT_US);
 
                 break;
 
@@ -179,8 +186,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             case R.id.password_rl:
 
                 bottomSheerDialog.dismiss();
-                ((HomeActivity)getActivity()).replaceFragment(new ResetPasswordFragment(),true,
-                        KeyClass.FRAGMENT_RESET_PASSWORD,KeyClass.FRAGMENT_RESET_PASSWORD);
+                ((HomeActivity) getActivity()).replaceFragment(new ResetPasswordFragment(), true,
+                        KeyClass.FRAGMENT_RESET_PASSWORD, KeyClass.FRAGMENT_RESET_PASSWORD);
 
                 break;
 
@@ -188,21 +195,19 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
                 bottomSheerDialog.dismiss();
 
-                logoutFlag=false;
+                logoutFlag = false;
 
                 PrefrenceShared.getInstance().getPreferenceData().setValue(Constant.loginflag, String.valueOf(logoutFlag));
 
-                if(firebaseAuth.getCurrentUser()!=null){
+                if (firebaseAuth.getCurrentUser() != null) {
 
                     firebaseAuth.signOut();
                 }
-                Intent logout= new Intent(getActivity(), LoginActivity.class);
+                Intent logout = new Intent(getActivity(), LoginActivity.class);
                 startActivity(logout);
                 getActivity().finish();
 
                 break;
-
-
 
 
         }
@@ -233,6 +238,15 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         about_rl.setOnClickListener(this);
         password_rl.setOnClickListener(this);
         logout_btn_rl.setOnClickListener(this);
+
+        if (PrefrenceShared.getInstance().getPreferenceData().getValueFromKey(Constant.close) != null) {
+
+            if (PrefrenceShared.getInstance().getPreferenceData().getValueFromKey(Constant.close).equalsIgnoreCase("true")) {
+
+                bottomSheerDialog.openContextMenu(parentView);
+
+            }
+        }
 
 
         bottomSheerDialog.show();

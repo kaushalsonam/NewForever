@@ -73,6 +73,9 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/Mobile_num"
                     android:background="@null"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"
                     android:padding="@dimen/dp8"
                     android:textSize="@dimen/textsize_sp16" />
 
@@ -98,6 +101,9 @@
                 android:layout_margin="@dimen/dp5"
                 android:layout_toLeftOf="@id/hide_password"
                 android:background="@null"
+                android:inputType="textWebPassword"
+                android:singleLine="true"
+                android:imeOptions="actionDone"
                 android:hint="@string/password"
                 android:padding="@dimen/dp6"
                 android:textSize="@dimen/textsize_sp16" />

@@ -19,5 +19,8 @@ public interface Constant {
     public static final String device_token="device_token";
     public static final String password="password";
 
+    public static final String close="close";
+    public static final String profileFlag="profileFlag";
+
 
 }

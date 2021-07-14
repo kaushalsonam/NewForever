@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 import com.forever.R;
 import com.forever.fragments.Profile.ProfileFragment;
 import com.forever.fragments.home.HomeFragment;
+import com.forever.fragments.home.UploadReceiptsFragment;
 import com.forever.fragments.notifications.NotificationsFragment;
 import com.forever.fragments.reward.RewardFragment;
 import com.forever.utilities.KeyClass;
@@ -24,12 +25,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.jetbrains.annotations.NotNull;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static FrameLayout container;
     public static Context context;
     public static BottomNavigationView bottom_navigation;
-    private RelativeLayout rl_upload;
+    public RelativeLayout rl_upload;
 
 
     @Override
@@ -50,6 +51,8 @@ public class HomeActivity extends AppCompatActivity {
         //bottom navigation
         bottom_navigation = findViewById(R.id.bottom_navigation);
         rl_upload = findViewById(R.id.rl_upload);
+
+        rl_upload.setOnClickListener(this);
 
 
     }
@@ -145,5 +148,19 @@ public class HomeActivity extends AppCompatActivity {
     };
 
 
+    @Override
+    public void onClick(View v) {
 
+        switch (v.getId()){
+
+            case R.id.rl_upload:
+
+                replaceFragment(new UploadReceiptsFragment(),true,KeyClass.FRAGMENT_UPLOAD_RECEIPTS,
+                        KeyClass.FRAGMENT_UPLOAD_RECEIPTS);
+
+                break;
+
+        }
+
+    }
 }

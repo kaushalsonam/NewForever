@@ -123,11 +123,12 @@
 
             <EditText
                 android:id="@+id/txt_user_name"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:background="@null"
                 android:hint="@string/txt_user_name"
+                android:singleLine="true"
                 android:padding="@dimen/dp5"
                 android:textColor="@color/white"
                 android:textColorHint="@color/et_hint_color"
@@ -138,6 +139,7 @@
                 android:layout_height="@dimen/dp15"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp10"
                 android:src="@drawable/ic_close"
                 app:tint="@color/et_hint_color" />
 
@@ -186,22 +188,17 @@
 
                 <EditText
                     android:id="@+id/mobile_num"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"
                     android:hint="@string/Mobile_num"
                     android:padding="@dimen/dp8"
                     android:textSize="@dimen/textsize_sp16" />
 
-                <TextView
-                    android:id="@+id/mobile_num_astric"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/mobile_num"
-                    android:hint="*"
-                    android:textColorHint="@android:color/holo_red_dark"
-                    android:visibility="gone" />
+
 
             </RelativeLayout>
 
@@ -225,6 +222,9 @@
                 android:layout_margin="@dimen/dp5"
                 android:background="@null"
                 android:hint="@string/emailid"
+                android:inputType="textEmailAddress"
+                android:imeOptions="actionNext"
+                android:singleLine="true"
                 android:padding="@dimen/dp6"
                 android:textSize="@dimen/textsize_sp16" />
 

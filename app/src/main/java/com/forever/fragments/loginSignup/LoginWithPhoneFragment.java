@@ -274,6 +274,7 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
 
         PrefrenceShared.getInstance().getPreferenceData().setValue(Constant.loginflag, String.valueOf(loginFlag));
 
+
         Intent intent = new Intent(getActivity(), HomeActivity.class);
         ((LoginActivity) getActivity()).startActivity(intent);
         ((LoginActivity) getActivity()).finish();

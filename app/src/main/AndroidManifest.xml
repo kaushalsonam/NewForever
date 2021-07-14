@@ -15,10 +15,8 @@
         android:testOnly="false"
         android:theme="@style/Theme.Forever"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.PointsSummaryActivity" />
-        <activity android:name=".activities.ActivityPoints" />
-        <activity android:name=".activities.ActivitySummary" />
-        <activity android:name=".activities.LevelBadgeStatusActivity" />
+
+
         <activity android:name=".activities.HomeActivity">
 
             <!-- <intent-filter> -->
