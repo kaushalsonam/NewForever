@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp70">
+
+        <TextView
+            android:id="@+id/_active_point"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/dp40"
+            android:layout_marginRight="@dimen/dp40"
+            android:gravity="center"
+            android:text="@string/active_points_calculation"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_sp16" />
+
+        <ImageView
+            android:id="@+id/close_btn"
+            android:layout_width="@dimen/dp20"
+            android:layout_height="@dimen/dp20"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp10"
+            android:src="@drawable/ic_close"
+            app:tint="@color/dotcolor" />
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dp20"
+        android:layout_marginBottom="@dimen/dp20"
+        android:background="@color/et_bg_color"
+        android:padding="@dimen/dp10"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp50"
+            android:text="@string/physical_activity"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_sp16" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/dp60"
+            android:layout_marginRight="@dimen/dp20"
+            android:text="@string/max_10_days"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_sp16" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp10"
+        android:layout_marginTop="-20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/dp20"
+            android:layout_height="@dimen/dp20"
+            android:layout_marginLeft="@dimen/dp30"
+            android:src="@drawable/ic_steps" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/steps"
+            android:layout_marginLeft="@dimen/dp5"
+            android:textColor="@color/et_hint_color"
+            android:textSize="@dimen/textsize_sp14" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/points1"
+            android:gravity="right"
+            android:layout_marginRight="@dimen/dp20"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_sp16" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/dp20"
+            android:layout_height="@dimen/dp20"
+            android:layout_marginLeft="@dimen/dp30"
+            android:src="@drawable/ic_gym_swipes" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gym_visit"
+            android:textColor="@color/et_hint_color"
+            android:layout_marginLeft="@dimen/dp5"
+            android:textSize="@dimen/textsize_sp16" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/points2"
+            android:gravity="right"
+            android:layout_marginRight="@dimen/dp20"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_sp16" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/dp20"
+            android:layout_height="@dimen/dp20"
+            android:layout_marginLeft="@dimen/dp30"
+            android:src="@drawable/ic_heart_rate" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/heart_rate"
+            android:textColor="@color/et_hint_color"
+            android:layout_marginLeft="@dimen/dp5"
+            android:textSize="@dimen/textsize_sp16" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/points3"
+            android:gravity="right"
+            android:layout_marginRight="@dimen/dp20"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_sp16" />
+
+
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dp20"
+        android:background="@color/et_bg_color"
+        android:padding="@dimen/dp10"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp50"
+            android:text="@string/healthy_eating"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_sp16" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/dp60"
+            android:layout_marginRight="@dimen/dp20"
+            android:text="@string/unlimited"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_sp16" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/dp20"
+            android:layout_height="@dimen/dp20"
+            android:layout_marginLeft="@dimen/dp30"
+            android:src="@drawable/ic_healthy_food" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/food_and_drink"
+            android:textColor="@color/et_hint_color"
+            android:layout_marginLeft="@dimen/dp5"
+            android:textSize="@dimen/textsize_sp16" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/points4"
+            android:gravity="right"
+            android:layout_marginRight="@dimen/dp20"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_sp16" />
+
+
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/et_bg_color"
+        android:padding="@dimen/dp10"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp50"
+            android:text="@string/healthy_eating"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_sp16" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/dp60"
+            android:layout_marginRight="@dimen/dp20"
+            android:text="@string/max_5_days"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_sp16" />
+
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/dp20"
+            android:layout_height="@dimen/dp20"
+            android:layout_marginLeft="@dimen/dp30"
+            android:src="@drawable/ic_yoga" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mindfulness"
+            android:textColor="@color/et_hint_color"
+            android:layout_marginLeft="@dimen/dp5"
+            android:textSize="@dimen/textsize_sp16" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/points1"
+            android:gravity="right"
+            android:layout_marginRight="@dimen/dp20"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_sp16" />
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/dp20"
+            android:layout_height="@dimen/dp20"
+            android:layout_marginLeft="@dimen/dp30"
+            android:src="@drawable/ic_spa" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/spa_message"
+            android:textColor="@color/et_hint_color"
+            android:layout_marginLeft="@dimen/dp5"
+            android:textSize="@dimen/textsize_sp16" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/points2"
+            android:gravity="right"
+            android:layout_marginRight="@dimen/dp20"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_sp16" />
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp10"
+        android:layout_marginBottom="@dimen/dp40"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/dp20"
+            android:layout_height="@dimen/dp20"
+            android:layout_marginLeft="@dimen/dp30"
+            android:src="@drawable/ic_sleep" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sleep"
+            android:textColor="@color/et_hint_color"
+            android:layout_marginLeft="@dimen/dp5"
+            android:textSize="@dimen/textsize_sp16" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/points3"
+            android:gravity="right"
+            android:layout_marginRight="@dimen/dp20"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_sp16" />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

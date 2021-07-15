@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -31,6 +32,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public static Context context;
     public static BottomNavigationView bottom_navigation;
     public RelativeLayout rl_upload;
+    public Menu menu;
 
 
     @Override
@@ -55,6 +57,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         rl_upload.setOnClickListener(this);
 
 
+
     }
 
     private void viewSetup() {
@@ -71,10 +74,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 KeyClass.FRAGMENT_HOME);
 
 
-
-
-
-
+//        Menu menu = bottom_navigation.getMenu();
+//        menu.findItem(R.id.nav_home).setIcon(R.drawable.ic_home_select);
+//        menu.findItem(R.id.nav_notifications).setIcon(R.drawable.ic_notification_deselect);
+//        menu.findItem(R.id.nav_rewards).setIcon(R.drawable.ic_star_tab);
 
     }
 
@@ -108,6 +111,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     replaceFragment(new HomeFragment(),true,KeyClass.FRAGMENT_HOME,
                             KeyClass.FRAGMENT_HOME);
 
+//                    item.setIcon(R.drawable.ic_home_select);
 
                     break;
 
@@ -116,12 +120,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     replaceFragment(new RewardFragment(),true,KeyClass.FRAGMENT_REWARD,
                             KeyClass.FRAGMENT_REWARD);
 
+//                    item.setIcon(R.drawable.ic_rewards_selected);
+
                     break;
 
                 case R.id.nav_notifications:
                     rl_upload.setVisibility(View.GONE);
                     replaceFragment(new NotificationsFragment(),true,KeyClass.FRAGMENT_NOTIFICATIONS,
                             KeyClass.FRAGMENT_NOTIFICATIONS);
+
+//                    item.setIcon(R.drawable.ic_notification);
 
 
                     break;

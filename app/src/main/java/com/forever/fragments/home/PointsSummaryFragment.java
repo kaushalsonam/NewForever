@@ -30,12 +30,12 @@ public class PointsSummaryFragment extends Fragment implements View.OnClickListe
 
     private TextView txt_day, txt_week, txt_month, txt_year;
     private String type;
-    private ImageView back_btn;
+    private ImageView back_btn,close_btn;
     private TextView txt_points_Sammary;
     private SwitchCompat toggle_btn;
     private BottomNavigationView bottom_navigation;
     private RelativeLayout rl_upload;
-    private BottomSheetDialog bottomSheerDialog;
+    private BottomSheetDialog bottomSheerDialog,pointsBottomSheetDialog;
 
 
     @Override
@@ -224,13 +224,14 @@ public class PointsSummaryFragment extends Fragment implements View.OnClickListe
 
 //                Toast.makeText(getActivity(), "points popup", Toast.LENGTH_SHORT).show();
 
-                bottomPointSummaryDialog();
+                setActivityPointsBottomDialog();
+
 
                 break;
 
             case R.id.close_btn:
 
-                bottomSheerDialog.dismiss();
+                pointsBottomSheetDialog.dismiss();
 
                 break;
         }
@@ -270,6 +271,24 @@ public class PointsSummaryFragment extends Fragment implements View.OnClickListe
 
 
         bottomSheerDialog.show();
+
+    }
+
+
+    private void setActivityPointsBottomDialog(){
+
+        pointsBottomSheetDialog= new BottomSheetDialog(getActivity());
+        View parentView = getLayoutInflater().inflate(R.layout.activity_points_dialog, null);
+        pointsBottomSheetDialog.setContentView(parentView);
+
+
+        close_btn=parentView.findViewById(R.id.close_btn);
+
+        close_btn.setOnClickListener(this);
+
+
+        pointsBottomSheetDialog.show();
+
 
     }
 

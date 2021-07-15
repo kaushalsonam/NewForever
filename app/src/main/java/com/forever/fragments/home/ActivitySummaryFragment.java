@@ -25,13 +25,14 @@ import org.jetbrains.annotations.NotNull;
 
 public class ActivitySummaryFragment extends Fragment implements View.OnClickListener {
 
-    private ImageView back_btn,txt_today_iv,txt_yesterday_iv,txt_last_week_iv,txt_last_month_iv,txt_custom_date_iv;
+    private ImageView back_btn,txt_today_iv,txt_yesterday_iv,txt_last_week_iv,txt_last_month_iv,
+            txt_custom_date_iv,close_btn;
     private CardView custom_date_btn,total_steps_cv,pramotion_cv,total_points_cv;
     private TextView txt_activity_Sammary,txt_today,txt_yesterday,txt_last_week,txt_last_month,
             txt_custom_date,done_btn;
     private BottomNavigationView bottom_navigation;
     private RelativeLayout rl_upload;
-    private BottomSheetDialog bottomSheetDialog;
+    private BottomSheetDialog bottomSheetDialog,pointsBottomSheetDialog;
     private RelativeLayout txt_yesterday_rl,txt_today_rl,txt_last_week_rl,txt_last_month_rl,txt_custom_date_rl;
     private CardView custom_date_close_btn;
     private LinearLayout card_view_ll,no_activity_points_ll;
@@ -128,7 +129,7 @@ public class ActivitySummaryFragment extends Fragment implements View.OnClickLis
                 
             case R.id.txt_activity_Sammary:
 
-                Toast.makeText(getActivity(), "activity summary dialog", Toast.LENGTH_SHORT).show();
+              setActivityPointsBottomDialog();
                 
                 break;
 
@@ -240,6 +241,11 @@ public class ActivitySummaryFragment extends Fragment implements View.OnClickLis
                 card_view_ll.setVisibility(View.GONE);
                 no_activity_points_ll.setVisibility(View.VISIBLE);
 
+                break;
+
+            case R.id.close_btn:
+
+                pointsBottomSheetDialog.dismiss();
 
                 break;
         }
@@ -290,10 +296,27 @@ public class ActivitySummaryFragment extends Fragment implements View.OnClickLis
 
         done_btn.setOnClickListener(this);
 
-
-
-
         bottomSheetDialog.show();
+
+
+    }
+
+
+
+
+    private void setActivityPointsBottomDialog(){
+
+        pointsBottomSheetDialog= new BottomSheetDialog(getActivity());
+        View parentView = getLayoutInflater().inflate(R.layout.activity_points_dialog, null);
+        pointsBottomSheetDialog.setContentView(parentView);
+
+
+        close_btn=parentView.findViewById(R.id.close_btn);
+
+        close_btn.setOnClickListener(this);
+
+
+        pointsBottomSheetDialog.show();
 
 
     }

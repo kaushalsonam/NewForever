@@ -64,8 +64,8 @@
             android:id="@+id/card_view_ll"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="visible">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/total_steps_cv"
@@ -225,7 +225,8 @@
                             <ImageView
                                 android:layout_width="@dimen/dp15"
                                 android:layout_height="@dimen/dp15"
-                                android:src="@drawable/ic_target" />
+                                android:src="@drawable/ic_target"
+                                app:tint="@color/dotcolor" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -333,32 +334,32 @@
 
 
         <LinearLayout
+            android:id="@+id/no_activity_points_ll"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:gravity="center"
-            android:id="@+id/no_activity_points_ll">
+            android:orientation="vertical"
+            android:visibility="gone">
 
             <ImageView
                 android:layout_width="@dimen/dp300"
                 android:layout_height="@dimen/dp300"
                 android:layout_marginTop="-60dp"
-                android:src="@drawable/ic_no_activity"/>
+                android:src="@drawable/ic_no_activity" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:gravity="center"
                 android:layout_marginLeft="@dimen/dp40"
-                android:layout_marginRight="@dimen/dp40"
                 android:layout_marginTop="-50dp"
+                android:layout_marginRight="@dimen/dp40"
+                android:gravity="center"
                 android:padding="@dimen/dp5"
-                android:textSize="@dimen/textsize_sp18"
-                android:text="@string/no_points"/>
+                android:text="@string/no_points"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_sp18" />
 
         </LinearLayout>
-
 
 
     </LinearLayout>
