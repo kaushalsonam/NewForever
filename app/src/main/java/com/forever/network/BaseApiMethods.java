@@ -18,19 +18,19 @@ import retrofit2.http.Query;
 import retrofit2.http.Url;
 
 public interface BaseApiMethods {
-    @GET("api/app/settings")
+    @GET("app/settings")
     Call<OnBoardingModel> onBoarding();
 
-    @POST("api/user/phone-exists")
+    @POST("user/phone-exists")
     Call<ExistsPhoneEmailModel>existPhone(@Body JsonObject jsonObject);
 
 //    @GET("user/email-exists")
 //    Call<ExistsPhoneEmailModel> emailExist(@Query("email") String email);
 
-    @POST("api/user/signup")
+    @POST("user/signup")
     Call<PhoneSignupResponseModel> phoneSignup(@Body JsonObject object);
 
-    @POST("api/user/signin")
+    @POST("user/signin")
     Call<LoginModel> loginwithPhone(@Body JsonObject object);
 
 

@@ -3,7 +3,7 @@ package com.forever.utilities;
 public final class KeyClass {
 
 
-    public static final String BASE_URL = "http://ec2-15-206-253-136.ap-south-1.compute.amazonaws.com:8080/";
+    public static final String BASE_URL = "http://ec2-15-206-253-136.ap-south-1.compute.amazonaws.com:8000/api/";
 
     public static final String FRAGMENT_ONBOARDING = "Onboarding fragment";
     public static final String FRAGMENT_LOGIN = "Login fragment";

@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.forever.R;
 import com.forever.activities.HomeActivity;
-import com.forever.fragments.Terms_PrivacyFragment;
+import com.forever.fragments.Profile.Terms_PrivacyFragment;
 import com.forever.utilities.AdapterItemClick;
 import com.forever.utilities.KeyClass;
 

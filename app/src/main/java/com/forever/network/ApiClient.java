@@ -49,7 +49,7 @@ public class ApiClient {
 
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
 
-        httpClient.connectTimeout(3, TimeUnit.MINUTES)
+        httpClient.connectTimeout(2, TimeUnit.MINUTES)
                 .readTimeout(1, TimeUnit.MINUTES)
                 .writeTimeout(2, TimeUnit.MINUTES);
 

@@ -1,9 +1,10 @@
-package com.forever.fragments;
+package com.forever.fragments.loginSignup;
 
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -13,16 +14,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.forever.R;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.forever.activities.LoginActivity;
+import com.forever.fragments.loginSignup.AgeFragment;
+import com.forever.utilities.KeyClass;
 
 import org.jetbrains.annotations.NotNull;
 
-public class Terms_PrivacyFragment extends Fragment implements View.OnClickListener {
 
-    private ImageView back_btn,close_btn;
-    private TextView terms_and_condition;
-    private BottomNavigationView bottomNavigationView;
+public class LocationFragment extends Fragment implements View.OnClickListener {
 
+    private ImageView back_btn;
+    private TextView txt_skip_btn;
+    private CardView next_btn;
 
 
     @Override
@@ -37,7 +40,7 @@ public class Terms_PrivacyFragment extends Fragment implements View.OnClickListe
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_terms__privacy, container, false);
+        return inflater.inflate(R.layout.fragment_location, container, false);
     }
 
     @Override
@@ -51,18 +54,18 @@ public class Terms_PrivacyFragment extends Fragment implements View.OnClickListe
     private void bindView(View view) {
 
         back_btn=view.findViewById(R.id.back_btn);
-        close_btn=view.findViewById(R.id.close_btn);
-        terms_and_condition=view.findViewById(R.id.terms_and_condition);
-        bottomNavigationView=getActivity().findViewById(R.id.bottom_navigation);
+        txt_skip_btn=view.findViewById(R.id.txt_skip_btn);
+        next_btn=view.findViewById(R.id.next_btn);
+
 
     }
 
     private void viewSetup() {
 
         back_btn.setOnClickListener(this);
-        close_btn.setOnClickListener(this);
+        txt_skip_btn.setOnClickListener(this);
+        next_btn.setOnClickListener(this);
 
-        bottomNavigationView.setVisibility(View.GONE);
 
     }
 
@@ -72,11 +75,21 @@ public class Terms_PrivacyFragment extends Fragment implements View.OnClickListe
         switch (v.getId()){
 
             case R.id.back_btn:
-            case R.id.close_btn:
 
                 getActivity().onBackPressed();
 
                 break;
+
+            case R.id.txt_skip_btn:
+            case R.id.next_btn:
+
+                ((LoginActivity)getActivity()).replaceFragment(new AgeFragment(),true,
+                        KeyClass.FRAGMENT_AGE, KeyClass.FRAGMENT_AGE);
+
+
+                break;
+
+
         }
 
     }

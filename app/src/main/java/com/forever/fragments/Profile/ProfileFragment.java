@@ -17,7 +17,6 @@ import com.forever.R;
 import com.forever.fragments.home.ActivityPointsFragment;
 import com.forever.activities.HomeActivity;
 import com.forever.activities.LoginActivity;
-import com.forever.fragments.Terms_PrivacyFragment;
 import com.forever.fragments.home.LevelBadgeStatusFragment;
 import com.forever.fragments.loginSignup.ResetPasswordFragment;
 import com.forever.utilities.Constant;

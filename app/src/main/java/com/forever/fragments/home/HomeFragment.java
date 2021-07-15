@@ -7,11 +7,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -19,7 +17,6 @@ import android.widget.Toast;
 
 import com.forever.R;
 import com.forever.activities.HomeActivity;
-import com.forever.customView.DayPointSummary;
 import com.forever.utilities.Constant;
 import com.forever.utilities.KeyClass;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -37,7 +34,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private RelativeLayout rl_upload;
 
 
-    private DayPointSummary dayPointSummary;
 
 
 
@@ -95,7 +91,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         rl_upload.setVisibility(View.VISIBLE);
 
 
-        dayPointSummary= new DayPointSummary(HomeActivity.context,R.style.DialogDim);
+
 
 
         level_badge.setOnClickListener(this);
@@ -129,8 +125,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.total_steps_rl:
-
-
 
 
                 ((HomeActivity)getActivity()).replaceFragment(new ActivitySummaryFragment(),true,
@@ -174,13 +168,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    private void openDialog() {
 
-        dayPointSummary.show();
-        Window window = dayPointSummary.getWindow();
-        window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        window.setGravity(Gravity.CENTER);
-        dayPointSummary.setCanceledOnTouchOutside(true);
-    }
 
 }

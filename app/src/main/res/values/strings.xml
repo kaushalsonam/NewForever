@@ -129,7 +129,7 @@
     <string name="more_reward">Earn more rewards</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="txt_user_name">User name</string>
-    <string name="device_type">a</string>
+    <string name="device_type"> a </string>
     <string name="tocken">f1tmwBMuEwo:APA91bHBeF_X0MBCn-wtKhg4OvckXxNvoKk1vmhYzuCoGiZtlZOPXyJGcPDJPetCW0VMiV2UXZzEM89LesSbwdV9e-yiRIQH8JNJn1mkdPiH2G6Fj37CBu8wrZeuogcztp9qe-6a_Ubb</string>
     <string name="rewards">Rewards</string>
     <string name="search">Search...</string>
@@ -187,6 +187,17 @@
     <string name="attached_document">Attach Documents</string>
     <string name="browse_file">Browse files</string>
     <string name="secure">Secure</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="filter">Filter</string>
+    <string name="custom_date">Custom Date</string>
+    <string name="date_to">Tuesday, Feb 22, 2021</string>
+    <string name="date_from">- Tuesday, Feb 23, 2021</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="last_week">Last Week</string>
+    <string name="last_month">Last 12 Months</string>
+    <string name="txt_date_from">Feb 22, 2021</string>
+    <string name="to">To</string>
+    <string name="no_points">You currently have no activity points to nreport. Stay active to earn rewards!</string>
 
     <string-array name="countryCodes">
         <item>93,AF</item>

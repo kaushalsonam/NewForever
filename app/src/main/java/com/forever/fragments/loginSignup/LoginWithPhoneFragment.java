@@ -78,7 +78,7 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
     private PhoneExsistViewModel phoneExsistViewModel;
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth firebaseAuth;
-    private Boolean loginFlag=false;
+    private Boolean loginFlag = false;
     private CallbackManager callbackManager;
 
     @Override
@@ -133,7 +133,7 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
 
         mGoogleSignInClient = GoogleSignIn.getClient(getActivity(), gso);
 
-        firebaseAuth=FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
 
     }
 
@@ -162,8 +162,6 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
     }
 
 
-
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -174,17 +172,23 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
 
                     if (!et_password.getText().toString().isEmpty()) {
 
-
-                        JsonObject jsonObject = new JsonObject();
-                        jsonObject.addProperty(Constant.password, et_password.getText().toString());
-                        jsonObject.addProperty(Constant.device_token, R.string.tocken);
-                        jsonObject.addProperty(Constant.device_type, R.string.device_type);
-                        jsonObject.addProperty(Constant.phone_code, countryCodePicker.getSelectedCountryCode());
-                        jsonObject.addProperty(Constant.phone_number, mobile_num.getText().toString());
+                        if (!(et_password.getText().toString().length() < 8) || !(et_password.getText().toString().length() > 32)) {
 
 
-                        loginViewModel.userLogin(getActivity(), jsonObject);
+                            JsonObject jsonObject = new JsonObject();
+                            jsonObject.addProperty(Constant.password, et_password.getText().toString());
+                            jsonObject.addProperty(Constant.device_token, getString(R.string.tocken));
+                            jsonObject.addProperty(Constant.device_type, getString(R.string.device_type));
+                            jsonObject.addProperty(Constant.phone_code, countryCodePicker.getSelectedCountryCode());
+                            jsonObject.addProperty(Constant.phone_number, mobile_num.getText().toString());
 
+
+                            loginViewModel.userLogin(getActivity(), jsonObject);
+
+                        } else {
+
+                            Toast.makeText(getActivity(), "No whitespace - length: 8-32", Toast.LENGTH_LONG).show();
+                        }
 
                     }
 
@@ -257,12 +261,12 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
 
         if (mobile_num.getText().toString().length() > 9) {
 
-            JsonObject jsonObject= new JsonObject();
-            jsonObject.addProperty(Constant.phone_number,mobile_num.getText().toString());
-            jsonObject.addProperty(Constant.phone_code,countryCodePicker.getSelectedCountryCode());
+            JsonObject jsonObject = new JsonObject();
+            jsonObject.addProperty(Constant.phone_number, mobile_num.getText().toString());
+            jsonObject.addProperty(Constant.phone_code, countryCodePicker.getSelectedCountryCode());
 
-            phoneExsistViewModel.exsistPhone(getActivity(),jsonObject);
-            
+            phoneExsistViewModel.exsistPhone(getActivity(), jsonObject);
+
         }
 
     }
@@ -270,14 +274,21 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
     @Override
     public void onChanged(LoginModel loginModel) {
 
-        loginFlag=true;
+        loginFlag = true;
 
         PrefrenceShared.getInstance().getPreferenceData().setValue(Constant.loginflag, String.valueOf(loginFlag));
 
 
-        Intent intent = new Intent(getActivity(), HomeActivity.class);
-        ((LoginActivity) getActivity()).startActivity(intent);
-        ((LoginActivity) getActivity()).finish();
+        if (loginModel.getError().toString().equals("0")) {
+
+            Intent intent = new Intent(getActivity(), HomeActivity.class);
+            ((LoginActivity) getActivity()).startActivity(intent);
+            ((LoginActivity) getActivity()).finish();
+        }else {
+
+            Toast.makeText(getActivity(), loginModel.getMessage(), Toast.LENGTH_SHORT).show();
+
+        }
 
 
     }
@@ -286,7 +297,7 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
         @Override
         public void onChanged(ExistsPhoneEmailModel existsPhoneEmailModel) {
 
-            if(existsPhoneEmailModel.getExists().equals(true)){
+            if (existsPhoneEmailModel.getExists().equals(true)) {
 
                 Toast.makeText(getActivity(), "This Contact number exist", Toast.LENGTH_SHORT).show();
 
@@ -300,7 +311,6 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
-
 
 
     @Override
@@ -330,7 +340,6 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
     }
 
 
-
     private void firebaseAuthWithGoogle(String idToken) {
 
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
@@ -351,7 +360,7 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
 //                            ((LoginActivity)getActivity()).replaceFragment(new HomeFragment(),false,
 //                                    KeyClass.FRAGMENT_HOME,KeyClass.FRAGMENT_HOME);
 
-                            Intent intent= new Intent(getActivity(),HomeActivity.class);
+                            Intent intent = new Intent(getActivity(), HomeActivity.class);
                             startActivity(intent);
                             getActivity().finish();
 
@@ -386,7 +395,7 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
 //                            updateUI(user);
                             Toast.makeText(getActivity(), "success", Toast.LENGTH_SHORT).show();
 
-                            Intent intent= new Intent(getActivity(),HomeActivity.class);
+                            Intent intent = new Intent(getActivity(), HomeActivity.class);
                             startActivity(intent);
                             getActivity().finish();
 
@@ -404,7 +413,7 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
     }
 
 
-    public void facbookLogin(){
+    public void facbookLogin() {
 
 //        LoginManager.getInstance().logInWithReadPermissions(getActivity(), Arrays.asList("email","public_profile"));
 

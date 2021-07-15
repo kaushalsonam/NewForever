@@ -18,8 +18,6 @@ import android.widget.TextView;
 
 import com.forever.R;
 import com.forever.activities.LoginActivity;
-import com.forever.fragments.GenderFragment;
-import com.forever.fragments.LocationFragment;
 import com.forever.utilities.KeyClass;
 
 import org.jetbrains.annotations.NotNull;

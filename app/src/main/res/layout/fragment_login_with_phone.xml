@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.loginSignup.LoginWithPhoneFragment">
 
 
@@ -57,7 +57,6 @@
                 app:showFlag="false" />
 
 
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -71,12 +70,13 @@
                     android:id="@+id/mobile_num"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/Mobile_num"
                     android:background="@null"
-                    android:inputType="number"
-                    android:singleLine="true"
+                    android:hint="@string/Mobile_num"
                     android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="10"
                     android:padding="@dimen/dp8"
+                    android:singleLine="true"
                     android:textSize="@dimen/textsize_sp16" />
 
 
@@ -101,21 +101,22 @@
                 android:layout_margin="@dimen/dp5"
                 android:layout_toLeftOf="@id/hide_password"
                 android:background="@null"
-                android:inputType="textWebPassword"
-                android:singleLine="true"
-                android:imeOptions="actionDone"
                 android:hint="@string/password"
+                android:imeOptions="actionDone"
+                android:inputType="textWebPassword"
+                android:maxLength="32"
                 android:padding="@dimen/dp6"
+                android:singleLine="true"
                 android:textSize="@dimen/textsize_sp16" />
 
             <ImageView
                 android:id="@+id/hide_password"
                 android:layout_width="@dimen/dp20"
                 android:layout_height="@dimen/dp20"
+                android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="20dp"
-                android:layout_alignParentTop="true"
                 android:background="@android:color/transparent"
                 android:src="@drawable/ic_password_hide" />
 
@@ -221,8 +222,8 @@
             android:layout_height="@dimen/dp25"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:visibility="gone"
-            android:src="@drawable/ic_apple_id" />
+            android:src="@drawable/ic_apple_id"
+            android:visibility="gone" />
 
 
     </LinearLayout>
@@ -254,8 +255,6 @@
             android:textSize="@dimen/textsize_sp14" />
 
     </LinearLayout>
-
-
 
 
 </RelativeLayout>

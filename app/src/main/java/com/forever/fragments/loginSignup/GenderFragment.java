@@ -1,4 +1,4 @@
-package com.forever.fragments;
+package com.forever.fragments.loginSignup;
 
 import android.os.Bundle;
 
@@ -15,8 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.forever.R;
+import com.forever.activities.HomeActivity;
 import com.forever.activities.LoginActivity;
-import com.forever.fragments.loginSignup.SignupFragment;
 import com.forever.utilities.KeyClass;
 
 import org.jetbrains.annotations.NotNull;
@@ -168,10 +168,16 @@ public class GenderFragment extends Fragment implements View.OnClickListener {
 
                     txt_error.setVisibility(View.VISIBLE);
 
+                }else {
+
+                    txt_error.setVisibility(View.GONE);
+
+                    ((LoginActivity)getActivity()).replaceFragment(new LocationFragment(),true,
+                            KeyClass.FRAGMENT_LOCATION,KeyClass.FRAGMENT_LOCATION);
 
                 }
 
-                Toast.makeText(getActivity(), "save", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), "save", Toast.LENGTH_SHORT).show();
 
                 break;
 

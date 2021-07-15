@@ -1,5 +1,6 @@
-package com.forever.fragments;
+package com.forever.fragments.loginSignup;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -32,8 +33,8 @@ public class AgeFragment extends Fragment implements View.OnClickListener {
 
     private TextView txt_skip_btn;
     private ImageView back_btn;
-    private CardView save_btn;
-    private RelativeLayout save_rl;
+    private CardView save_btn,save_cv;
+
 
 
     @Override
@@ -64,7 +65,7 @@ public class AgeFragment extends Fragment implements View.OnClickListener {
         txt_skip_btn = view.findViewById(R.id.txt_skip_btn);
         back_btn = view.findViewById(R.id.back_btn);
         save_btn = view.findViewById(R.id.save_btn);
-        save_rl = view.findViewById(R.id.save_rl);
+        save_cv = view.findViewById(R.id.save_cv);
 
     }
 
@@ -73,7 +74,7 @@ public class AgeFragment extends Fragment implements View.OnClickListener {
         txt_skip_btn.setOnClickListener(this);
         back_btn.setOnClickListener(this);
         save_btn.setOnClickListener(this);
-        save_rl.setOnClickListener(this);
+        save_cv.setOnClickListener(this);
 
     }
 
@@ -86,12 +87,13 @@ public class AgeFragment extends Fragment implements View.OnClickListener {
             case R.id.save_btn:
             case R.id.save_rl:
 
-                ((HomeActivity)getActivity()).replaceFragment(new HomeFragment(),true,
-                        KeyClass.FRAGMENT_HOME,KeyClass.FRAGMENT_HOME);
+                Intent intent= new Intent(getActivity(),HomeActivity.class);
+                startActivity(intent);
 
                 break;
 
             case R.id.back_btn:
+
                 getActivity().onBackPressed();
 
                 break;

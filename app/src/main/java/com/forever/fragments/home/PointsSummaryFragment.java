@@ -22,6 +22,7 @@ import com.forever.fragments.Profile.ProfileFragment;
 import com.forever.utilities.Constant;
 import com.forever.utilities.KeyClass;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -34,6 +35,7 @@ public class PointsSummaryFragment extends Fragment implements View.OnClickListe
     private SwitchCompat toggle_btn;
     private BottomNavigationView bottom_navigation;
     private RelativeLayout rl_upload;
+    private BottomSheetDialog bottomSheerDialog;
 
 
     @Override
@@ -66,8 +68,8 @@ public class PointsSummaryFragment extends Fragment implements View.OnClickListe
 
     private void bindView(View view) {
 
-        bottom_navigation=getActivity().findViewById(R.id.bottom_navigation);
-        rl_upload=getActivity().findViewById(R.id.rl_upload);
+        bottom_navigation = getActivity().findViewById(R.id.bottom_navigation);
+        rl_upload = getActivity().findViewById(R.id.rl_upload);
 
         txt_day = view.findViewById(R.id.txt_day);
         txt_week = view.findViewById(R.id.txt_week);
@@ -90,7 +92,6 @@ public class PointsSummaryFragment extends Fragment implements View.OnClickListe
         txt_week.setOnClickListener(this);
         txt_month.setOnClickListener(this);
         txt_points_Sammary.setOnClickListener(this);
-
 
 
         if (type != null) {
@@ -119,7 +120,7 @@ public class PointsSummaryFragment extends Fragment implements View.OnClickListe
 
             }
 
-        }else {
+        } else {
 
             onClick(txt_day);
 
@@ -221,10 +222,56 @@ public class PointsSummaryFragment extends Fragment implements View.OnClickListe
 
             case R.id.txt_points_Sammary:
 
-                Toast.makeText(getActivity(), "points popup", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), "points popup", Toast.LENGTH_SHORT).show();
+
+                bottomPointSummaryDialog();
+
+                break;
+
+            case R.id.close_btn:
+
+                bottomSheerDialog.dismiss();
 
                 break;
         }
 
     }
+
+
+    private void bottomPointSummaryDialog() {
+
+        bottomSheerDialog = new BottomSheetDialog(getActivity());
+        View parentView = getLayoutInflater().inflate(R.layout.day_points_summary, null);
+        bottomSheerDialog.setContentView(parentView);
+
+
+        ImageView close_btn = parentView.findViewById(R.id.close_btn);
+
+        TextView steps1_tv = parentView.findViewById(R.id.steps1_tv);
+        TextView steps2_tv = parentView.findViewById(R.id.steps2_tv);
+        TextView steps3_tv = parentView.findViewById(R.id.steps3_tv);
+        TextView gym1_tv = parentView.findViewById(R.id.gym1_tv);
+        TextView food1_tv = parentView.findViewById(R.id.food1_tv);
+        TextView food2_tv = parentView.findViewById(R.id.food2_tv);
+        TextView heart1_tv = parentView.findViewById(R.id.heart1_tv);
+        TextView heart2_tv = parentView.findViewById(R.id.heart2_tv);
+
+        TextView steps1_points_tv = parentView.findViewById(R.id.steps1_points_tv);
+        TextView steps2_points_tv = parentView.findViewById(R.id.steps2_points_tv);
+        TextView steps3_points_tv = parentView.findViewById(R.id.steps3_points_tv);
+        TextView gym1_points_tv = parentView.findViewById(R.id.gym1_points_tv);
+        TextView food1_points_tv = parentView.findViewById(R.id.food1_points_tv);
+        TextView food2_points_tv = parentView.findViewById(R.id.food2_points_tv);
+        TextView heart1_points_tv = parentView.findViewById(R.id.heart1_points_tv);
+        TextView heart2_points_tv = parentView.findViewById(R.id.heart2_points_tv);
+        TextView heart3_points_tv = parentView.findViewById(R.id.heart3_points_tv);
+
+        close_btn.setOnClickListener(this);
+
+
+        bottomSheerDialog.show();
+
+    }
+
+
 }

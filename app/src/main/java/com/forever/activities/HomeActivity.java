@@ -105,7 +105,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
                 case R.id.nav_home:
                     rl_upload.setVisibility(View.VISIBLE);
-                    replaceFragment(new HomeFragment(),false,KeyClass.FRAGMENT_HOME,
+                    replaceFragment(new HomeFragment(),true,KeyClass.FRAGMENT_HOME,
                             KeyClass.FRAGMENT_HOME);
 
 
@@ -113,14 +113,14 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
                 case R.id.nav_rewards:
                     rl_upload.setVisibility(View.GONE);
-                    replaceFragment(new RewardFragment(),false,KeyClass.FRAGMENT_REWARD,
+                    replaceFragment(new RewardFragment(),true,KeyClass.FRAGMENT_REWARD,
                             KeyClass.FRAGMENT_REWARD);
 
                     break;
 
                 case R.id.nav_notifications:
                     rl_upload.setVisibility(View.GONE);
-                    replaceFragment(new NotificationsFragment(),false,KeyClass.FRAGMENT_NOTIFICATIONS,
+                    replaceFragment(new NotificationsFragment(),true,KeyClass.FRAGMENT_NOTIFICATIONS,
                             KeyClass.FRAGMENT_NOTIFICATIONS);
 
 
@@ -128,7 +128,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
                 case R.id.nav_user:
                     rl_upload.setVisibility(View.GONE);
-                    replaceFragment(new ProfileFragment(),false,KeyClass.FRAGMENT_PROFILE,
+                    replaceFragment(new ProfileFragment(),true,KeyClass.FRAGMENT_PROFILE,
                             KeyClass.FRAGMENT_PROFILE);
 
 //                    Intent intent_profile= new Intent(context,ProfileActivity.class);

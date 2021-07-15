@@ -70,7 +70,7 @@
 
 
             <TextView
-                android:id="@+id/steps1_et"
+                android:id="@+id/steps1_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp50"
@@ -80,7 +80,7 @@
 
 
             <TextView
-                android:id="@+id/steps1_points_et"
+                android:id="@+id/steps1_points_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -99,7 +99,7 @@
 
 
             <TextView
-                android:id="@+id/steps2_et"
+                android:id="@+id/steps2_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp50"
@@ -109,7 +109,7 @@
 
 
             <TextView
-                android:id="@+id/steps2_points_et"
+                android:id="@+id/steps2_points_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -129,7 +129,7 @@
 
 
             <TextView
-                android:id="@+id/steps3_et"
+                android:id="@+id/steps3_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp50"
@@ -139,7 +139,7 @@
 
 
             <TextView
-                android:id="@+id/steps3_points_et"
+                android:id="@+id/steps3_points_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -190,7 +190,7 @@
 
 
             <TextView
-                android:id="@+id/gym1_et"
+                android:id="@+id/gym1_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp50"
@@ -200,7 +200,7 @@
 
 
             <TextView
-                android:id="@+id/gym1_points_et"
+                android:id="@+id/gym1_points_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -251,7 +251,7 @@
 
 
             <TextView
-                android:id="@+id/food1_et"
+                android:id="@+id/food1_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp50"
@@ -261,7 +261,7 @@
 
 
             <TextView
-                android:id="@+id/food1_points_et"
+                android:id="@+id/food1_points_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -283,7 +283,7 @@
 
 
             <TextView
-                android:id="@+id/food2_et"
+                android:id="@+id/food2_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp50"
@@ -293,7 +293,7 @@
 
 
             <TextView
-                android:id="@+id/food2_points_et"
+                android:id="@+id/food2_points_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -343,7 +343,7 @@
 
 
             <TextView
-                android:id="@+id/heart1_et"
+                android:id="@+id/heart1_tv"
                 android:layout_width="@dimen/dp200"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp50"
@@ -353,7 +353,7 @@
 
 
             <TextView
-                android:id="@+id/heart1_points_et"
+                android:id="@+id/heart1_points_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -372,7 +372,7 @@
 
 
             <TextView
-                android:id="@+id/heart2_et"
+                android:id="@+id/heart2_tv"
                 android:layout_width="@dimen/dp200"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp50"
@@ -382,7 +382,7 @@
 
 
             <TextView
-                android:id="@+id/heart2_points_et"
+                android:id="@+id/heart2_points_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -402,7 +402,7 @@
 
 
             <TextView
-                android:id="@+id/heart3_et"
+                android:id="@+id/heart3_tv"
                 android:layout_width="@dimen/dp200"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp50"
@@ -412,7 +412,7 @@
 
 
             <TextView
-                android:id="@+id/heart3_points_et"
+                android:id="@+id/heart3_points_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

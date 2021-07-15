@@ -120,5 +120,8 @@ dependencies {
     //circular imageview
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
+    //runtime permissions
+    implementation 'com.karumi:dexter:6.2.3'
+
 
 }
