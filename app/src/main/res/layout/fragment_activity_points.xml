@@ -265,7 +265,7 @@
             android:layout_height="@dimen/dp100"
             android:layout_below="@id/txt_reset_title"
             android:layout_marginLeft="@dimen/dp20"
-            android:layout_marginTop="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp10"
             android:layout_marginRight="@dimen/dp20"
             android:elevation="@dimen/dp10"
             app:cardCornerRadius="@dimen/dp10">

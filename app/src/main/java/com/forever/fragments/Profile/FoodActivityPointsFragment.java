@@ -2,58 +2,35 @@ package com.forever.fragments.Profile;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.forever.R;
+import com.forever.activities.HomeActivity;
+import com.forever.fragments.home.PointsSummaryFragment;
+import com.forever.utilities.KeyClass;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FoodActivityPointsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class FoodActivityPointsFragment extends Fragment {
+import org.jetbrains.annotations.NotNull;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+public class FoodActivityPointsFragment extends Fragment implements View.OnClickListener {
 
-    public FoodActivityPointsFragment() {
-        // Required empty public constructor
-    }
+    private CardView next_btn_cv;
+    private ImageView back_btn;
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FoodActivityPointsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FoodActivityPointsFragment newInstance(String param1, String param2) {
-        FoodActivityPointsFragment fragment = new FoodActivityPointsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
     }
 
@@ -62,5 +39,50 @@ public class FoodActivityPointsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_food_activity_points, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        bindView(view);
+        viewSetup();
+    }
+
+    private void bindView(View view) {
+
+        next_btn_cv = view.findViewById(R.id.next_btn_cv);
+        back_btn = view.findViewById(R.id.back_btn);
+
+    }
+
+    private void viewSetup() {
+
+        next_btn_cv.setOnClickListener(this);
+        back_btn.setOnClickListener(this);
+
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+
+            case R.id.next_btn_cv:
+
+                ((HomeActivity) getActivity()).replaceFragment(new PointsSummaryFragment(), true,
+                        KeyClass.FRAGMENT_POINTS_SUMMARY, KeyClass.FRAGMENT_POINTS_SUMMARY);
+
+                break;
+
+            case R.id.back_btn:
+
+                getActivity().onBackPressed();
+
+                break;
+
+
+        }
     }
 }

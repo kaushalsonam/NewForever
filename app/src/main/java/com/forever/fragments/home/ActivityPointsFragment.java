@@ -39,12 +39,15 @@ public class ActivityPointsFragment extends Fragment implements View.OnClickList
             txt_custom_date_rl;
     private BottomSheetDialog bottomSheetDialog, pointsBottomSheetDialog;
     private LinearLayout card_view_ll, no_activity_points_ll;
+    private String profile;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
+
+            profile = getArguments().getString(Constant.profileFlag);
 
         }
     }
@@ -116,27 +119,41 @@ public class ActivityPointsFragment extends Fragment implements View.OnClickList
 
             case R.id.custom_date_btn:
 
-               setCustomDateBottomDialog();
+                setCustomDateBottomDialog();
 
                 break;
 
             case R.id.total_steps_cv:
             case R.id.gym_points_cv:
             case R.id.user_points_cv:
-            case R.id.food_points_cv:
+
 
                 ((HomeActivity) getActivity()).replaceFragment(new PointsSummaryFragment(), true,
                         KeyClass.FRAGMENT_POINTS_SUMMARY, KeyClass.FRAGMENT_POINTS_SUMMARY);
 
                 break;
 
+            case R.id.food_points_cv:
+
+                if (profile != null) {
+
+                    ((HomeActivity)getActivity()).replaceFragment(new FoodActivityPointsFragment(),true,
+                            KeyClass.FRAGMENT_FOOD_ACTIVITY_POINTS,KeyClass.FRAGMENT_FOOD_ACTIVITY_POINTS);
+
+
+                } else {
+
+                    ((HomeActivity) getActivity()).replaceFragment(new PointsSummaryFragment(), true,
+                            KeyClass.FRAGMENT_POINTS_SUMMARY, KeyClass.FRAGMENT_POINTS_SUMMARY);
+                }
+                break;
+
             case R.id.txt_activity_points:
             case R.id.info_btn:
 
-               setActivityPointsBottomDialog();
+                setActivityPointsBottomDialog();
 
                 break;
-
 
 
             case R.id.custom_date_close_btn:

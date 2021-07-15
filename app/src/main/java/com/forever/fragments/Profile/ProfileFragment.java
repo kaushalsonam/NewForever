@@ -109,12 +109,14 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
             case R.id.total_points_rl:
 
+                ActivityPointsFragment pointsFragment= new ActivityPointsFragment();
+                Bundle bundle= new Bundle();
+                bundle.putString(Constant.profileFlag,"Profile");
+                pointsFragment.setArguments(bundle);
 
 
 
-//                PrefrenceShared.getInstance().getPreferenceData().setValue(Constant.profileFlag, String.valueOf(profileFlag));
-
-                ((HomeActivity) getActivity()).replaceFragment(new ActivityPointsFragment(), true,
+                ((HomeActivity) getActivity()).replaceFragment(pointsFragment, true,
                         KeyClass.FRAGMENT_ACTIVITY_POINTS, KeyClass.FRAGMENT_ACTIVITY_POINTS);
 
 
