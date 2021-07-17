@@ -25,7 +25,6 @@ import org.jetbrains.annotations.NotNull;
 
 
 public class OfferDetailFragment extends Fragment implements View.OnClickListener {
-
     private ImageView back_btn;
     private BottomNavigationView bottom_navigation;
     private SwitchCompat toggle_btn;

@@ -123,5 +123,8 @@ dependencies {
     //runtime permissions
     implementation 'com.karumi:dexter:6.2.3'
 
+    //graph show
+    implementation 'com.jjoe64:graphview:4.2.2'
+
 
 }
