@@ -196,20 +196,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/dp10"
+                android:orientation="vertical"
                 android:layout_toRightOf="@id/points_ll">
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/idGraphView"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true" />
 
                 <com.hadiidbouk.charts.ChartProgressBar
-                    android:visibility="gone"
                     android:id="@+id/chartProgressBar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
+                    android:visibility="visible"
                     app:hdBarCanBeClick="true"
                     app:hdBarCanBeToggle="true"
                     app:hdBarHeight="170dp"
@@ -230,6 +232,9 @@
                     app:hdProgressClickColor="@color/progress_click"
                     app:hdProgressColor="@color/progress"
                     app:hdProgressDisableColor="@color/dotcolorlight" />
+
+
+
 
 
             </LinearLayout>

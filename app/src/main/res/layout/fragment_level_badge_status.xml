@@ -38,14 +38,14 @@
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/toggle_btn"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/dp50"
+                android:layout_height="@dimen/dp60"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="@dimen/dp10"
-                android:textColor="@color/dotcolor"
+                android:textColor="@color/black"
                 android:textOn="2100"
                 android:thumb="@drawable/button_selector"
-                app:switchMinWidth="@dimen/dp40"
+                app:switchMinWidth="@dimen/dp45"
 
                 />
 

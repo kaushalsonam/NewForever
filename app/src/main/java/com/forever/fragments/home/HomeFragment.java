@@ -7,6 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
+import android.renderscript.Sampler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +19,10 @@ import android.widget.Toast;
 
 import com.forever.R;
 import com.forever.activities.HomeActivity;
+import com.forever.customLibararies.CurveGraphConfig;
+import com.forever.customLibararies.CurveGraphView;
+import com.forever.customLibararies.GraphData;
+import com.forever.customLibararies.PointMap;
 import com.forever.utilities.Constant;
 import com.forever.utilities.KeyClass;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -32,6 +38,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private RelativeLayout total_steps_rl,total_points_rl;
     private BottomNavigationView bottom_navigation;
     private RelativeLayout rl_upload;
+    private CurveGraphView curve_graph_view;
 
 
 
@@ -83,6 +90,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         total_steps_rl=view.findViewById(R.id.total_steps_rl);
         total_points_rl=view.findViewById(R.id.total_points_rl);
 
+        //Graph view
+        curve_graph_view=view.findViewById(R.id.curve_graph_view);
+
     }
 
     private void viewSetup() {
@@ -100,6 +110,45 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         total_points_rl.setOnClickListener(this);
         txt_see_all.setOnClickListener(this);
         txt_this_week_see_all_tv.setOnClickListener(this);
+
+
+        curve_graph_view.configure(
+                new CurveGraphConfig.Builder(getActivity())
+                        .setAxisColor(R.color.et_hint_color)                                                                       // Set number of values to be displayed in X ax
+                        .setVerticalGuideline(7)
+                        .setGuidelineColor(R.color.et_hint_color)// Set number of background guidelines to be shown.
+                        .setAnimationDuration(2000)                                             // Set Animation Duration
+                        .build()
+        );
+
+        PointMap pointMap = new PointMap();
+        pointMap.addPoint(0, 0);
+        pointMap.addPoint(1, 5);
+        pointMap.addPoint(2, 10);
+        pointMap.addPoint(3, 15);
+        pointMap.addPoint(4, 20);
+
+
+
+        GraphData gd = GraphData.builder(getActivity())
+                .setPointMap(pointMap)                                                   // PointMap datqa
+                .setGraphStroke(R.color.dotcolor)                                           // Graph line stroke color
+                // Graph fill gradient color
+                // true for straight line; false for curved line graph
+                // set point radius
+                // set point color
+                .animateLine(true)                                                       // Trigger animation for the particular graph line!
+                .build();
+
+
+
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                curve_graph_view.setData(5, 20, gd);
+            }
+        }, 250);
 
     }
 

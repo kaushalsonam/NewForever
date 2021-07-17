@@ -24,6 +24,7 @@ import com.forever.utilities.Constant;
 import com.forever.utilities.KeyClass;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+
 import com.hadiidbouk.charts.BarData;
 import com.hadiidbouk.charts.ChartProgressBar;
 import com.hadiidbouk.charts.OnBarClickedListener;
@@ -113,7 +114,7 @@ public class PointsSummaryFragment extends Fragment implements View.OnClickListe
         // after adding data to our line graph series.
         // on below line we are setting
         // title for our graph view.
-        graphView.setTitle("My Graph View");
+
 
         // on below line we are setting
         // text color to our graph view.
@@ -143,7 +144,7 @@ public class PointsSummaryFragment extends Fragment implements View.OnClickListe
         txt_month.setOnClickListener(this);
         txt_points_Sammary.setOnClickListener(this);
 
-//        barChartSetup();
+        barChartSetup();
 
 
         if (type != null) {
@@ -368,12 +369,10 @@ public class PointsSummaryFragment extends Fragment implements View.OnClickListe
         dataList.add(data);
 
 
-
         chartProgressBar.setDataList(dataList);
         chartProgressBar.build();
 
     }
-
 
 
 }

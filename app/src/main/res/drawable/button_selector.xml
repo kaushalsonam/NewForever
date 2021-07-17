@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_checked="false">
         <shape android:shape="oval">
-            <size android:width="20dp" android:height="20dp" />
-            <stroke android:width="2dp" android:color="#0000ffff" />
+            <size android:width="30dp" android:height="30dp" />
             <solid
                 android:color="@color/light_yellow"/>
         </shape> <!-- shape circle -->
     </item>
-</selector>
+
+    <item
+
+        android:drawable="@drawable/ic_star_with_cicle"
+        android:width="@dimen/dp30"
+        android:height="@dimen/dp30"
+        >
+
+
+
+
+    </item>
+</layer-list>
