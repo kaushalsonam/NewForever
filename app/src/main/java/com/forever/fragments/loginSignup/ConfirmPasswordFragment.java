@@ -107,7 +107,7 @@ public class ConfirmPasswordFragment extends Fragment implements View.OnClickLis
 
             case R.id.reset_rl:
 
-                ((LoginActivity) getActivity()).replaceFragment(new LoginFragment(), false,
+                ((LoginActivity) getActivity()).replaceFragment(new LoginWithPhoneFragment(), false,
                         KeyClass.FRAGMENT_LOGIN, KeyClass.FRAGMENT_LOCATION);
 
                 changed_password_dialog.dismiss();

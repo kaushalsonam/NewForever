@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -80,6 +81,7 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
     private FirebaseAuth firebaseAuth;
     private Boolean loginFlag = false;
     private CallbackManager callbackManager;
+    private RelativeLayout mobile_num_rl;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -117,6 +119,7 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
         fb_login = view.findViewById(R.id.fb_login);
         google_login = view.findViewById(R.id.google_login);
         hide_password = view.findViewById(R.id.hide_password);
+        mobile_num_rl = view.findViewById(R.id.mobile_num_rl);
 
         FacebookSdk.sdkInitialize(getActivity());
         callbackManager = CallbackManager.Factory.create();
@@ -259,6 +262,21 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
     @Override
     public void afterTextChanged(Editable s) {
 
+        if(mobile_num.getText().toString().length()>0){
+
+
+            mobile_num_rl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_green_bg));
+            countryCodePicker.setBackground(getResources().getDrawable(R.drawable.rounded_corner_green_bg));
+
+
+        }else {
+
+            mobile_num_rl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_grey_bg));
+            countryCodePicker.setBackground(getResources().getDrawable(R.drawable.rounded_corner_grey_bg));
+
+
+        }
+
         if (mobile_num.getText().toString().length() > 9) {
 
             JsonObject jsonObject = new JsonObject();
@@ -376,6 +394,12 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
                         }
                     }
                 });
+
+    }
+
+    private boolean isValidMobile(String phone) {
+
+        return android.util.Patterns.PHONE.matcher(phone).matches();
 
     }
 

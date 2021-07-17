@@ -419,6 +419,14 @@
             </RelativeLayout>
 
 
+            <com.google.android.material.internal.BaselineLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp200"
+                android:layout_below="@id/txt_this_week_see_all_rl"
+                />
+
+
+
         </RelativeLayout>
 
 

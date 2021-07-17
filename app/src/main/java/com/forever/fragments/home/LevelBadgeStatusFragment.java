@@ -14,9 +14,11 @@ import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateInterpolator;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -93,6 +95,10 @@ public class LevelBadgeStatusFragment extends Fragment implements View.OnClickLi
     private void viewSetup() {
 
 
+//        level_badge_recycler.setHasFixedSize(true);
+//
+//        level_badge_recycler.setPadding(50,50,50,50);
+
 
         bottom_navigation.setVisibility(View.GONE);
         rl_upload.setVisibility(View.GONE);
@@ -122,6 +128,8 @@ public class LevelBadgeStatusFragment extends Fragment implements View.OnClickLi
 
 
     }
+
+
 
     @Override
     public void onClick(View v) {
@@ -166,16 +174,13 @@ public class LevelBadgeStatusFragment extends Fragment implements View.OnClickLi
         badgeName.add("Bronze");
         badgeName.add("Silver");
 
-        snapHelper= new CenterLayoutManagerHorizontal(getActivity());
+
 
 
         badgeRecyclerAdapter= new LevelBadgeRecyclerAdapter(getActivity(),badgeImage,badgeName);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         level_badge_recycler.setLayoutManager(layoutManager);
         level_badge_recycler.setAdapter(badgeRecyclerAdapter);
-
-
-
 
 
     }

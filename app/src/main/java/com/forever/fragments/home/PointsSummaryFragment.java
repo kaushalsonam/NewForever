@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,19 +24,26 @@ import com.forever.utilities.Constant;
 import com.forever.utilities.KeyClass;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.hadiidbouk.charts.BarData;
+import com.hadiidbouk.charts.ChartProgressBar;
+import com.hadiidbouk.charts.OnBarClickedListener;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
 
 public class PointsSummaryFragment extends Fragment implements View.OnClickListener {
 
     private TextView txt_day, txt_week, txt_month, txt_year;
     private String type;
-    private ImageView back_btn,close_btn;
+    private ImageView back_btn, close_btn;
     private TextView txt_points_Sammary;
     private SwitchCompat toggle_btn;
     private BottomNavigationView bottom_navigation;
     private RelativeLayout rl_upload;
-    private BottomSheetDialog bottomSheerDialog,pointsBottomSheetDialog;
+    private BottomSheetDialog bottomSheerDialog, pointsBottomSheetDialog;
+    private ChartProgressBar chartProgressBar;
+    private LinearLayout chartProgressBar_ll;
 
 
     @Override
@@ -79,6 +87,11 @@ public class PointsSummaryFragment extends Fragment implements View.OnClickListe
         txt_points_Sammary = view.findViewById(R.id.txt_points_Sammary);
         toggle_btn = view.findViewById(R.id.toggle_btn);
 
+        chartProgressBar = (ChartProgressBar) view.findViewById(R.id.chartProgressBar);
+        chartProgressBar_ll = view.findViewById(R.id.chartProgressBar_ll);
+
+//        barChartSetup();
+
     }
 
     private void viewSetup() {
@@ -92,6 +105,8 @@ public class PointsSummaryFragment extends Fragment implements View.OnClickListe
         txt_week.setOnClickListener(this);
         txt_month.setOnClickListener(this);
         txt_points_Sammary.setOnClickListener(this);
+
+//        barChartSetup();
 
 
         if (type != null) {
@@ -275,14 +290,14 @@ public class PointsSummaryFragment extends Fragment implements View.OnClickListe
     }
 
 
-    private void setActivityPointsBottomDialog(){
+    private void setActivityPointsBottomDialog() {
 
-        pointsBottomSheetDialog= new BottomSheetDialog(getActivity());
+        pointsBottomSheetDialog = new BottomSheetDialog(getActivity());
         View parentView = getLayoutInflater().inflate(R.layout.activity_points_dialog, null);
         pointsBottomSheetDialog.setContentView(parentView);
 
 
-        close_btn=parentView.findViewById(R.id.close_btn);
+        close_btn = parentView.findViewById(R.id.close_btn);
 
         close_btn.setOnClickListener(this);
 
@@ -291,6 +306,37 @@ public class PointsSummaryFragment extends Fragment implements View.OnClickListe
 
 
     }
+
+
+    private void barChartSetup() {
+
+        ArrayList<BarData> dataList = new ArrayList<>();
+
+        BarData data = new BarData("Sep", 3.4f, "3.4€");
+        dataList.add(data);
+
+        data = new BarData("Oct", 8f, "8€");
+        dataList.add(data);
+
+        data = new BarData("Nov", 1.8f, "1.8€");
+        dataList.add(data);
+
+        data = new BarData("Dec", 7.3f, "7.3€");
+        dataList.add(data);
+
+        data = new BarData("Jan", 6.2f, "6.2€");
+        dataList.add(data);
+
+        data = new BarData("Feb", 3.3f, "3.3€");
+        dataList.add(data);
+
+
+
+        chartProgressBar.setDataList(dataList);
+        chartProgressBar.build();
+
+    }
+
 
 
 }

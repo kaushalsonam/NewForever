@@ -63,7 +63,11 @@ public class ResetPasswordFragment extends Fragment implements View.OnClickListe
 
     private void viewSetup() {
 
-        bottom_navigation.setVisibility(View.GONE);
+        if(bottom_navigation!=null) {
+
+            bottom_navigation.setVisibility(View.GONE);
+
+        }
 
         back_btn.setOnClickListener(this);
         next_btn.setOnClickListener(this);

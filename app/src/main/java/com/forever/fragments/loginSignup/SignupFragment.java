@@ -35,6 +35,8 @@ import com.hbb20.CountryCodePicker;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.regex.Pattern;
+
 
 public class SignupFragment extends Fragment implements View.OnClickListener, Observer<PhoneSignupResponseModel>, TextWatcher {
 
@@ -44,7 +46,7 @@ public class SignupFragment extends Fragment implements View.OnClickListener, Ob
     private LinearLayout txt_already_have_one;
     private PhoneSignupViewModel phoneSignupViewModel;
     private ImageView hide_password, hide_confirm_password;
-    private Boolean loginFlag=false;
+    private Boolean loginFlag = false;
 
 
     @Override
@@ -139,43 +141,51 @@ public class SignupFragment extends Fragment implements View.OnClickListener, Ob
                         if (!mobile_num.getText().toString().isEmpty() && mobile_num.getText().toString().length() < 11) {
 
 //                            if (!et_email.getText().toString().isEmpty()) {
-
-                            if (!et_password.getText().toString().isEmpty()) {
-
-                                if (!et_confirm_password.getText().toString().isEmpty()) {
-
-                                    if (et_confirm_password.getText().toString().equals(et_password.getText().toString())) {
-
-
-                                        JsonObject data = new JsonObject();
-                                        data.addProperty(Constant.full_name, full_name.getText().toString());
-                                        data.addProperty(Constant.phone_code, countryCodePicker.getSelectedCountryCode());
-                                        data.addProperty(Constant.phone_number, mobile_num.getText().toString());
-                                        data.addProperty(Constant.email, et_email.getText().toString());
-                                        data.addProperty(Constant.password, et_password.getText().toString());
-                                        data.addProperty(Constant.device_type, R.string.device_type);
-                                        data.addProperty(Constant.device_token, R.string.tocken);
+//
+//
+//                                if (!isValidMail(et_email.getText().toString())) {
+//
+//                                    Toast.makeText(getActivity(), "Please enter valid email", Toast.LENGTH_SHORT).show();
+//
+//                                }
 
 
-                                        phoneSignupViewModel.phoneSignup(data, getActivity());
+                                if (!et_password.getText().toString().isEmpty()) {
+
+                                    if (!et_confirm_password.getText().toString().isEmpty()) {
+
+                                        if (et_confirm_password.getText().toString().equals(et_password.getText().toString())) {
+
+
+                                            JsonObject data = new JsonObject();
+                                            data.addProperty(Constant.full_name, full_name.getText().toString());
+                                            data.addProperty(Constant.phone_code, countryCodePicker.getSelectedCountryCode());
+                                            data.addProperty(Constant.phone_number, mobile_num.getText().toString());
+                                            data.addProperty(Constant.email, et_email.getText().toString());
+                                            data.addProperty(Constant.password, et_password.getText().toString());
+                                            data.addProperty(Constant.device_type, R.string.device_type);
+                                            data.addProperty(Constant.device_token, R.string.tocken);
+
+
+                                            phoneSignupViewModel.phoneSignup(data, getActivity());
+
+                                        } else {
+
+                                            Toast.makeText(getActivity(), "Confirm Password should be same as password", Toast.LENGTH_SHORT).show();
+                                        }
+
 
                                     } else {
 
-                                        Toast.makeText(getActivity(), "Confirm Password should be same as password", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getActivity(), "Confirm Password can not be empty", Toast.LENGTH_SHORT).show();
                                     }
 
 
                                 } else {
 
-                                    Toast.makeText(getActivity(), "Confirm Password can not be empty", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getActivity(), "Password Can not be empty", Toast.LENGTH_SHORT).show();
+
                                 }
-
-
-                            } else {
-
-                                Toast.makeText(getActivity(), "Password Can not be empty", Toast.LENGTH_SHORT).show();
-
-                            }
 //                            }
                         } else {
 
@@ -228,6 +238,16 @@ public class SignupFragment extends Fragment implements View.OnClickListener, Ob
 
                 break;
         }
+
+    }
+
+
+    private boolean isValidMail(String email) {
+
+        String EMAIL_STRING = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+
+        return Pattern.compile(EMAIL_STRING).matcher(email).matches();
 
     }
 
