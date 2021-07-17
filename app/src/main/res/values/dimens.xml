@@ -64,4 +64,5 @@
     <dimen name="dp450">450dp</dimen>
     <dimen name="textsize_sp24">24sp</dimen>
     <dimen name="dp3">3dp</dimen>
+    <dimen name="dp22">22dp</dimen>
 </resources>

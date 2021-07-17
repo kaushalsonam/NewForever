@@ -156,15 +156,28 @@
                 android:id="@+id/points_ll"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp20"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp10"
+                    android:gravity="bottom"
                     android:layout_weight="1"
                     android:padding="@dimen/dp10"
-                    android:text="10"
+                    android:text="100"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_sp12" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:padding="@dimen/dp10"
+                    android:text="50"
                     android:textColor="@color/black"
                     android:textSize="@dimen/textsize_sp12" />
 
@@ -174,16 +187,7 @@
                     android:layout_marginTop="@dimen/dp10"
                     android:layout_weight="1"
                     android:padding="@dimen/dp10"
-                    android:text="5"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/textsize_sp12" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp10"
-                    android:layout_weight="1"
-                    android:padding="@dimen/dp10"
+                    android:gravity="bottom"
                     android:text="0"
                     android:textColor="@color/black"
                     android:textSize="@dimen/textsize_sp12" />
@@ -199,42 +203,41 @@
                 android:orientation="vertical"
                 android:layout_toRightOf="@id/points_ll">
 
-                <com.jjoe64.graphview.GraphView
-                    android:id="@+id/idGraphView"
-                    android:visibility="gone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true" />
+<!--                <com.jjoe64.graphview.GraphView-->
+<!--                    android:id="@+id/idGraphView"-->
+<!--                    android:visibility="gone"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentTop="true" />-->
+
 
                 <com.hadiidbouk.charts.ChartProgressBar
                     android:id="@+id/chartProgressBar"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="bottom"
                     android:visibility="visible"
                     app:hdBarCanBeClick="true"
                     app:hdBarCanBeToggle="true"
                     app:hdBarHeight="170dp"
+                    app:hdPinDrawable="@drawable/pin"
                     app:hdBarRadius="10dp"
-                    app:hdBarTitleColor="@color/bar_title_color"
+                    app:hdBarTitleColor="@color/et_hint_color"
                     app:hdBarTitleMarginTop="9dp"
-                    app:hdBarTitleSelectedColor="@color/white"
+                    app:hdBarTitleSelectedColor="@color/et_hint_color"
                     app:hdBarTitleTxtSize="12sp"
-                    app:hdBarWidth="7dp"
-                    app:hdEmptyColor="@color/empty"
+                    app:hdBarWidth="@dimen/dp15"
+                    app:hdEmptyColor="@color/dotcolorlight"
                     app:hdMaxValue="10"
                     app:hdPinBackgroundColor="@color/pin_background"
-                    app:hdPinMarginBottom="45dp"
-                    app:hdPinMarginEnd="22dp"
-                    app:hdPinPaddingBottom="5dp"
-                    app:hdPinTextColor="@color/pin_text"
-                    app:hdPinTxtSize="17sp"
-                    app:hdProgressClickColor="@color/progress_click"
-                    app:hdProgressColor="@color/progress"
+                    app:hdPinMarginBottom="@dimen/dp45"
+                    app:hdPinMarginEnd="@dimen/dp22"
+                    app:hdPinPaddingBottom="@dimen/dp5"
+                    app:hdPinTextColor="@color/dotcolor"
+                    app:hdPinTxtSize="@dimen/textsize_sp18"
+                    app:hdProgressClickColor="@color/et_bg_green"
+                    app:hdProgressColor="@color/dotcolor"
                     app:hdProgressDisableColor="@color/dotcolorlight" />
-
-
-
 
 
             </LinearLayout>

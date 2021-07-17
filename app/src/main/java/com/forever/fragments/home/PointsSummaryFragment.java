@@ -48,7 +48,7 @@ public class PointsSummaryFragment extends Fragment implements View.OnClickListe
     private BottomSheetDialog bottomSheerDialog, pointsBottomSheetDialog;
     private ChartProgressBar chartProgressBar;
     private LinearLayout chartProgressBar_ll;
-    GraphView graphView;
+//    GraphView graphView;
 
 
     @Override
@@ -94,22 +94,22 @@ public class PointsSummaryFragment extends Fragment implements View.OnClickListe
 
         chartProgressBar = (ChartProgressBar) view.findViewById(R.id.chartProgressBar);
         chartProgressBar_ll = view.findViewById(R.id.chartProgressBar_ll);
-        graphView = view.findViewById(R.id.idGraphView);
+//        graphView = view.findViewById(R.id.idGraphView);
 
         // on below line we are adding data to our graph view.
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[]{
-                // on below line we are adding
-                // each point on our x and y axis.
-                new DataPoint(0, 1),
-                new DataPoint(1, 3),
-                new DataPoint(2, 4),
-                new DataPoint(3, 9),
-                new DataPoint(4, 6),
-                new DataPoint(5, 3),
-                new DataPoint(6, 6),
-                new DataPoint(7, 1),
-                new DataPoint(8, 2)
-        });
+//        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[]{
+//                // on below line we are adding
+//                // each point on our x and y axis.
+//                new DataPoint(0, 1),
+//                new DataPoint(1, 3),
+//                new DataPoint(2, 4),
+//                new DataPoint(3, 9),
+//                new DataPoint(4, 6),
+//                new DataPoint(5, 3),
+//                new DataPoint(6, 6),
+//                new DataPoint(7, 1),
+//                new DataPoint(8, 2)
+//        });
 
         // after adding data to our line graph series.
         // on below line we are setting
@@ -117,16 +117,16 @@ public class PointsSummaryFragment extends Fragment implements View.OnClickListe
 
 
         // on below line we are setting
-        // text color to our graph view.
-        graphView.setTitleColor(R.color.purple_200);
-
-        // on below line we are setting
-        // our title text size.
-        graphView.setTitleTextSize(18);
-
-        // on below line we are adding
-        // data series to our graph view.
-        graphView.addSeries(series);
+//        // text color to our graph view.
+//        graphView.setTitleColor(R.color.purple_200);
+//
+//        // on below line we are setting
+//        // our title text size.
+//        graphView.setTitleTextSize(18);
+//
+//        // on below line we are adding
+//        // data series to our graph view.
+//        graphView.addSeries(series);
 
 //        barChartSetup();
 
@@ -353,21 +353,41 @@ public class PointsSummaryFragment extends Fragment implements View.OnClickListe
         BarData data = new BarData("Sep", 3.4f, "3.4€");
         dataList.add(data);
 
-        data = new BarData("Oct", 8f, "8€");
+        data = new BarData("Jan", 8f, "8€");
         dataList.add(data);
 
-        data = new BarData("Nov", 1.8f, "1.8€");
+        data = new BarData("Feb", 1.8f, "1.8€");
         dataList.add(data);
 
-        data = new BarData("Dec", 7.3f, "7.3€");
+        data = new BarData("Mar", 7.3f, "7.3€");
         dataList.add(data);
 
-        data = new BarData("Jan", 6.2f, "6.2€");
+        data = new BarData("Apr", 6.2f, "6.2€");
         dataList.add(data);
 
-        data = new BarData("Feb", 3.3f, "3.3€");
+        data = new BarData("May", 3.3f, "3.3€");
         dataList.add(data);
 
+        data = new BarData("Jun", 3.3f, "3.3€");
+        dataList.add(data);
+
+        data = new BarData("Jul", 3.3f, "3.3€");
+        dataList.add(data);
+
+        data = new BarData("Aug", 3.3f, "3.3€");
+        dataList.add(data);
+
+        data = new BarData("Sep", 3.3f, "3.3€");
+        dataList.add(data);
+
+        data = new BarData("Oct", 3.3f, "3.3€");
+        dataList.add(data);
+
+        data = new BarData("Nov", 3.3f, "3.3€");
+        dataList.add(data);
+
+        data = new BarData("Dec", 3.3f, "3.3€");
+        dataList.add(data);
 
         chartProgressBar.setDataList(dataList);
         chartProgressBar.build();
