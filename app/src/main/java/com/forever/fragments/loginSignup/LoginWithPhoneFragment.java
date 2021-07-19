@@ -33,14 +33,10 @@ import com.facebook.login.LoginResult;
 import com.forever.Model.ExistsPhoneEmailModel;
 import com.forever.Model.LoginModel;
 import com.forever.R;
-import com.forever.ViewModel.EmailExistsViewModel;
 import com.forever.ViewModel.LoginViewModel;
 import com.forever.ViewModel.PhoneExsistViewModel;
-import com.forever.ViewModel.PhoneSignupViewModel;
 import com.forever.activities.HomeActivity;
 import com.forever.activities.LoginActivity;
-import com.forever.activities.MainActivity;
-import com.forever.fragments.home.HomeFragment;
 import com.forever.utilities.Constant;
 import com.forever.utilities.KeyClass;
 import com.forever.utilities.PrefrenceShared;
@@ -271,8 +267,8 @@ public class LoginWithPhoneFragment extends Fragment implements View.OnClickList
 
         }else {
 
-            mobile_num_rl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_grey_bg));
-            countryCodePicker.setBackground(getResources().getDrawable(R.drawable.rounded_corner_grey_bg));
+            mobile_num_rl.setBackground(getResources().getDrawable(R.drawable.gray_rounded_corners_bg));
+            countryCodePicker.setBackground(getResources().getDrawable(R.drawable.gray_rounded_corners_bg));
 
 
         }

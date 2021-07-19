@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment;
 
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +16,6 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.forever.R;
 import com.forever.activities.LoginActivity;
@@ -174,7 +172,7 @@ public class ConfirmPasswordFragment extends Fragment implements View.OnClickLis
 
         } else {
 
-            otp_et_1.setBackground(getResources().getDrawable(R.drawable.rounde_corner_white_bg_without_strock));
+            otp_et_1.setBackground(getResources().getDrawable(R.drawable.rounde_corner_white_bg));
 
         }
         if (otp_et_2.getText().toString().length() == 1) {
@@ -183,7 +181,7 @@ public class ConfirmPasswordFragment extends Fragment implements View.OnClickLis
 
         } else {
 
-            otp_et_2.setBackground(getResources().getDrawable(R.drawable.rounde_corner_white_bg_without_strock));
+            otp_et_2.setBackground(getResources().getDrawable(R.drawable.rounde_corner_white_bg));
 
         }
 
@@ -194,7 +192,7 @@ public class ConfirmPasswordFragment extends Fragment implements View.OnClickLis
 
         } else {
 
-            otp_et_3.setBackground(getResources().getDrawable(R.drawable.rounde_corner_white_bg_without_strock));
+            otp_et_3.setBackground(getResources().getDrawable(R.drawable.rounde_corner_white_bg));
 
         }
 
@@ -205,7 +203,7 @@ public class ConfirmPasswordFragment extends Fragment implements View.OnClickLis
 
         } else {
 
-            otp_et_4.setBackground(getResources().getDrawable(R.drawable.rounde_corner_white_bg_without_strock));
+            otp_et_4.setBackground(getResources().getDrawable(R.drawable.rounde_corner_white_bg));
 
         }
 

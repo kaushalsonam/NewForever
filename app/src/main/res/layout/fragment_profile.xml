@@ -271,8 +271,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/user_detail_cv"
                 android:layout_marginTop="@dimen/dp10"
-                android:padding="@dimen/dp10"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="@dimen/dp10">
 
 
                 <androidx.cardview.widget.CardView
@@ -304,28 +304,39 @@
                             android:layout_below="@id/txt_points"
                             android:background="@drawable/rounded_corner_white_bg_blue_strock" />
 
+                        <LinearLayout
 
-                        <TextView
-                            android:layout_width="@dimen/dp200"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
-                            android:text="@string/profile_reward"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/textsize_sp16" />
+                            android:layout_marginBottom="@dimen/dp10"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/profile_reward"
+                                android:textColor="@color/black"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/dp6"
+                                android:textSize="@dimen/textsize_sp16" />
 
 
-                        <TextView
-                            android:id="@+id/complete_profile_btn"
-                            android:layout_width="@dimen/dp150"
-                            android:layout_height="@dimen/dp40"
-                            android:layout_alignParentRight="true"
-                            android:layout_alignParentBottom="true"
-                            android:background="@drawable/rounded_corner_btn"
-                            android:gravity="center"
-                            android:padding="@dimen/dp10"
-                            android:text="@string/complete_profile"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/textsize_sp12" />
+                            <TextView
+                                android:id="@+id/complete_profile_btn"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:layout_height="@dimen/dp40"
+                                android:gravity="center_vertical|center"
+                                android:background="@drawable/rounded_corner_btn"
+                                android:padding="@dimen/dp6"
+                                android:text="@string/complete_profile"
+                                android:layout_marginTop="@dimen/dp10"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/textsize_sp12" />
+
+                        </LinearLayout>
 
                     </RelativeLayout>
 
@@ -402,7 +413,7 @@
                             android:layout_height="@dimen/dp60"
                             android:layout_marginLeft="-5dp"
                             android:layout_marginTop="-5dp"
-                            android:background="@drawable/sky_blue_circle">
+                            android:background="@drawable/blue_circle">
 
                             <ImageView
                                 android:layout_width="@dimen/dp40"
@@ -435,7 +446,7 @@
                         <LinearLayout
                             android:layout_width="@dimen/dp310"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/dp50"
+                            android:layout_marginLeft="@dimen/dp45"
                             android:layout_marginTop="@dimen/dp10"
                             android:orientation="horizontal">
 

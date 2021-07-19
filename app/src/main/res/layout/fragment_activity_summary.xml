@@ -88,7 +88,7 @@
                         android:layout_height="@dimen/dp50"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="@dimen/dp20"
-                        android:background="@drawable/skyblue_circle">
+                        android:background="@drawable/complete_sky_blue_circle">
 
                         <ImageView
                             android:layout_width="@dimen/dp20"
@@ -182,7 +182,7 @@
                         android:layout_height="@dimen/dp50"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="@dimen/dp20"
-                        android:background="@drawable/skyblue_circle">
+                        android:background="@drawable/complete_sky_blue_circle">
 
                         <ImageView
                             android:layout_width="@dimen/dp20"
@@ -276,7 +276,7 @@
                         android:layout_height="@dimen/dp50"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="@dimen/dp20"
-                        android:background="@drawable/skyblue_circle">
+                        android:background="@drawable/complete_sky_blue_circle">
 
                         <ImageView
                             android:layout_width="@dimen/dp20"

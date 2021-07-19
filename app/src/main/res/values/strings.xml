@@ -37,7 +37,7 @@
     <string name="nav_home">Home</string>
     <string name="nav_rewards">Rewards</string>
     <string name="nav_notification">Notification</string>
-    <string name="nav_user" />
+    <string name="nav_user">Profile</string>
     <string name="reset_password">Reset Password</string>
     <string name="next">Next</string>
     <string name="Reset">Reset\nPassword</string>

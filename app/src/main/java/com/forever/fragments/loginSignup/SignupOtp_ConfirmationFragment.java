@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.forever.R;
 import com.forever.activities.LoginActivity;
@@ -144,8 +145,29 @@ public class SignupOtp_ConfirmationFragment extends Fragment implements View.OnC
 
             case R.id.next_btn:
 
-                ((LoginActivity)getActivity()).replaceFragment(new GenderFragment(),true,
-                        KeyClass.FRAGMENT_GENDER,KeyClass.FRAGMENT_GENDER);
+                if(!otp_et_1.getText().toString().isEmpty()){
+
+                    if(!otp_et_2.getText().toString().isEmpty()){
+
+                        if(!otp_et_3.getText().toString().isEmpty()){
+
+                            if(!otp_et_4.getText().toString().isEmpty()){
+
+                                ((LoginActivity)getActivity()).replaceFragment(new GenderFragment(),true,
+                                        KeyClass.FRAGMENT_GENDER,KeyClass.FRAGMENT_GENDER);
+
+
+                            }
+
+                        }
+                    }
+                }else {
+
+                    Toast.makeText(getActivity(), "Please Enter valid OTP", Toast.LENGTH_SHORT).show();
+
+                }
+
+
 
                 break;
 
@@ -169,7 +191,7 @@ public class SignupOtp_ConfirmationFragment extends Fragment implements View.OnC
 
         } else {
 
-            otp_et_1.setBackground(getResources().getDrawable(R.drawable.rounde_corner_white_bg_without_strock));
+            otp_et_1.setBackground(getResources().getDrawable(R.drawable.rounde_corner_white_bg));
 
         }
         if (otp_et_2.getText().toString().length() == 1) {
@@ -178,7 +200,7 @@ public class SignupOtp_ConfirmationFragment extends Fragment implements View.OnC
 
         } else {
 
-            otp_et_2.setBackground(getResources().getDrawable(R.drawable.rounde_corner_white_bg_without_strock));
+            otp_et_2.setBackground(getResources().getDrawable(R.drawable.rounde_corner_white_bg));
 
         }
 
@@ -189,7 +211,7 @@ public class SignupOtp_ConfirmationFragment extends Fragment implements View.OnC
 
         } else {
 
-            otp_et_3.setBackground(getResources().getDrawable(R.drawable.rounde_corner_white_bg_without_strock));
+            otp_et_3.setBackground(getResources().getDrawable(R.drawable.rounde_corner_white_bg));
 
         }
 
@@ -200,7 +222,7 @@ public class SignupOtp_ConfirmationFragment extends Fragment implements View.OnC
 
         } else {
 
-            otp_et_4.setBackground(getResources().getDrawable(R.drawable.rounde_corner_white_bg_without_strock));
+            otp_et_4.setBackground(getResources().getDrawable(R.drawable.rounde_corner_white_bg));
 
         }
 

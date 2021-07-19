@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/home_select_ic"
+        android:enabled="true"
+        android:icon="@drawable/ic_home_select"
         android:title="@string/nav_home"
+        app:showAsAction="ifRoom"
         />
 
     <item
         android:id="@+id/nav_rewards"
-        android:icon="@drawable/ic_star_tab"
+        android:enabled="true"
+        android:icon="@drawable/ic_rewards_selected"
         android:title="@string/nav_rewards"
+        app:showAsAction="ifRoom"
         />
 
     <item
         android:id="@+id/nav_notifications"
-        android:icon="@drawable/ic_notification_deselect"
+        android:enabled="true"
+        android:icon="@drawable/ic_notifications_selected"
         android:title="@string/nav_notification"
+        app:showAsAction="ifRoom"
         />
     <item
         android:id="@+id/nav_user"
+        android:enabled="true"
         android:icon="@drawable/ic_user"
         android:title="@string/nav_user"
+        app:showAsAction="ifRoom"
         />
 
 </menu>

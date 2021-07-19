@@ -1,6 +1,10 @@
 package com.forever.fragments.home;
 
 import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -25,22 +29,29 @@ import com.forever.customLibararies.GraphData;
 import com.forever.customLibararies.PointMap;
 import com.forever.utilities.Constant;
 import com.forever.utilities.KeyClass;
+import com.forever.utilities.StepDetector;
+import com.forever.utilities.StepListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.jetbrains.annotations.NotNull;
 
+import static android.content.Context.SENSOR_SERVICE;
 
-public class HomeFragment extends Fragment implements View.OnClickListener {
+
+public class HomeFragment extends Fragment implements View.OnClickListener, SensorEventListener, StepListener {
 
     private Context context;
     private ImageView level_badge, share_btn;
-    private TextView txt_day,txt_see_all,txt_this_week_see_all_tv;
+    private TextView txt_day,txt_see_all,txt_this_week_see_all_tv,num_of_steps;
     private RelativeLayout total_steps_rl,total_points_rl;
     private BottomNavigationView bottom_navigation;
     private RelativeLayout rl_upload;
     private CurveGraphView curve_graph_view;
-
-
+    private StepDetector simpleStepDetector;
+    private SensorManager sensorManager;
+    private Sensor accel;
+    private static final String TEXT_NUM_STEPS = "Number of Steps: ";
+    private int numSteps;
 
 
 
@@ -84,6 +95,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         txt_day = view.findViewById(R.id.txt_day);
         txt_see_all = view.findViewById(R.id.txt_see_all);
         txt_this_week_see_all_tv = view.findViewById(R.id.txt_this_week_see_all_tv);
+        num_of_steps = view.findViewById(R.id.num_of_steps);
 
 
         //RealtiveLayout
@@ -93,6 +105,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         //Graph view
         curve_graph_view=view.findViewById(R.id.curve_graph_view);
 
+
+        // Get an instance of the SensorManager
+        sensorManager = (SensorManager) getActivity().getSystemService(SENSOR_SERVICE);
+        accel = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        simpleStepDetector = new StepDetector();
+        simpleStepDetector.registerListener(this);
+
     }
 
     private void viewSetup() {
@@ -101,7 +120,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         rl_upload.setVisibility(View.VISIBLE);
 
 
-
+        //pedometer
+        numSteps = 0;
+        sensorManager.registerListener((SensorEventListener) this,
+                sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                SensorManager.SENSOR_DELAY_NORMAL);
 
 
         level_badge.setOnClickListener(this);
@@ -218,5 +241,26 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
 
+    @Override
+    public void onSensorChanged(SensorEvent event) {
 
+        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+            simpleStepDetector.updateAccel(
+                    event.timestamp, event.values[0], event.values[1], event.values[2]);
+        }
+
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
+
+    @Override
+    public void step(long timeNs) {
+
+        numSteps++;
+        num_of_steps.setText(TEXT_NUM_STEPS + numSteps);
+
+    }
 }

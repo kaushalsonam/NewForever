@@ -255,9 +255,9 @@ public class SignupFragment extends Fragment implements View.OnClickListener, Ob
     @Override
     public void onChanged(PhoneSignupResponseModel phoneSignupResponseModel) {
 
-//        loginFlag=true;
-//
-//        PrefrenceShared.getInstance().getPreferenceData().setValue(Constant.loginflag, String.valueOf(loginFlag));
+        loginFlag=true;
+
+        PrefrenceShared.getInstance().getPreferenceData().setValue(Constant.loginflag, String.valueOf(loginFlag));
 
         ((LoginActivity) getActivity()).replaceFragment(new SignupOtp_ConfirmationFragment(), true,
                 KeyClass.FRAGMENT_SIGN_UP_OTP_CONFIRMATION, KeyClass.FRAGMENT_SIGN_UP_OTP_CONFIRMATION);

@@ -91,7 +91,7 @@
                     android:layout_height="@dimen/dp50"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/dp20"
-                    android:background="@drawable/skyblue_circle">
+                    android:background="@drawable/complete_sky_blue_circle">
 
                     <ImageView
                         android:layout_width="@dimen/dp20"
@@ -185,7 +185,7 @@
                     android:layout_height="@dimen/dp50"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/dp20"
-                    android:background="@drawable/skyblue_circle">
+                    android:background="@drawable/complete_sky_blue_circle">
 
                     <ImageView
                         android:layout_width="@dimen/dp20"
@@ -280,7 +280,7 @@
                     android:layout_height="@dimen/dp50"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/dp20"
-                    android:background="@drawable/skyblue_circle">
+                    android:background="@drawable/complete_sky_blue_circle">
 
                     <ImageView
                         android:layout_width="@dimen/dp20"
@@ -373,13 +373,13 @@
                     android:layout_height="@dimen/dp50"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/dp20"
-                    android:background="@drawable/skyblue_circle">
+                    android:background="@drawable/complete_sky_blue_circle">
 
                     <ImageView
                         android:layout_width="@dimen/dp20"
                         android:layout_height="@dimen/dp20"
                         android:layout_centerInParent="true"
-                        android:src="@drawable/user_ic"
+                        android:src="@drawable/ic_user_icon"
                         app:tint="@color/white" />
 
 
@@ -416,7 +416,7 @@
                         <ImageView
                             android:layout_width="@dimen/dp15"
                             android:layout_height="@dimen/dp15"
-                            android:src="@drawable/user_ic"
+                            android:src="@drawable/ic_user_icon"
                             app:tint="@color/dotcolor" />
 
                         <TextView

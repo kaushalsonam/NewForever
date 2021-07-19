@@ -25,10 +25,10 @@ import org.jetbrains.annotations.NotNull;
 public class GenderFragment extends Fragment implements View.OnClickListener {
 
 
-    private ImageView male_icon,female_icon,non_binary_icon,back_btn;
-    private TextView txt_male,txt_female,txt_non_binary,txt_skip_btn,txt_error;
+    private ImageView male_icon, female_icon, non_binary_icon, back_btn;
+    private TextView txt_male, txt_female, txt_non_binary, txt_skip_btn, txt_error;
     private CardView save_btn;
-    private Boolean gender_flag=false;
+    private Boolean gender_flag = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,18 +57,18 @@ public class GenderFragment extends Fragment implements View.OnClickListener {
 
     private void bindView(View view) {
 
-        male_icon=view.findViewById(R.id.male_icon);
-        female_icon=view.findViewById(R.id.female_icon);
-        non_binary_icon=view.findViewById(R.id.non_binary_icon);
-        back_btn=view.findViewById(R.id.back_btn);
+        male_icon = view.findViewById(R.id.male_icon);
+        female_icon = view.findViewById(R.id.female_icon);
+        non_binary_icon = view.findViewById(R.id.non_binary_icon);
+        back_btn = view.findViewById(R.id.back_btn);
 
-        txt_male=view.findViewById(R.id.txt_male);
-        txt_female=view.findViewById(R.id.txt_female);
-        txt_non_binary=view.findViewById(R.id.txt_non_binary);
-        txt_skip_btn=view.findViewById(R.id.txt_skip_btn);
-        txt_error=view.findViewById(R.id.txt_error);
+        txt_male = view.findViewById(R.id.txt_male);
+        txt_female = view.findViewById(R.id.txt_female);
+        txt_non_binary = view.findViewById(R.id.txt_non_binary);
+        txt_skip_btn = view.findViewById(R.id.txt_skip_btn);
+        txt_error = view.findViewById(R.id.txt_error);
 
-        save_btn=view.findViewById(R.id.save_btn);
+        save_btn = view.findViewById(R.id.save_btn);
 
     }
 
@@ -86,11 +86,11 @@ public class GenderFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
-        switch (v.getId()){
+        switch (v.getId()) {
 
             case R.id.male_icon:
 
-                gender_flag=true;
+                gender_flag = true;
 
                 male_icon.setColorFilter(getResources().getColor(R.color.white));
                 male_icon.setBackgroundColor(getResources().getColor(R.color.dotcolor));
@@ -105,13 +105,18 @@ public class GenderFragment extends Fragment implements View.OnClickListener {
                 txt_female.setTextColor(getResources().getColor(R.color.non_binary));
                 txt_non_binary.setTextColor(getResources().getColor(R.color.non_binary));
 
+                if (txt_error.getVisibility() == View.VISIBLE) {
+
+                    txt_error.setVisibility(View.GONE);
+
+                }
 
 
                 break;
 
             case R.id.female_icon:
 
-                gender_flag=true;
+                gender_flag = true;
 
                 female_icon.setColorFilter(getResources().getColor(R.color.white));
                 female_icon.setBackgroundColor(getResources().getColor(R.color.female_gender));
@@ -126,10 +131,17 @@ public class GenderFragment extends Fragment implements View.OnClickListener {
                 txt_non_binary.setTextColor(getResources().getColor(R.color.non_binary));
                 txt_female.setTextColor(getResources().getColor(R.color.black));
 
+
+                if (txt_error.getVisibility() == View.VISIBLE) {
+
+                    txt_error.setVisibility(View.GONE);
+
+                }
+
                 break;
 
             case R.id.non_binary_icon:
-                gender_flag=true;
+                gender_flag = true;
 
                 non_binary_icon.setColorFilter(getResources().getColor(R.color.white));
                 non_binary_icon.setBackgroundColor(getResources().getColor(R.color.non_binary));
@@ -145,35 +157,42 @@ public class GenderFragment extends Fragment implements View.OnClickListener {
                 txt_female.setTextColor(getResources().getColor(R.color.non_binary));
                 txt_non_binary.setTextColor(getResources().getColor(R.color.black));
 
+
+                if (txt_error.getVisibility() == View.VISIBLE) {
+
+                    txt_error.setVisibility(View.GONE);
+
+                }
+
                 break;
 
             case R.id.back_btn:
 
-                ((LoginActivity)getActivity()).replaceFragment(new SignupFragment(),true,
-                        KeyClass.FRAGMENT_SIGNUP,KeyClass.FRAGMENT_SIGNUP);
+                ((LoginActivity) getActivity()).replaceFragment(new SignupFragment(), true,
+                        KeyClass.FRAGMENT_SIGNUP, KeyClass.FRAGMENT_SIGNUP);
 
                 break;
 
-                
+
             case R.id.txt_skip_btn:
 
-                ((LoginActivity)getActivity()).replaceFragment(new LocationFragment(),true,
-                KeyClass.FRAGMENT_LOCATION,KeyClass.FRAGMENT_LOCATION);
+                ((LoginActivity) getActivity()).replaceFragment(new LocationFragment(), true,
+                        KeyClass.FRAGMENT_LOCATION, KeyClass.FRAGMENT_LOCATION);
 
                 break;
 
             case R.id.save_btn:
 
-                if(!gender_flag){
+                if (!gender_flag) {
 
                     txt_error.setVisibility(View.VISIBLE);
 
-                }else {
+                } else {
 
                     txt_error.setVisibility(View.GONE);
 
-                    ((LoginActivity)getActivity()).replaceFragment(new LocationFragment(),true,
-                            KeyClass.FRAGMENT_LOCATION,KeyClass.FRAGMENT_LOCATION);
+                    ((LoginActivity) getActivity()).replaceFragment(new LocationFragment(), true,
+                            KeyClass.FRAGMENT_LOCATION, KeyClass.FRAGMENT_LOCATION);
 
                 }
 

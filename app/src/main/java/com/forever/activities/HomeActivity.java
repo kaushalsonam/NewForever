@@ -74,10 +74,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 KeyClass.FRAGMENT_HOME);
 
 
-//        Menu menu = bottom_navigation.getMenu();
+        Menu menu = bottom_navigation.getMenu();
 //        menu.findItem(R.id.nav_home).setIcon(R.drawable.ic_home_select);
 //        menu.findItem(R.id.nav_notifications).setIcon(R.drawable.ic_notification_deselect);
-//        menu.findItem(R.id.nav_rewards).setIcon(R.drawable.ic_star_tab);
+        menu.findItem(R.id.nav_user).setIcon(R.drawable.ic_user_icon);
 
     }
 
@@ -138,6 +138,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     rl_upload.setVisibility(View.GONE);
                     replaceFragment(new ProfileFragment(),true,KeyClass.FRAGMENT_PROFILE,
                             KeyClass.FRAGMENT_PROFILE);
+
+//                    item.setIcon(R.drawable.ic_profile_img);
 
 //                    Intent intent_profile= new Intent(context,ProfileActivity.class);
 //                    startActivity(intent_profile);

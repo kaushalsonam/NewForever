@@ -85,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp15"
-            android:background="@drawable/rounded_corner_grey_bg"
+            android:background="@drawable/gray_rounded_corners_bg"
             android:padding="@dimen/dp5">
 
             <TextView
@@ -114,7 +114,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp15"
-            android:background="@drawable/rounded_corner_grey_bg"
+            android:background="@drawable/gray_rounded_corners_bg"
             android:padding="@dimen/dp5">
 
             <TextView
@@ -144,7 +144,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp15"
-            android:background="@drawable/rounded_corner_grey_bg"
+            android:background="@drawable/gray_rounded_corners_bg"
             android:padding="@dimen/dp5">
 
             <TextView
@@ -174,7 +174,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp15"
-            android:background="@drawable/rounded_corner_grey_bg"
+            android:background="@drawable/gray_rounded_corners_bg"
             android:padding="@dimen/dp5">
 
             <TextView
@@ -204,7 +204,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp15"
-            android:background="@drawable/rounded_corner_grey_bg"
+            android:background="@drawable/gray_rounded_corners_bg"
             android:padding="@dimen/dp5">
 
             <TextView
@@ -274,7 +274,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="@dimen/dp5"
             android:layout_marginBottom="@dimen/dp40"
-            android:background="@drawable/rounded_corner_btn"
+            android:background="@drawable/blue_rounded_corner_btn"
             android:gravity="center"
             android:text="@string/done"
             android:textColor="@color/white"

@@ -317,7 +317,7 @@
         android:layout_height="@dimen/dp40"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/dp5"
-        android:background="@drawable/rounded_corner_btn"
+        android:background="@drawable/blue_rounded_corner_btn"
         android:gravity="center">
 
         <ImageView
