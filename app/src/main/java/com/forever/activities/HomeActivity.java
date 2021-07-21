@@ -57,7 +57,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         rl_upload.setOnClickListener(this);
 
 
-
     }
 
     private void viewSetup() {
@@ -74,10 +73,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 KeyClass.FRAGMENT_HOME);
 
 
-        Menu menu = bottom_navigation.getMenu();
-//        menu.findItem(R.id.nav_home).setIcon(R.drawable.ic_home_select);
+//        Menu menu = bottom_navigation.getMenu();
+//        menu.findItem(R.id.nav_home).setIcon(R.drawable.ic_home_deselect);
+//        menu.findItem(R.id.nav_rewards).setIcon(R.drawable.ic_rewards_dese);
 //        menu.findItem(R.id.nav_notifications).setIcon(R.drawable.ic_notification_deselect);
-        menu.findItem(R.id.nav_user).setIcon(R.drawable.ic_user_icon);
+//        menu.findItem(R.id.nav_user).setIcon(R.drawable.ic_user_icon);
 
     }
 
@@ -104,39 +104,48 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         public boolean onNavigationItemSelected(@NonNull @NotNull MenuItem item) {
 
 
+            Menu menu = bottom_navigation.getMenu();
+            menu.findItem(R.id.nav_home).setIcon(R.drawable.ic_home_deselect);
+            menu.findItem(R.id.nav_rewards).setIcon(R.drawable.ic_rewards_dese);
+            menu.findItem(R.id.nav_notifications).setIcon(R.drawable.ic_notification_deselect);
+            menu.findItem(R.id.nav_user).setIcon(R.drawable.ic_user_icon);
+
+
             switch (item.getItemId()) {
 
                 case R.id.nav_home:
                     rl_upload.setVisibility(View.VISIBLE);
-                    replaceFragment(new HomeFragment(),true,KeyClass.FRAGMENT_HOME,
+                    replaceFragment(new HomeFragment(), true, KeyClass.FRAGMENT_HOME,
                             KeyClass.FRAGMENT_HOME);
 
-//                    item.setIcon(R.drawable.ic_home_select);
+                    item.setIcon(R.drawable.ic_home_select);
 
-                    break;
+
+                break;
 
                 case R.id.nav_rewards:
                     rl_upload.setVisibility(View.GONE);
-                    replaceFragment(new RewardFragment(),true,KeyClass.FRAGMENT_REWARD,
+                    replaceFragment(new RewardFragment(), true, KeyClass.FRAGMENT_REWARD,
                             KeyClass.FRAGMENT_REWARD);
 
-//                    item.setIcon(R.drawable.ic_rewards_selected);
+                    item.setIcon(R.drawable.ic_rewards_selected);
+
 
                     break;
 
                 case R.id.nav_notifications:
                     rl_upload.setVisibility(View.GONE);
-                    replaceFragment(new NotificationsFragment(),true,KeyClass.FRAGMENT_NOTIFICATIONS,
+                    replaceFragment(new NotificationsFragment(), true, KeyClass.FRAGMENT_NOTIFICATIONS,
                             KeyClass.FRAGMENT_NOTIFICATIONS);
 
-//                    item.setIcon(R.drawable.ic_notification);
+                    item.setIcon(R.drawable.ic_notifications_selected);
 
 
                     break;
 
                 case R.id.nav_user:
                     rl_upload.setVisibility(View.GONE);
-                    replaceFragment(new ProfileFragment(),true,KeyClass.FRAGMENT_PROFILE,
+                    replaceFragment(new ProfileFragment(), true, KeyClass.FRAGMENT_PROFILE,
                             KeyClass.FRAGMENT_PROFILE);
 
 //                    item.setIcon(R.drawable.ic_profile_img);
@@ -151,9 +160,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             return false;
 
 
-
-
-
         }
     };
 
@@ -161,11 +167,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        switch (v.getId()){
+        switch (v.getId()) {
 
             case R.id.rl_upload:
 
-                replaceFragment(new UploadReceiptsFragment(),true,KeyClass.FRAGMENT_UPLOAD_RECEIPTS,
+                replaceFragment(new UploadReceiptsFragment(), true, KeyClass.FRAGMENT_UPLOAD_RECEIPTS,
                         KeyClass.FRAGMENT_UPLOAD_RECEIPTS);
 
                 break;

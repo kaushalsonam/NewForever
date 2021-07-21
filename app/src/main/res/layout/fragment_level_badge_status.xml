@@ -64,11 +64,24 @@
         android:background="@color/white">
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/level_badge_recycler"
-            android:layout_width="match_parent"
-           android:layout_marginTop="@dimen/dp10"
-            android:layout_height="wrap_content" />
+                <com.forever.customLibararies.CustomRecycler.CircleRecyclerView
+                    android:id="@+id/level_badge_recycler"
+                    android:layout_width="match_parent"
+                   android:layout_marginTop="@dimen/dp10"
+                    android:layout_height="@dimen/dp200" />
+
+
+<!--        <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager-->
+<!--            android:id="@+id/level_badge_recycler"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/dp200"-->
+<!--            app:icvp_center_page_scale_offset="30dp"-->
+<!--            app:icvp_interpolator="..."-->
+<!--            app:icvp_max_page_scale="0.8"-->
+<!--            app:icvp_medium_scaled="true"-->
+<!--            app:icvp_min_page_scale="0.5"-->
+<!--            app:icvp_min_page_scale_offset="5dp"-->
+<!--            app:icvp_scroll_duration="500" />-->
 
 
         <androidx.cardview.widget.CardView

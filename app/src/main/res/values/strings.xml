@@ -217,6 +217,8 @@
     <string name="completed">Completed</string>
     <string name="consumed">You consumed Healthy food</string>
     <string name="view_point_summary">View Point Summery</string>
+    <string name="tag_is_center">tagIsCenter</string>
+
 
     <string-array name="countryCodes">
         <item>93,AF</item>

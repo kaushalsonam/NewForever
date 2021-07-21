@@ -54,8 +54,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/save_rl"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/save_cv"
         android:layout_below="@id/back_rl">
 
 
@@ -80,7 +80,13 @@
             android:layout_marginRight="-130dp"
             android:src="@drawable/ic_age_bg" />
 
-
+        <com.forever.customLibararies.CustomRecycler.CircleRecyclerView
+            android:id="@+id/age_recycler_view"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp300"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp50" />
 
 
     </RelativeLayout>

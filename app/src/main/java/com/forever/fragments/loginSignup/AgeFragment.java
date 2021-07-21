@@ -23,6 +23,8 @@ import android.widget.TextView;
 import com.forever.R;
 import com.forever.activities.HomeActivity;
 import com.forever.adapter.AgeSpinnerRecycler;
+import com.forever.customLibararies.CustomRecycler.CircleRecyclerView;
+import com.forever.customLibararies.CustomRecycler.RotateXScaleYViewMode;
 import com.forever.fragments.home.HomeFragment;
 import com.forever.utilities.KeyClass;
 
@@ -34,7 +36,9 @@ public class AgeFragment extends Fragment implements View.OnClickListener {
     private TextView txt_skip_btn;
     private ImageView back_btn;
     private CardView save_btn,save_cv;
-
+    private CircleRecyclerView age_recycler_view;
+    private AgeSpinnerRecycler adapter;
+    private RotateXScaleYViewMode rotateXScaleYViewMode;
 
 
     @Override
@@ -67,6 +71,9 @@ public class AgeFragment extends Fragment implements View.OnClickListener {
         save_btn = view.findViewById(R.id.save_btn);
         save_cv = view.findViewById(R.id.save_cv);
 
+        age_recycler_view = view.findViewById(R.id.age_recycler_view);
+
+
     }
 
     private void viewSetup() {
@@ -75,6 +82,14 @@ public class AgeFragment extends Fragment implements View.OnClickListener {
         back_btn.setOnClickListener(this);
         save_btn.setOnClickListener(this);
         save_cv.setOnClickListener(this);
+
+        adapter= new AgeSpinnerRecycler(getActivity());
+
+
+        age_recycler_view.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false));
+//        age_recycler_view.setViewMode(rotateXScaleYViewMode);
+        age_recycler_view.setAdapter(adapter);
+
 
     }
 

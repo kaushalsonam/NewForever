@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,14 +23,20 @@ import android.view.animation.AccelerateInterpolator;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.forever.R;
 import com.forever.activities.HomeActivity;
 import com.forever.adapter.LevelBadgeRecyclerAdapter;
+import com.forever.customLibararies.CustomRecycler.CircleRecyclerView;
+import com.forever.customLibararies.CustomRecycler.ScaleXViewMode;
 import com.forever.fragments.Profile.ProfileFragment;
 import com.forever.fragments.reward.RewardFragment;
 import com.forever.utilities.CenterLayoutManagerHorizontal;
+import com.forever.utilities.EndlessRecyclerOnScrollListener;
 import com.forever.utilities.KeyClass;
+import com.forever.utilities.ScaleCenterItemLayoutManager;
+import com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.jetbrains.annotations.NotNull;
@@ -44,11 +51,16 @@ public class LevelBadgeStatusFragment extends Fragment implements View.OnClickLi
     private ImageView back_btn;
     private SwitchCompat toggle_btn;
     private CardView next_btn;
-    private RecyclerView level_badge_recycler;
+    private CircleRecyclerView level_badge_recycler;
     private LevelBadgeRecyclerAdapter badgeRecyclerAdapter;
     private List<Integer> badgeImage;
     private List<String> badgeName;
-    private CenterLayoutManagerHorizontal snapHelper;
+    private CenterLayoutManagerHorizontal centerLayoutManagerHorizontal;
+    private int previousTotal = 0;
+    private boolean loading = true;
+    private int visibleThreshold = 5;
+    private ScaleXViewMode scaleXViewMode;
+    int firstVisibleItem, visibleItemCount, totalItemCount;
 
 
     @Override
@@ -70,32 +82,29 @@ public class LevelBadgeStatusFragment extends Fragment implements View.OnClickLi
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-       bindView(view);
+        bindView(view);
         viewSetup();
     }
 
-    private void bindView(View view){
+    private void bindView(View view) {
 
-        bottom_navigation=getActivity().findViewById(R.id.bottom_navigation);
-        rl_upload=getActivity().findViewById(R.id.rl_upload);
-
-
-        back_btn=view.findViewById(R.id.back_btn);
-        toggle_btn=view.findViewById(R.id.toggle_btn);
-        next_btn=view.findViewById(R.id.next_btn);
+        bottom_navigation = getActivity().findViewById(R.id.bottom_navigation);
+        rl_upload = getActivity().findViewById(R.id.rl_upload);
 
 
-        level_badge_recycler=view.findViewById(R.id.level_badge_recycler);
+        back_btn = view.findViewById(R.id.back_btn);
+        toggle_btn = view.findViewById(R.id.toggle_btn);
+        next_btn = view.findViewById(R.id.next_btn);
 
+
+        level_badge_recycler = view.findViewById(R.id.level_badge_recycler);
 
 
     }
 
 
     private void viewSetup() {
-
-
-//        level_badge_recycler.setHasFixedSize(true);
+        //        level_badge_recycler.setHasFixedSize(true);
 //
 //        level_badge_recycler.setPadding(50,50,50,50);
 
@@ -130,12 +139,11 @@ public class LevelBadgeStatusFragment extends Fragment implements View.OnClickLi
     }
 
 
-
     @Override
     public void onClick(View v) {
 
 
-        switch (v.getId()){
+        switch (v.getId()) {
 
 
             case R.id.back_btn:
@@ -146,8 +154,8 @@ public class LevelBadgeStatusFragment extends Fragment implements View.OnClickLi
 
             case R.id.next_btn:
 
-                ((HomeActivity)getActivity()).replaceFragment(new RewardFragment(),true,
-                        KeyClass.FRAGMENT_REWARD,KeyClass.FRAGMENT_REWARD);
+                ((HomeActivity) getActivity()).replaceFragment(new RewardFragment(), true,
+                        KeyClass.FRAGMENT_REWARD, KeyClass.FRAGMENT_REWARD);
 
                 break;
 
@@ -156,9 +164,9 @@ public class LevelBadgeStatusFragment extends Fragment implements View.OnClickLi
     }
 
 
-    private void adapterSetup(){
+    private void adapterSetup() {
 
-        badgeImage= new ArrayList<>();
+        badgeImage = new ArrayList<>();
         badgeImage.add(R.drawable.ic_badge_level);
         badgeImage.add(R.drawable.ic_level1);
         badgeImage.add(R.drawable.ic_level2);
@@ -166,7 +174,7 @@ public class LevelBadgeStatusFragment extends Fragment implements View.OnClickLi
         badgeImage.add(R.drawable.ic_level1);
         badgeImage.add(R.drawable.ic_level2);
 
-        badgeName= new ArrayList<>();
+        badgeName = new ArrayList<>();
         badgeName.add("Gold");
         badgeName.add("Bronze");
         badgeName.add("Silver");
@@ -175,12 +183,20 @@ public class LevelBadgeStatusFragment extends Fragment implements View.OnClickLi
         badgeName.add("Silver");
 
 
+        scaleXViewMode= new ScaleXViewMode();
 
 
-        badgeRecyclerAdapter= new LevelBadgeRecyclerAdapter(getActivity(),badgeImage,badgeName);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-        level_badge_recycler.setLayoutManager(layoutManager);
+        centerLayoutManagerHorizontal = new CenterLayoutManagerHorizontal(getActivity(), LinearLayoutManager.HORIZONTAL, true);
+        //ScaleCenterItemLayoutManager layoutManager= new ScaleCenterItemLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
+        badgeRecyclerAdapter = new LevelBadgeRecyclerAdapter(getActivity(), badgeImage, badgeName);
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        level_badge_recycler.setLayoutManager(centerLayoutManagerHorizontal);
+        level_badge_recycler.setViewMode(scaleXViewMode);
+        level_badge_recycler.setNeedCenterForce(true); // when SCROLL_STATE_IDLE == state, nearly center itemview scroll to center
+        level_badge_recycler.setNeedLoop(true); // default is true
         level_badge_recycler.setAdapter(badgeRecyclerAdapter);
+
+
 
 
     }

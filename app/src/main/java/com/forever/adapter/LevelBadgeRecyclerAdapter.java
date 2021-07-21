@@ -44,6 +44,8 @@ public class LevelBadgeRecyclerAdapter extends RecyclerView.Adapter<LevelBadgeRe
     @Override
     public void onBindViewHolder(@NonNull @NotNull LevelBadgeRecyclerViewHolder holder, int position) {
 
+
+
         Glide.with(context).load(badgeImages.get(position)).into(holder.ic_level_badge);
         holder.txt_level_badge.setText(badgeName.get(position));
 

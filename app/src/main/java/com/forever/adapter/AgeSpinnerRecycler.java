@@ -35,27 +35,27 @@ public class AgeSpinnerRecycler extends RecyclerView.Adapter<AgeSpinnerRecycler.
     @Override
     public void onBindViewHolder(@NonNull @NotNull AgeSpinneViewHolder holder, int position) {
 
-        holder.txt_age.setText(String.valueOf(age));
-        holder.txt_age_before.setText(String.valueOf(age-1));
-        holder.txt_age_after.setText(String.valueOf(age+1));
+        holder.txt_age.setText(String.valueOf(age++));
+
+
+
 
     }
 
     @Override
     public int getItemCount() {
-        return 100;
+        return age;
     }
 
     public class AgeSpinneViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txt_age,txt_age_before,txt_age_after;
+        TextView txt_age;
 
         public AgeSpinneViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
 
             txt_age=itemView.findViewById(R.id.txt_age);
-            txt_age_before=itemView.findViewById(R.id.txt_age_before);
-            txt_age_after=itemView.findViewById(R.id.txt_age_after);
+
 
         }
     }

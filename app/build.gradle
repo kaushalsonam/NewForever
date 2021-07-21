@@ -126,8 +126,7 @@ dependencies {
     //graph show
     implementation 'com.jjoe64:graphview:4.2.2'
 
-
-
-
+    //endlessRecyclerview
+    implementation 'com.github.devlight:infinitecycleviewpager:1.0.2'
 
 }
