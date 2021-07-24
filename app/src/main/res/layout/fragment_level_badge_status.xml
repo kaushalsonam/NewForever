@@ -64,24 +64,23 @@
         android:background="@color/white">
 
 
-                <com.forever.customLibararies.CustomRecycler.CircleRecyclerView
-                    android:id="@+id/level_badge_recycler"
-                    android:layout_width="match_parent"
-                   android:layout_marginTop="@dimen/dp10"
-                    android:layout_height="@dimen/dp200" />
+        <com.forever.customLibararies.CustomRecycler.CircleRecyclerView
+            android:id="@+id/level_badge_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp180"
+            tools:listitem="@layout/level_badge_recycler_item"
+            android:layout_marginTop="@dimen/dp10" />
 
 
-<!--        <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager-->
-<!--            android:id="@+id/level_badge_recycler"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="@dimen/dp200"-->
-<!--            app:icvp_center_page_scale_offset="30dp"-->
-<!--            app:icvp_interpolator="..."-->
-<!--            app:icvp_max_page_scale="0.8"-->
-<!--            app:icvp_medium_scaled="true"-->
-<!--            app:icvp_min_page_scale="0.5"-->
-<!--            app:icvp_min_page_scale_offset="5dp"-->
-<!--            app:icvp_scroll_duration="500" />-->
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/level_chart"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp180"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp10"
+            android:layout_below="@id/level_badge_recycler"
+            android:background="@color/white"
+        />
 
 
         <androidx.cardview.widget.CardView
@@ -90,7 +89,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="@dimen/dp20"
             android:layout_marginRight="@dimen/dp20"
-            android:layout_marginBottom="@dimen/dp70"
+            android:layout_marginBottom="@dimen/dp50"
             app:cardCornerRadius="@dimen/dp10"
             app:cardElevation="@dimen/dp6">
 

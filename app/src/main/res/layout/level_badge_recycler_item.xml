@@ -18,7 +18,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:text="@string/gold"
-        android:padding="@dimen/dp5"
+        android:padding="@dimen/dp2"
         android:textAllCaps="true"
         android:textColor="@color/golden_yellow"
         android:textSize="@dimen/textsize_sp24"

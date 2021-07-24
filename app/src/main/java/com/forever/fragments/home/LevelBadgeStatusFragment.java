@@ -1,5 +1,6 @@
 package com.forever.fragments.home;
 
+import android.graphics.Color;
 import android.graphics.pdf.PdfDocument;
 import android.os.Bundle;
 
@@ -37,11 +38,21 @@ import com.forever.utilities.EndlessRecyclerOnScrollListener;
 import com.forever.utilities.KeyClass;
 import com.forever.utilities.ScaleCenterItemLayoutManager;
 import com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager;
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.LimitLine;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class LevelBadgeStatusFragment extends Fragment implements View.OnClickListener {
@@ -56,11 +67,11 @@ public class LevelBadgeStatusFragment extends Fragment implements View.OnClickLi
     private List<Integer> badgeImage;
     private List<String> badgeName;
     private CenterLayoutManagerHorizontal centerLayoutManagerHorizontal;
-    private int previousTotal = 0;
-    private boolean loading = true;
-    private int visibleThreshold = 5;
     private ScaleXViewMode scaleXViewMode;
-    int firstVisibleItem, visibleItemCount, totalItemCount;
+    private LineChart level_chart;
+    private LineData lineData;
+    private LineDataSet lineDataSet;
+    private List<Entry> entryList = new ArrayList<>();
 
 
     @Override
@@ -99,6 +110,8 @@ public class LevelBadgeStatusFragment extends Fragment implements View.OnClickLi
 
         level_badge_recycler = view.findViewById(R.id.level_badge_recycler);
 
+        level_chart = view.findViewById(R.id.level_chart);
+
 
     }
 
@@ -117,6 +130,8 @@ public class LevelBadgeStatusFragment extends Fragment implements View.OnClickLi
 
 
         adapterSetup();
+
+        setLevelGraph();
 
 
         toggle_btn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -183,7 +198,7 @@ public class LevelBadgeStatusFragment extends Fragment implements View.OnClickLi
         badgeName.add("Silver");
 
 
-        scaleXViewMode= new ScaleXViewMode();
+        scaleXViewMode = new ScaleXViewMode();
 
 
         centerLayoutManagerHorizontal = new CenterLayoutManagerHorizontal(getActivity(), LinearLayoutManager.HORIZONTAL, true);
@@ -193,11 +208,87 @@ public class LevelBadgeStatusFragment extends Fragment implements View.OnClickLi
         level_badge_recycler.setLayoutManager(centerLayoutManagerHorizontal);
         level_badge_recycler.setViewMode(scaleXViewMode);
         level_badge_recycler.setNeedCenterForce(true); // when SCROLL_STATE_IDLE == state, nearly center itemview scroll to center
-        level_badge_recycler.setNeedLoop(true); // default is true
+//        level_badge_recycler.setNeedLoop(true); // default is true
         level_badge_recycler.setAdapter(badgeRecyclerAdapter);
 
 
+    }
+
+    private void setLevelGraph() {
+
+
+        ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+        List<String> xAxisValues = new ArrayList<>(Arrays.asList("Bronze", "Silver", "Gold", "Gold"));
+        List<Entry> incomeEntries = getIncomeEntries();
+        dataSets = new ArrayList<>();
+        LineDataSet set1;
+
+        set1 = new LineDataSet(incomeEntries, "Platinum");
+        set1.setColor(getResources().getColor(R.color.dotcolor));
+        set1.setValueTextColor(getResources().getColor(R.color.et_hint_color ));
+        set1.setValueTextSize(10f);
+        set1.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        dataSets.add(set1);
+
+//customization
+
+        level_chart.setTouchEnabled(true);
+        level_chart.setDragEnabled(true);
+        level_chart.setScaleEnabled(false);
+        level_chart.setPinchZoom(false);
+        level_chart.setDrawGridBackground(false);
+        
+        //to hide background lines
+        level_chart.getXAxis().setDrawGridLines(true);
+        level_chart.getAxisLeft().setDrawGridLines(false);
+        level_chart.getAxisRight().setDrawGridLines(false);
+
+
+        //to hide right Y and top X border
+        YAxis rightYAxis = level_chart.getAxisRight();
+        rightYAxis.setEnabled(false);
+        YAxis leftYAxis = level_chart.getAxisLeft();
+        leftYAxis.setEnabled(false);
+        XAxis topXAxis = level_chart.getXAxis();
+        topXAxis.setEnabled(false);
+
+
+        XAxis xAxis = level_chart.getXAxis();
+        xAxis.setGranularity(1f);
+        xAxis.setCenterAxisLabels(true);
+        xAxis.setEnabled(true);
+        xAxis.setDrawGridLines(false);
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+
+        set1.setLineWidth(5f);
+        set1.setCircleRadius(5f);
+        set1.setDrawValues(false);
+        set1.setCircleHoleColor(getResources().getColor(R.color.dotcolor));
+        set1.setCircleColor(getResources().getColor(R.color.dotcolor));
+
+        //String setter in x-Axis
+        level_chart.getXAxis().setValueFormatter(new com.github.mikephil.charting.formatter.IndexAxisValueFormatter(xAxisValues));
+
+        LineData data = new LineData(dataSets);
+        level_chart.setData(data);
+        level_chart.invalidate();
+        level_chart.getLegend().setEnabled(false);
+        level_chart.getDescription().setEnabled(false);
 
 
     }
+
+
+    private List<Entry> getIncomeEntries() {
+        ArrayList<Entry> incomeEntries = new ArrayList<>();
+
+        incomeEntries.add(new Entry(1, 10));
+        incomeEntries.add(new Entry(2, 20));
+        incomeEntries.add(new Entry(3, 30));
+        incomeEntries.add(new Entry(4, 40));
+
+
+        return incomeEntries.subList(0, 4);
+    }
+
 }
