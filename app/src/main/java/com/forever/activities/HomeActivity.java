@@ -64,8 +64,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         bottom_navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        BottomNavigationMenuView menuView = (BottomNavigationMenuView) bottom_navigation.getChildAt(0);
-        bottom_navigation.getMenu().getItem(0).setChecked(true);
         bottom_navigation.setItemIconTintList(null);
 
 
@@ -73,11 +71,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 KeyClass.FRAGMENT_HOME);
 
 
-//        Menu menu = bottom_navigation.getMenu();
-//        menu.findItem(R.id.nav_home).setIcon(R.drawable.ic_home_deselect);
-//        menu.findItem(R.id.nav_rewards).setIcon(R.drawable.ic_rewards_dese);
-//        menu.findItem(R.id.nav_notifications).setIcon(R.drawable.ic_notification_deselect);
-//        menu.findItem(R.id.nav_user).setIcon(R.drawable.ic_user_icon);
+
 
     }
 
@@ -108,7 +102,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             menu.findItem(R.id.nav_home).setIcon(R.drawable.ic_home_deselect);
             menu.findItem(R.id.nav_rewards).setIcon(R.drawable.ic_rewards_dese);
             menu.findItem(R.id.nav_notifications).setIcon(R.drawable.ic_notification_deselect);
-            menu.findItem(R.id.nav_user).setIcon(R.drawable.ic_user_icon);
+            menu.findItem(R.id.nav_user).setIcon(R.drawable.ic_user);
 
 
             switch (item.getItemId()) {

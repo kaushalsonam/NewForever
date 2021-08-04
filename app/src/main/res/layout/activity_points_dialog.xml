@@ -16,6 +16,7 @@
             android:layout_centerInParent="true"
             android:layout_marginLeft="@dimen/dp40"
             android:layout_marginRight="@dimen/dp40"
+            android:fontFamily="@font/poppins_bold"
             android:gravity="center"
             android:text="@string/active_points_calculation"
             android:textColor="@color/black"
