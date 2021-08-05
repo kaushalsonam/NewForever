@@ -4,11 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/dp80"
     android:layout_marginLeft="@dimen/dp20"
-    android:layout_marginRight="@dimen/dp20"
     android:layout_marginTop="@dimen/dp5"
+    android:layout_marginRight="@dimen/dp20"
     android:layout_marginBottom="@dimen/dp5"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,8 +18,7 @@
             android:layout_width="@dimen/dp30"
             android:layout_height="@dimen/dp30"
             android:layout_centerVertical="true"
-            android:src="@mipmap/app_logo"
-             />
+            android:src="@mipmap/app_logo" />
 
         <TextView
             android:id="@+id/txt_type_of_notification"
@@ -29,6 +27,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dp5"
             android:layout_toRightOf="@id/logo_img"
+            android:fontFamily="@font/poppins_light"
             android:text="@string/sport"
             android:textColor="@color/notification_text"
             android:textSize="@dimen/textsize_sp16" />
@@ -41,6 +40,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:padding="@dimen/dp5"
+            android:fontFamily="@font/poppins_light"
             android:text="@string/spend_time"
             android:textColor="@color/notification_text"
             android:textSize="@dimen/textsize_sp14" />
@@ -52,10 +52,11 @@
         android:id="@+id/notification_heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp5"
+        android:layout_marginTop="@dimen/dp5"
+        android:fontFamily="@font/poppins_medium"
         android:text="@string/notification_title"
         android:textColor="@color/black"
-        android:layout_marginTop="@dimen/dp5"
-        android:layout_marginLeft="@dimen/dp5"
         android:textSize="@dimen/textsize_sp14"
         android:textStyle="bold" />
 
@@ -66,6 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
+        android:fontFamily="@font/poppins"
         android:layout_marginLeft="@dimen/dp5"
         android:text="@string/notification_offer"
         android:textColor="@color/notification_text"
@@ -75,6 +77,6 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp2"
         android:layout_marginTop="@dimen/dp10"
-        android:background="@color/view_color"/>
+        android:background="@color/view_color" />
 
 </LinearLayout>

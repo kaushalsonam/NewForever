@@ -23,6 +23,7 @@
                 android:id="@+id/back_btn"
                 android:layout_width="@dimen/dp20"
                 android:layout_height="@dimen/dp20"
+                android:fontFamily="@font/poppins_medium"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dp30"
                 android:src="@drawable/ic_back" />
@@ -115,6 +116,7 @@
                         android:id="@+id/week_day_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
                         android:text="@string/weekday"
                         android:textColor="@color/et_hint_color"
                         android:textSize="@dimen/textsize_sp12" />
@@ -124,6 +126,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/points2"
+                        android:fontFamily="@font/poppins_medium"
                         android:textColor="@color/black"
                         android:textSize="@dimen/textsize_sp18" />
 
@@ -140,6 +143,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
                             android:text="@string/steps"
                             android:textColor="@color/et_hint_color"
                             android:textSize="@dimen/textsize_sp12" />
@@ -208,6 +212,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
                         android:text="@string/weekday"
                         android:textColor="@color/et_hint_color"
                         android:textSize="@dimen/textsize_sp12" />
@@ -216,6 +221,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
                         android:text="@string/points2"
                         android:textColor="@color/black"
                         android:textSize="@dimen/textsize_sp18" />
@@ -233,6 +239,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
                             android:text="@string/gym_swipe"
                             android:layout_marginLeft="@dimen/dp2"
                             android:textColor="@color/et_hint_color"
@@ -303,6 +310,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
                         android:text="@string/weekday"
                         android:textColor="@color/et_hint_color"
                         android:textSize="@dimen/textsize_sp12" />
@@ -312,6 +320,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/points2"
+                        android:fontFamily="@font/poppins_medium"
                         android:textColor="@color/black"
                         android:textSize="@dimen/textsize_sp18" />
 
@@ -328,6 +337,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
                             android:text="@string/steps"
                             android:textColor="@color/et_hint_color"
                             android:textSize="@dimen/textsize_sp12" />
@@ -396,6 +406,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
                         android:text="@string/weekday"
                         android:textColor="@color/et_hint_color"
                         android:textSize="@dimen/textsize_sp12" />
@@ -405,6 +416,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/points2"
+                        android:fontFamily="@font/poppins_medium"
                         android:textColor="@color/black"
                         android:textSize="@dimen/textsize_sp18" />
 
@@ -423,6 +435,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/profile_completion"
+                            android:fontFamily="@font/poppins"
                             android:layout_marginLeft="@dimen/dp2"
                             android:textColor="@color/et_hint_color"
                             android:textSize="@dimen/textsize_sp12" />
@@ -499,6 +512,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dp30"
+                android:fontFamily="@font/poppins"
                 android:text="@string/Today"
                 android:textColor="@color/black"
                 android:textSize="@dimen/textsize_sp18" />

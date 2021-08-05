@@ -42,6 +42,7 @@
                     android:layout_centerVertical="true"
                     android:layout_margin="@dimen/dp20"
                     android:padding="@dimen/dp10"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="@string/today"
                     android:textColor="@color/black"
                     android:textSize="@dimen/textsize_sp18" />
@@ -87,6 +88,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:fontFamily="@font/poppins_medium"
                         android:text="@string/this_week"
                         android:textColor="@color/white"
                         android:textSize="@dimen/textsize_sp8" />
@@ -97,6 +99,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="@string/percent"
+                        android:fontFamily="@font/poppins_medium"
                         android:textColor="@color/white"
                         android:textSize="@dimen/textsize_sp32" />
 
@@ -105,6 +108,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:fontFamily="@font/poppins_light"
                         android:text="@string/points"
                         android:textColor="@color/white"
                         android:textSize="@dimen/textsize_sp12" />
@@ -114,6 +118,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:fontFamily="@font/poppins"
                         android:text="@string/for_the_week"
                         android:textColor="@color/white"
                         android:textSize="@dimen/textsize_sp12" />
@@ -162,6 +167,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="@dimen/dp10"
+                        android:fontFamily="@font/poppins_medium"
                         android:layout_toRightOf="@id/start_icon"
                         android:text="@string/earned_points"
                         android:textColor="@color/black"
@@ -186,6 +192,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/today"
+                    android:fontFamily="@font/poppins_medium"
                     android:textColor="@color/black"
                     android:textSize="@dimen/textsize_sp16"
                     android:textStyle="bold" />
@@ -197,6 +204,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:text="@string/see_all"
+                    android:fontFamily="@font/poppins"
                     android:textColor="@color/dotcolor"
                     android:textSize="@dimen/textsize_sp16" />
 
@@ -259,6 +267,7 @@
                         android:layout_marginTop="@dimen/dp20"
                         android:layout_toRightOf="@id/step_icon_rl"
                         android:text="@string/total_step"
+                        android:fontFamily="@font/poppins"
                         android:textColor="@color/black"
                         android:textSize="@dimen/textsize_sp16" />
 
@@ -283,6 +292,7 @@
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="@dimen/dp25"
                             android:text="@string/totalstep"
+                            android:fontFamily="@font/poppins_semibold"
                             android:textColor="@color/dotcolor"
                             android:textSize="@dimen/textsize_sp22"
                             android:textStyle="bold" />
@@ -298,6 +308,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/out_of"
+                                android:fontFamily="@font/poppins"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/textsize_sp12" />
 
@@ -320,6 +331,7 @@
                         android:layout_marginTop="@dimen/dp20"
                         android:layout_marginRight="@dimen/dp20"
                         android:layout_toLeftOf="@id/star_icon_rl"
+                        android:fontFamily="@font/poppins"
                         android:text="@string/total_points"
                         android:textColor="@color/black"
                         android:textSize="@dimen/textsize_sp16" />
@@ -341,6 +353,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="@dimen/dp10"
+                            android:fontFamily="@font/poppins_semibold"
                             android:text="@string/point"
                             android:textColor="@color/dotcolor"
                             android:textSize="@dimen/textsize_sp22"
@@ -356,6 +369,7 @@
 
                             <TextView
                                 android:layout_width="wrap_content"
+                                android:fontFamily="@font/poppins"
                                 android:layout_height="wrap_content"
                                 android:text="@string/txt_point"
                                 android:textColor="@color/black" />
@@ -401,6 +415,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/this_week"
+                    android:fontFamily="@font/poppins_medium"
                     android:textColor="@color/black"
                     android:textSize="@dimen/textsize_sp16"
                     android:textStyle="bold" />
@@ -412,6 +427,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:text="@string/see_all"
+                    android:fontFamily="@font/poppins"
                     android:textColor="@color/dotcolor"
                     android:textSize="@dimen/textsize_sp16" />
 

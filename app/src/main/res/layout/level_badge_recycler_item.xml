@@ -18,6 +18,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:text="@string/gold"
+        android:fontFamily="@font/poppins_semibold"
         android:padding="@dimen/dp2"
         android:textAllCaps="true"
         android:textColor="@color/golden_yellow"

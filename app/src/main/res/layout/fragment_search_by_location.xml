@@ -32,6 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="@string/search_by_loaction"
+                android:fontFamily="@font/poppins_medium"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
                 android:textSize="@dimen/textsize_sp18"
@@ -71,6 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:text="@string/rewards"
+            android:fontFamily="@font/poppins_medium"
             android:textColor="@color/black"
             android:textSize="@dimen/textsize_sp18"
             android:textStyle="bold" />

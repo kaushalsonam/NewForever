@@ -13,6 +13,8 @@
         android:layout_alignParentRight="true"
         android:layout_margin="20dp"
         android:text="@string/skip"
+        android:textSize="@dimen/textsize_sp12"
+        android:fontFamily="@font/poppins"
         android:textColor="@color/black"
         android:textStyle="bold" />
 
@@ -31,10 +33,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/screen_img_1"
         android:gravity="center"
+        android:fontFamily="@font/poppins_medium"
         android:padding="@dimen/dp10"
         android:text="@string/screen_1_text"
         android:textColor="@color/black"
-        android:textSize="18sp" />
+        android:textSize="@dimen/textsize_sp16" />
 
     <LinearLayout
         android:layout_width="wrap_content"

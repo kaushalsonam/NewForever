@@ -30,6 +30,7 @@
                 android:id="@+id/txt_activity_points"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
                 android:layout_centerInParent="true"
                 android:text="@string/activity_points"
                 android:textColor="@color/black"
@@ -104,6 +105,7 @@
 
                     <TextView
                         android:layout_width="wrap_content"
+                        android:fontFamily="@font/poppins"
                         android:layout_height="wrap_content"
                         android:text="@string/healthy_food"
                         android:textColor="@color/et_hint_color"
@@ -113,6 +115,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
                         android:text="@string/points3"
                         android:textColor="@color/black"
                         android:textSize="@dimen/textsize_sp20" />
@@ -126,6 +129,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
+                    android:fontFamily="@font/poppins_medium"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/dp20"
                     android:text="@string/thb"
@@ -182,6 +186,7 @@
 
                     <TextView
                         android:layout_width="wrap_content"
+                        android:fontFamily="@font/poppins"
                         android:layout_height="wrap_content"
                         android:text="@string/healthy_food"
                         android:textColor="@color/et_hint_color"
@@ -191,6 +196,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
                         android:text="@string/points3"
                         android:textColor="@color/black"
                         android:textSize="@dimen/textsize_sp20" />
@@ -205,6 +211,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
+                    android:fontFamily="@font/poppins_medium"
                     android:layout_marginRight="@dimen/dp20"
                     android:text="@string/thb"
                     android:textColor="@color/black"
@@ -261,6 +268,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
                         android:text="@string/healthy_food"
                         android:textColor="@color/et_hint_color"
                         android:textSize="@dimen/textsize_sp16" />
@@ -269,6 +277,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
                         android:text="@string/points3"
                         android:textColor="@color/black"
                         android:textSize="@dimen/textsize_sp20" />
@@ -283,6 +292,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
+                    android:fontFamily="@font/poppins_medium"
                     android:layout_marginRight="@dimen/dp20"
                     android:text="@string/thb"
                     android:textColor="@color/black"
@@ -338,6 +348,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
                         android:text="@string/healthy_food"
                         android:textColor="@color/et_hint_color"
                         android:textSize="@dimen/textsize_sp16" />
@@ -346,6 +357,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
                         android:text="@string/points3"
                         android:textColor="@color/black"
                         android:textSize="@dimen/textsize_sp20" />
@@ -360,6 +372,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
+                    android:fontFamily="@font/poppins_medium"
                     android:layout_marginRight="@dimen/dp20"
                     android:text="@string/thb"
                     android:textColor="@color/black"
@@ -415,6 +428,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
                         android:text="@string/healthy_food"
                         android:textColor="@color/et_hint_color"
                         android:textSize="@dimen/textsize_sp16" />
@@ -423,6 +437,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
                         android:text="@string/points3"
                         android:textColor="@color/black"
                         android:textSize="@dimen/textsize_sp20" />
@@ -438,6 +453,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/dp20"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="@string/thb"
                     android:textColor="@color/black"
                     android:textSize="@dimen/textsize_sp20"
@@ -470,6 +486,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:fontFamily="@font/poppins"
                 android:layout_marginLeft="@dimen/dp30"
                 android:text="@string/view_point_summary"
                 android:textColor="@color/black"

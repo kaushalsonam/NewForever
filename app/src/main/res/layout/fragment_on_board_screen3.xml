@@ -33,9 +33,10 @@
         android:layout_below="@id/screen_img_1"
         android:gravity="center"
         android:padding="@dimen/dp10"
+        android:fontFamily="@font/poppins_medium"
         android:text="@string/screen_1_text"
         android:textColor="@color/black"
-        android:textSize="18sp" />
+        android:textSize="@dimen/textsize_sp16" />
 
     <LinearLayout
         android:layout_width="wrap_content"

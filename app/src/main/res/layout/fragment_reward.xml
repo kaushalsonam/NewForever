@@ -33,6 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="@string/rewards"
+                android:fontFamily="@font/poppins_medium"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
                 android:textSize="@dimen/textsize_sp18"
@@ -102,6 +103,7 @@
                         android:layout_toRightOf="@id/magnifier_img"
                         android:background="@null"
                         android:hint="@string/search"
+                        android:fontFamily="@font/poppins_light"
                         android:padding="@dimen/dp5"
                         android:textColor="@color/black"
                         android:textColorHint="@color/et_hint_color"
@@ -157,6 +159,7 @@
                         android:layout_centerVertical="true"
                         android:text="@string/new_arrival"
                         android:textStyle="bold"
+                        android:fontFamily="@font/poppins_medium"
                         android:textColor="@color/black"
                         android:textSize="@dimen/textsize_sp18" />
 
@@ -166,6 +169,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:text="@string/see_all"
+                        android:fontFamily="@font/poppins"
                         android:textColor="@color/dotcolor"
                         android:textSize="@dimen/textsize_sp16" />
 
@@ -205,6 +209,7 @@
                         android:layout_centerVertical="true"
                         android:text="@string/recommended"
                         android:textStyle="bold"
+                        android:fontFamily="@font/poppins_medium"
                         android:textColor="@color/black"
                         android:textSize="@dimen/textsize_sp18" />
 

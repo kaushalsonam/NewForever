@@ -54,6 +54,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
             android:text="@string/custom_date"
             android:textColor="@color/black"
             android:textSize="@dimen/textsize_sp20" />
@@ -66,6 +67,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
                 android:text="@string/date_to"
                 android:textColor="@color/et_hint_color"
                 android:textSize="@dimen/textsize_sp12" />
@@ -74,6 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp5"
+                android:fontFamily="@font/poppins"
                 android:text="@string/date_from"
                 android:textColor="@color/et_hint_color"
                 android:textSize="@dimen/textsize_sp12" />
@@ -92,6 +95,7 @@
                 android:id="@+id/txt_today"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
                 android:layout_centerVertical="true"
                 android:padding="@dimen/dp10"
                 android:text="@string/Today"
@@ -121,6 +125,7 @@
                 android:id="@+id/txt_yesterday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
                 android:layout_centerVertical="true"
                 android:padding="@dimen/dp10"
                 android:text="@string/yesterday"
@@ -152,6 +157,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:fontFamily="@font/poppins_light"
                 android:padding="@dimen/dp10"
                 android:text="@string/last_week"
                 android:textColor="@color/et_hint_color" />
@@ -182,6 +188,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:fontFamily="@font/poppins_light"
                 android:padding="@dimen/dp10"
                 android:text="@string/last_month"
                 android:textColor="@color/et_hint_color" />
@@ -211,6 +218,7 @@
                 android:id="@+id/txt_custom_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
                 android:layout_centerVertical="true"
                 android:padding="@dimen/dp10"
                 android:text="@string/custom_date"
@@ -239,6 +247,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/poppins"
                 android:gravity="left"
                 android:text="@string/txt_date_from"
                 android:textColor="@color/dotcolor"
@@ -247,6 +256,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/to"
@@ -258,6 +268,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/poppins"
                 android:gravity="right"
                 android:text="@string/txt_date_from"
                 android:textColor="@color/dotcolor"
@@ -273,6 +284,7 @@
             android:layout_gravity="right"
             android:layout_marginTop="10dp"
             android:layout_marginRight="@dimen/dp5"
+            android:fontFamily="@font/poppins"
             android:layout_marginBottom="@dimen/dp40"
             android:background="@drawable/blue_rounded_corner_btn"
             android:gravity="center"

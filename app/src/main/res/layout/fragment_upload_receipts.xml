@@ -33,6 +33,7 @@
                 android:layout_centerInParent="true"
                 android:text="@string/upload_receipts"
                 android:textAllCaps="true"
+                android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/black"
                 android:textSize="@dimen/textsize_sp18" />
 
@@ -54,6 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/category"
+            android:fontFamily="@font/poppins_light"
             android:textColor="@color/non_binary"
             android:textSize="@dimen/textsize_sp14" />
 
@@ -72,6 +74,7 @@
                 android:layout_centerVertical="true"
                 android:background="@null"
                 android:padding="@dimen/dp5"
+                android:fontFamily="@font/poppins_medium"
                 android:text="@string/healthy_food"
                 android:textColor="@color/black"
                 android:textSize="@dimen/textsize_sp14" />
@@ -92,6 +95,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp20"
+            android:fontFamily="@font/poppins_light"
             android:text="@string/amount_spent"
             android:textColor="@color/non_binary"
             android:textSize="@dimen/textsize_sp14" />
@@ -111,7 +115,9 @@
                 android:layout_centerVertical="true"
                 android:background="@null"
                 android:padding="@dimen/dp5"
+                android:fontFamily="@font/poppins_medium"
                 android:hint="@string/thb"
+                android:textColorHint="@color/black"
                 android:textColor="@color/black"
                 android:textSize="@dimen/textsize_sp14" />
 
@@ -123,6 +129,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp20"
             android:text="@string/attached_document"
+            android:fontFamily="@font/poppins_light"
             android:textColor="@color/non_binary"
             android:textSize="@dimen/textsize_sp14" />
 
@@ -160,6 +167,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/ic_upload_icon"
+                    android:fontFamily="@font/poppins_medium"
                     android:layout_centerHorizontal="true"
                     android:padding="@dimen/dp10"
                     android:text="@string/browse_file"
@@ -197,6 +205,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/ic_open_camera"
                     android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/poppins_medium"
                     android:padding="@dimen/dp10"
                     android:text="@string/open_camera"
                     android:textColor="@color/black" />
@@ -246,6 +255,7 @@
         android:background="@drawable/rounded_corner_btn"
         android:gravity="center"
         android:padding="@dimen/dp5"
+        android:fontFamily="@font/poppins"
         android:text="@string/send"
         android:textColor="@color/white"
         android:textSize="@dimen/textsize_sp18" />

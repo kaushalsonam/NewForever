@@ -30,6 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Create_new"
+            android:fontFamily="@font/poppins_medium"
             android:textColor="@color/black"
             android:textSize="@dimen/textsize_sp16"
             android:textStyle="bold" />
@@ -51,6 +52,7 @@
                 android:layout_margin="@dimen/dp5"
                 android:background="@null"
                 android:hint="@string/full_name"
+                android:fontFamily="@font/poppins_light"
                 android:imeOptions="actionNext"
                 android:maxLength="20"
                 android:padding="@dimen/dp6"
@@ -101,6 +103,7 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:hint="@string/Mobile_num"
+                    android:fontFamily="@font/poppins_light"
                     android:imeOptions="actionNext"
                     android:inputType="number"
                     android:maxLength="10"
@@ -138,6 +141,7 @@
                 android:layout_centerVertical="true"
                 android:layout_margin="@dimen/dp5"
                 android:background="@null"
+                android:fontFamily="@font/poppins_light"
                 android:hint="@string/emailid"
                 android:imeOptions="actionNext"
                 android:padding="@dimen/dp6"
@@ -166,6 +170,7 @@
                 android:layout_margin="@dimen/dp5"
                 android:background="@null"
                 android:singleLine="true"
+                android:fontFamily="@font/poppins_light"
                 android:inputType="textWebPassword"
                 android:hint="@string/password"
                 android:maxLength="20"
@@ -213,6 +218,7 @@
                 android:layout_margin="@dimen/dp5"
                 android:singleLine="true"
                 android:maxLength="20"
+                android:fontFamily="@font/poppins_light"
                 android:inputType="textWebPassword"
                 android:background="@null"
                 android:hint="@string/confirm_password"
@@ -256,6 +262,7 @@
         android:layout_marginRight="@dimen/dp100"
         android:background="@drawable/rounded_corner_btn"
         android:gravity="center"
+        android:fontFamily="@font/poppins"
         android:padding="@dimen/dp6"
         android:text="@string/signup"
         android:textColor="@color/white"
@@ -277,6 +284,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/already_have"
+            android:fontFamily="@font/poppins"
             android:textColor="@color/et_hint_color"
             android:textSize="@dimen/textsize_sp14" />
 
@@ -285,6 +293,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp5"
             android:text="@string/signin"
+            android:fontFamily="@font/poppins_medium"
             android:textColor="@color/black"
             android:textSize="@dimen/textsize_sp14" />
 

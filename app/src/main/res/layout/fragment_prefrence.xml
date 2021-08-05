@@ -33,6 +33,7 @@
                 android:layout_centerInParent="true"
                 android:text="@string/prefrence"
                 android:textAllCaps="true"
+                android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/black"
                 android:textSize="@dimen/textsize_sp18" />
 
@@ -68,6 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:fontFamily="@font/poppins_medium"
                 android:layout_marginLeft="@dimen/dp5"
                 android:layout_toRightOf="@id/ic_distamce"
                 android:text="@string/distance"
@@ -140,6 +142,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dp5"
                 android:layout_toRightOf="@id/ic_language"
+                android:fontFamily="@font/poppins_medium"
                 android:text="@string/language"
                 android:textColor="@color/dotcolor"
                 android:textSize="@dimen/textsize_sp16" />
@@ -208,6 +211,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:fontFamily="@font/poppins_medium"
                 android:layout_marginLeft="@dimen/dp5"
                 android:layout_toRightOf="@id/ic_notification"
                 android:text="@string/notification"
@@ -273,6 +277,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dp5"
                 android:layout_toRightOf="@id/ic_reminder"
+                android:fontFamily="@font/poppins_medium"
                 android:text="@string/reminder"
                 android:id="@+id/txt_reminder"
                 android:textColor="@color/dotcolor"
@@ -322,6 +327,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/txt_time"
+            android:fontFamily="@font/poppins"
             android:layout_marginLeft="@dimen/dp5"
             android:layout_centerVertical="true"
             android:textSize="@dimen/textsize_sp12"
@@ -358,6 +364,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/daily_goals"
                 android:layout_marginLeft="@dimen/dp5"
+                android:fontFamily="@font/poppins"
                 android:layout_centerVertical="true"
                 android:textSize="@dimen/textsize_sp12"
                 android:textColor="@color/et_hint_color"
@@ -394,6 +401,7 @@
                 android:text="@string/general_reminder"
                 android:layout_marginLeft="@dimen/dp5"
                 android:layout_centerVertical="true"
+                android:fontFamily="@font/poppins"
                 android:textSize="@dimen/textsize_sp12"
                 android:textColor="@color/et_hint_color"
                 />

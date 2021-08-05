@@ -33,6 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="@string/redeemed"
+                android:fontFamily="@font/poppins_medium"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
                 android:textSize="@dimen/textsize_sp18"

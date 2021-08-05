@@ -31,6 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="@string/sign_up"
+                android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/black"
                 android:textSize="@dimen/textsize_sp18" />
 
@@ -71,6 +72,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dp5"
+                android:fontFamily="@font/poppins_medium"
                 android:text="@string/enter_code"
                 android:textColor="@color/black"
                 android:textSize="@dimen/textsize_sp20" />
@@ -80,6 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dp5"
+                android:fontFamily="@font/poppins"
                 android:text="@string/recover_code_string"
                 android:textColor="@color/et_hint_color"
                 android:textSize="@dimen/textsize_sp12" />
@@ -190,6 +193,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dp30"
                 android:text="@string/next"
+                android:fontFamily="@font/poppins"
                 android:textColor="@color/black"
                 android:textSize="@dimen/textsize_sp18" />
 
