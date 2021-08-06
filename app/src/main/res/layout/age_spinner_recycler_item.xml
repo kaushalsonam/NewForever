@@ -9,6 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="19"
+        android:fontFamily="@font/poppins_medium"
         android:textColor="@color/dotcolor"
         android:textSize="@dimen/textsize_sp80"
         android:textStyle="bold" />

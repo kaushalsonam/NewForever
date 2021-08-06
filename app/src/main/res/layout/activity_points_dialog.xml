@@ -50,6 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp50"
             android:text="@string/physical_activity"
+            android:fontFamily="@font/poppins_medium"
             android:textColor="@color/black"
             android:textSize="@dimen/textsize_sp16" />
 
@@ -61,6 +62,7 @@
             android:layout_marginLeft="@dimen/dp60"
             android:layout_marginRight="@dimen/dp20"
             android:text="@string/max_10_days"
+            android:fontFamily="@font/poppins_medium"
             android:textColor="@color/black"
             android:textSize="@dimen/textsize_sp16" />
 
@@ -84,6 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/steps"
+            android:fontFamily="@font/poppins_light"
             android:layout_marginLeft="@dimen/dp5"
             android:textColor="@color/et_hint_color"
             android:textSize="@dimen/textsize_sp14" />
@@ -93,6 +96,7 @@
             android:layout_height="wrap_content"
             android:text="@string/points1"
             android:gravity="right"
+            android:fontFamily="@font/poppins_medium"
             android:layout_marginRight="@dimen/dp20"
             android:textColor="@color/black"
             android:textSize="@dimen/textsize_sp16" />
@@ -117,6 +121,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/gym_visit"
+            android:fontFamily="@font/poppins_light"
             android:textColor="@color/et_hint_color"
             android:layout_marginLeft="@dimen/dp5"
             android:textSize="@dimen/textsize_sp16" />
@@ -127,6 +132,7 @@
             android:layout_height="wrap_content"
             android:text="@string/points2"
             android:gravity="right"
+            android:fontFamily="@font/poppins_medium"
             android:layout_marginRight="@dimen/dp20"
             android:textColor="@color/black"
             android:textSize="@dimen/textsize_sp16" />
@@ -150,6 +156,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/heart_rate"
+            android:fontFamily="@font/poppins_light"
             android:textColor="@color/et_hint_color"
             android:layout_marginLeft="@dimen/dp5"
             android:textSize="@dimen/textsize_sp16" />
@@ -159,6 +166,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/points3"
+            android:fontFamily="@font/poppins_medium"
             android:gravity="right"
             android:layout_marginRight="@dimen/dp20"
             android:textColor="@color/black"
@@ -182,6 +190,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp50"
             android:text="@string/healthy_eating"
+            android:fontFamily="@font/poppins_medium"
             android:textColor="@color/black"
             android:textSize="@dimen/textsize_sp16" />
 
@@ -193,6 +202,7 @@
             android:layout_marginLeft="@dimen/dp60"
             android:layout_marginRight="@dimen/dp20"
             android:text="@string/unlimited"
+            android:fontFamily="@font/poppins_medium"
             android:textColor="@color/black"
             android:textSize="@dimen/textsize_sp16" />
 
@@ -217,6 +227,7 @@
             android:text="@string/food_and_drink"
             android:textColor="@color/et_hint_color"
             android:layout_marginLeft="@dimen/dp5"
+            android:fontFamily="@font/poppins_light"
             android:textSize="@dimen/textsize_sp16" />
 
 
@@ -225,6 +236,7 @@
             android:layout_height="wrap_content"
             android:text="@string/points4"
             android:gravity="right"
+            android:fontFamily="@font/poppins_medium"
             android:layout_marginRight="@dimen/dp20"
             android:textColor="@color/black"
             android:textSize="@dimen/textsize_sp16" />
@@ -246,6 +258,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp50"
             android:text="@string/healthy_eating"
+            android:fontFamily="@font/poppins_medium"
             android:textColor="@color/black"
             android:textSize="@dimen/textsize_sp16" />
 
@@ -256,6 +269,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginLeft="@dimen/dp60"
             android:layout_marginRight="@dimen/dp20"
+            android:fontFamily="@font/poppins_medium"
             android:text="@string/max_5_days"
             android:textColor="@color/black"
             android:textSize="@dimen/textsize_sp16" />
@@ -280,6 +294,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/mindfulness"
+            android:fontFamily="@font/poppins_light"
             android:textColor="@color/et_hint_color"
             android:layout_marginLeft="@dimen/dp5"
             android:textSize="@dimen/textsize_sp16" />
@@ -289,6 +304,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/points1"
+            android:fontFamily="@font/poppins_medium"
             android:gravity="right"
             android:layout_marginRight="@dimen/dp20"
             android:textColor="@color/black"
@@ -315,6 +331,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/spa_message"
+            android:fontFamily="@font/poppins_light"
             android:textColor="@color/et_hint_color"
             android:layout_marginLeft="@dimen/dp5"
             android:textSize="@dimen/textsize_sp16" />
@@ -325,6 +342,7 @@
             android:layout_height="wrap_content"
             android:text="@string/points2"
             android:gravity="right"
+            android:fontFamily="@font/poppins_medium"
             android:layout_marginRight="@dimen/dp20"
             android:textColor="@color/black"
             android:textSize="@dimen/textsize_sp16" />
@@ -351,6 +369,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sleep"
+            android:fontFamily="@font/poppins_light"
             android:textColor="@color/et_hint_color"
             android:layout_marginLeft="@dimen/dp5"
             android:textSize="@dimen/textsize_sp16" />
@@ -360,6 +379,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/points3"
+            android:fontFamily="@font/poppins_medium"
             android:gravity="right"
             android:layout_marginRight="@dimen/dp20"
             android:textColor="@color/black"
