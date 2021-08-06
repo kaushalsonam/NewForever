@@ -27,7 +27,7 @@
             android:layout_alignParentBottom="true"
             android:background="?android:attr/windowBackground"
             android:fitsSystemWindows="true"
-            app:itemTextColor="@drawable/bottom_navigation_text_tint"
+            app:itemTextColor="@color/black"
             app:labelVisibilityMode="labeled"
             app:menu="@menu/bottom_navigation_menu" />
 

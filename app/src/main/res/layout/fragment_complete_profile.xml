@@ -168,7 +168,7 @@
             android:id="@+id/mobile_rl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dp10">
+            android:padding="@dimen/dp8">
 
 
             <com.hbb20.CountryCodePicker

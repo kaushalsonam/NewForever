@@ -2,10 +2,13 @@ package com.forever.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -61,10 +64,17 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     private void viewSetup() {
 
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
 
         bottom_navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         bottom_navigation.setItemIconTintList(null);
+
+
+
+
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
 
 
         replaceFragment(new HomeFragment(), false, KeyClass.FRAGMENT_HOME,
@@ -99,10 +109,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
 
             Menu menu = bottom_navigation.getMenu();
-            menu.findItem(R.id.nav_home).setIcon(R.drawable.ic_home_deselect);
-            menu.findItem(R.id.nav_rewards).setIcon(R.drawable.ic_rewards_dese);
-            menu.findItem(R.id.nav_notifications).setIcon(R.drawable.ic_notification_deselect);
-            menu.findItem(R.id.nav_user).setIcon(R.drawable.ic_user);
+            menu.findItem(R.id.nav_home).setIcon(R.drawable.home_deselect);
+            menu.findItem(R.id.nav_rewards).setIcon(R.drawable.rewards_deselected);
+            menu.findItem(R.id.nav_notifications).setIcon(R.drawable.notification_deselected);
+            menu.findItem(R.id.nav_user).setIcon(R.drawable.peofile_deselect);
 
 
             switch (item.getItemId()) {
@@ -112,7 +122,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     replaceFragment(new HomeFragment(), true, KeyClass.FRAGMENT_HOME,
                             KeyClass.FRAGMENT_HOME);
 
-                    item.setIcon(R.drawable.ic_home_select);
+                    item.setIcon(R.drawable.home_select);
+
 
 
                 break;
@@ -122,7 +133,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     replaceFragment(new RewardFragment(), true, KeyClass.FRAGMENT_REWARD,
                             KeyClass.FRAGMENT_REWARD);
 
-                    item.setIcon(R.drawable.ic_rewards_selected);
+                    item.setIcon(R.drawable.rewards_select);
 
 
                     break;
@@ -132,7 +143,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     replaceFragment(new NotificationsFragment(), true, KeyClass.FRAGMENT_NOTIFICATIONS,
                             KeyClass.FRAGMENT_NOTIFICATIONS);
 
-                    item.setIcon(R.drawable.ic_notifications_selected);
+                    item.setIcon(R.drawable.notification_selected);
 
 
                     break;
@@ -142,7 +153,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     replaceFragment(new ProfileFragment(), true, KeyClass.FRAGMENT_PROFILE,
                             KeyClass.FRAGMENT_PROFILE);
 
-//                    item.setIcon(R.drawable.ic_profile_img);
+                    item.setIcon(R.drawable.peofile_select);
 
 //                    Intent intent_profile= new Intent(context,ProfileActivity.class);
 //                    startActivity(intent_profile);

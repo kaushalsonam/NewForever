@@ -67,7 +67,7 @@
     <string name="earned_points">3000 points earned this year</string>
     <string name="see_all">See all</string>
     <string name="total_step">Total Steps</string>
-    <string name="totalstep">60000</string>
+    <string name="totalstep">0</string>
     <string name="total_points">Total Points</string>
     <string name="out_of">Out of 10000</string>
     <string name="point">3</string>

@@ -10,7 +10,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/header_rl"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp70"
+        android:layout_height="@dimen/dp80"
         android:elevation="@dimen/dp20">
 
         <RelativeLayout

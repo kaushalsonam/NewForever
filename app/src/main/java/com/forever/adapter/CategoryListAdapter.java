@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -34,6 +35,8 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
 
     @Override
     public void onBindViewHolder(@NonNull  CategoryViewHolder holder, int position) {
+
+
         holder.filter_category.setText(category.get(position));
 
     }
@@ -44,10 +47,20 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
     }
 
     public class CategoryViewHolder extends RecyclerView.ViewHolder {
-        private TextView filter_category;
+         TextView filter_category;
+         RelativeLayout filter_rl;
         public CategoryViewHolder(@NonNull View itemView) {
             super(itemView);
             filter_category = itemView.findViewById(R.id.filter_category);
+            filter_rl = itemView.findViewById(R.id.filter_rl);
+
+            filter_category.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+
         }
     }
 }
