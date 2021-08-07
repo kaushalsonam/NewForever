@@ -6,6 +6,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -24,6 +25,7 @@ import com.forever.fragments.home.UploadReceiptsFragment;
 import com.forever.fragments.notifications.NotificationsFragment;
 import com.forever.fragments.reward.RewardFragment;
 import com.forever.utilities.KeyClass;
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -36,6 +38,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public static BottomNavigationView bottom_navigation;
     public RelativeLayout rl_upload;
     public Menu menu;
+    BottomNavigationItemView home,reward,notification,profile;
 
 
     @Override
@@ -44,6 +47,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_home);
 
         context = this;
+
+
 
         bindView();
         viewSetup();
@@ -56,6 +61,17 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         //bottom navigation
         bottom_navigation = findViewById(R.id.bottom_navigation);
         rl_upload = findViewById(R.id.rl_upload);
+
+
+
+        Menu menu = bottom_navigation.getMenu();
+
+        home = bottom_navigation.findViewById(R.id.nav_home);
+        reward =  bottom_navigation.findViewById(R.id.nav_rewards);
+        notification = bottom_navigation.findViewById(R.id.nav_notifications);
+        profile = bottom_navigation.findViewById(R.id.nav_user);
+
+
 
         rl_upload.setOnClickListener(this);
 
@@ -104,6 +120,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @SuppressLint("RestrictedApi")
         @Override
         public boolean onNavigationItemSelected(@NonNull @NotNull MenuItem item) {
 
@@ -113,7 +130,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             menu.findItem(R.id.nav_rewards).setIcon(R.drawable.rewards_deselected);
             menu.findItem(R.id.nav_notifications).setIcon(R.drawable.notification_deselected);
             menu.findItem(R.id.nav_user).setIcon(R.drawable.peofile_deselect);
-
+            home.setTextColor(ColorStateList.valueOf(getResources().getColor(R.color.et_hint_color)));
+            profile.setTextColor(ColorStateList.valueOf(getResources().getColor(R.color.et_hint_color)));
+            reward.setTextColor(ColorStateList.valueOf(getResources().getColor(R.color.et_hint_color)));
+            notification.setTextColor(ColorStateList.valueOf(getResources().getColor(R.color.et_hint_color)));
 
             switch (item.getItemId()) {
 
@@ -123,6 +143,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                             KeyClass.FRAGMENT_HOME);
 
                     item.setIcon(R.drawable.home_select);
+                    home.setTextColor(ColorStateList.valueOf(getResources().getColor(R.color.black)));
 
 
 
@@ -134,6 +155,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                             KeyClass.FRAGMENT_REWARD);
 
                     item.setIcon(R.drawable.rewards_select);
+                    reward.setTextColor(ColorStateList.valueOf(getResources().getColor(R.color.black)));
 
 
                     break;
@@ -144,6 +166,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                             KeyClass.FRAGMENT_NOTIFICATIONS);
 
                     item.setIcon(R.drawable.notification_selected);
+                    notification.setTextColor(ColorStateList.valueOf(getResources().getColor(R.color.black)));
 
 
                     break;
@@ -154,6 +177,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                             KeyClass.FRAGMENT_PROFILE);
 
                     item.setIcon(R.drawable.peofile_select);
+                    profile.setTextColor(ColorStateList.valueOf(getResources().getColor(R.color.black)));
 
 //                    Intent intent_profile= new Intent(context,ProfileActivity.class);
 //                    startActivity(intent_profile);

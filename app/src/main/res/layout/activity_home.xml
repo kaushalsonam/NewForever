@@ -28,6 +28,7 @@
             android:background="?android:attr/windowBackground"
             android:fitsSystemWindows="true"
             app:itemTextColor="@color/black"
+            app:backgroundTint="@color/white"
             app:labelVisibilityMode="labeled"
             app:menu="@menu/bottom_navigation_menu" />
 
