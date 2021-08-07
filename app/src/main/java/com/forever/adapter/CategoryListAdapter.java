@@ -38,6 +38,19 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
 
 
         holder.filter_category.setText(category.get(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+                holder.filter_category.setBackground(mCtx.getResources().getDrawable(R.drawable.filter_skyblue_bg));
+                holder.filter_category.setTextColor(mCtx.getResources().getColor(R.color.white));
+                notifyDataSetChanged();
+
+
+            }
+        });
 
     }
 
@@ -54,12 +67,6 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
             filter_category = itemView.findViewById(R.id.filter_category);
             filter_rl = itemView.findViewById(R.id.filter_rl);
 
-            filter_category.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                }
-            });
 
         }
     }

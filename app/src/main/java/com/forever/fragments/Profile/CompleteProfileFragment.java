@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -36,6 +37,7 @@ public class CompleteProfileFragment extends Fragment implements View.OnClickLis
     private TextView txt_gender, txt_age,txt_save_btn;
     private BottomNavigationView bottomNavigationView;
     private ImageView back_btn;
+    private RelativeLayout rl_upload;
 
 
     @Override
@@ -64,6 +66,7 @@ public class CompleteProfileFragment extends Fragment implements View.OnClickLis
     private void bindView(View view) {
 
         bottomNavigationView=getActivity().findViewById(R.id.bottom_navigation);
+        rl_upload=getActivity().findViewById(R.id.rl_upload);
 
         txt_gender_spinner = view.findViewById(R.id.txt_gender_spinner);
         txt_age_spinner = view.findViewById(R.id.txt_age_spinner);
@@ -80,6 +83,7 @@ public class CompleteProfileFragment extends Fragment implements View.OnClickLis
     private void viewSetup() {
 
         bottomNavigationView.setVisibility(View.GONE);
+        rl_upload.setVisibility(View.GONE);
 
 
         txt_gender_spinner.setOnItemSelectedListener(this);

@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +41,7 @@ public class SearchByLocationFragment extends Fragment implements View.OnClickLi
     private List<Integer> color;
     private List<String> offer_text;
     private List<String> expired_date;
+    private RelativeLayout rl_upload;
 
 
     @Override
@@ -68,6 +70,7 @@ public class SearchByLocationFragment extends Fragment implements View.OnClickLi
     private void bindView(View view) {
 
         bottom_navigation=getActivity().findViewById(R.id.bottom_navigation);
+        rl_upload=getActivity().findViewById(R.id.rl_upload);
 
         close_btn=view.findViewById(R.id.close_btn);
         rewards_recycler_view=view.findViewById(R.id.rewards_recycler_view);
@@ -81,6 +84,7 @@ public class SearchByLocationFragment extends Fragment implements View.OnClickLi
     private void viewSetup() {
 
         bottom_navigation.setVisibility(View.GONE);
+        rl_upload.setVisibility(View.GONE);
 
         close_btn.setOnClickListener(this);
         txt_see_all.setOnClickListener(this);

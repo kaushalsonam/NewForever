@@ -21,6 +21,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.forever.R;
@@ -58,6 +59,7 @@ public class RewardFragment extends Fragment implements View.OnClickListener, Te
     private List<String> offer_text;
     private List<String> expired_date;
     private MegaOfferRecyclerAdapter megaOfferRecyclerAdapter;
+    private RelativeLayout rl_upload;
 
 
     @Override
@@ -90,6 +92,8 @@ public class RewardFragment extends Fragment implements View.OnClickListener, Te
     private void bindView(View view) {
 
         bottom_navigation = getActivity().findViewById(R.id.bottom_navigation);
+        rl_upload = getActivity().findViewById(R.id.rl_upload);
+
 
         new_arrival_recycler = view.findViewById(R.id.new_arrival_recycler);
         recommeded_recycler = view.findViewById(R.id.recommeded_recycler);
@@ -123,6 +127,7 @@ public class RewardFragment extends Fragment implements View.OnClickListener, Te
 
 
         bottom_navigation.setVisibility(View.VISIBLE);
+        rl_upload.setVisibility(View.VISIBLE);
 
 
         filter_ic.setOnClickListener(this);

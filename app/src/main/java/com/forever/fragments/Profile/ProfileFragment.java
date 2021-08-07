@@ -38,6 +38,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     private BottomNavigationView navigationView;
     private Boolean logoutFlag = true, closeflag = true, profileFlag = false;
     private FirebaseAuth firebaseAuth;
+    private RelativeLayout rl_upload;
 
 
     @Override
@@ -66,6 +67,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     private void bindView(View view) {
 
         navigationView = getActivity().findViewById(R.id.bottom_navigation);
+        rl_upload = getActivity().findViewById(R.id.rl_upload);
 
 
         redeemed_rl = view.findViewById(R.id.redeemed_rl);
@@ -85,6 +87,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     private void viewSetup() {
 
         navigationView.setVisibility(View.VISIBLE);
+        rl_upload.setVisibility(View.VISIBLE);
 
         redeemed_rl.setOnClickListener(this);
         total_points_rl.setOnClickListener(this);
@@ -124,6 +127,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.setting_icon:
+
                 settingDialog();
 
 

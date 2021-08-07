@@ -11,10 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import com.forever.R;
 import com.forever.adapter.NotificationRecyclerAdapter;
 import com.forever.utilities.AdapterItemClick;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -31,6 +33,8 @@ public class NotificationsFragment extends Fragment implements AdapterItemClick 
     private List<String> notificationOffer;
     private List<String> time;
     private NotificationRecyclerAdapter notificationRecyclerAdapter;
+    private BottomNavigationView bottom_navigation;
+    private RelativeLayout rl_upload;
 
 
     @Override
@@ -60,12 +64,18 @@ public class NotificationsFragment extends Fragment implements AdapterItemClick 
 
     private void bindView(View view) {
 
-        notification_recycler = view.findViewById(R.id.notification_recycler);
+        notification_recycler = getActivity().findViewById(R.id.notification_recycler);
+        bottom_navigation = getActivity().findViewById(R.id.bottom_navigation);
+
+        rl_upload=getActivity().findViewById(R.id.rl_upload);
 
 
     }
 
     private void viewSetup() {
+
+        rl_upload.setVisibility(View.VISIBLE);
+        bottom_navigation.setVisibility(View.VISIBLE);
 
         notification_recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
 

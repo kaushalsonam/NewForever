@@ -64,7 +64,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-        Menu menu = bottom_navigation.getMenu();
 
         home = bottom_navigation.findViewById(R.id.nav_home);
         reward =  bottom_navigation.findViewById(R.id.nav_rewards);
@@ -150,7 +149,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
                 case R.id.nav_rewards:
-                    rl_upload.setVisibility(View.GONE);
+                    rl_upload.setVisibility(View.VISIBLE);
                     replaceFragment(new RewardFragment(), true, KeyClass.FRAGMENT_REWARD,
                             KeyClass.FRAGMENT_REWARD);
 
@@ -161,7 +160,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     break;
 
                 case R.id.nav_notifications:
-                    rl_upload.setVisibility(View.GONE);
+                    rl_upload.setVisibility(View.VISIBLE);
                     replaceFragment(new NotificationsFragment(), true, KeyClass.FRAGMENT_NOTIFICATIONS,
                             KeyClass.FRAGMENT_NOTIFICATIONS);
 
@@ -172,7 +171,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     break;
 
                 case R.id.nav_user:
-                    rl_upload.setVisibility(View.GONE);
+                    rl_upload.setVisibility(View.VISIBLE);
                     replaceFragment(new ProfileFragment(), true, KeyClass.FRAGMENT_PROFILE,
                             KeyClass.FRAGMENT_PROFILE);
 

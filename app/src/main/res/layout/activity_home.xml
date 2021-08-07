@@ -17,6 +17,7 @@
         tools:targetApi="lollipop" />
 
     <RelativeLayout
+        android:id="@+id/bottom_navigation_rl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -27,8 +28,8 @@
             android:layout_alignParentBottom="true"
             android:background="?android:attr/windowBackground"
             android:fitsSystemWindows="true"
-            app:itemTextColor="@color/black"
             app:backgroundTint="@color/white"
+            app:itemTextColor="@color/black"
             app:labelVisibilityMode="labeled"
             app:menu="@menu/bottom_navigation_menu" />
 

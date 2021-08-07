@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ public class OfferDetailFragment extends Fragment implements View.OnClickListene
     private BottomNavigationView bottom_navigation;
     private SwitchCompat toggle_btn;
     private TextView share_btn, redeem_btn;
+    private RelativeLayout rl_upload;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,6 +65,7 @@ public class OfferDetailFragment extends Fragment implements View.OnClickListene
         redeem_btn = view.findViewById(R.id.redeem_btn);
 
         bottom_navigation = getActivity().findViewById(R.id.bottom_navigation);
+        rl_upload = getActivity().findViewById(R.id.rl_upload);
 
     }
 
@@ -73,6 +76,7 @@ public class OfferDetailFragment extends Fragment implements View.OnClickListene
         redeem_btn.setOnClickListener(this);
 
         bottom_navigation.setVisibility(View.GONE);
+        rl_upload.setVisibility(View.GONE);
 
 
         toggle_btn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

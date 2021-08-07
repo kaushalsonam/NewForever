@@ -283,6 +283,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/user_detail_cv"
                 android:layout_marginTop="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp60"
                 android:orientation="vertical"
                 android:padding="@dimen/dp10">
 
@@ -463,7 +464,7 @@
                         <LinearLayout
                             android:layout_width="@dimen/dp310"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/dp45"
+                            android:layout_marginLeft="@dimen/dp35"
                             android:layout_marginTop="@dimen/dp10"
                             android:orientation="horizontal">
 
@@ -472,7 +473,7 @@
                                 android:id="@+id/total_points_rl"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/dp10"
+                                android:layout_marginLeft="@dimen/dp15"
                                 android:layout_weight="1"
                                 android:padding="@dimen/dp5">
 
@@ -519,7 +520,6 @@
                                         android:layout_width="@dimen/dp15"
                                         android:layout_height="@dimen/dp15"
                                         android:layout_gravity="center_vertical"
-                                        android:layout_marginLeft="@dimen/dp5"
                                         android:src="@drawable/ic_circular_next" />
 
                                 </LinearLayout>
@@ -539,7 +539,7 @@
                                 android:id="@+id/redeemed_rl"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/dp10"
+                                android:layout_marginLeft="@dimen/dp5"
                                 android:layout_weight="1"
                                 android:padding="@dimen/dp5">
 
@@ -586,7 +586,6 @@
                                         android:layout_width="@dimen/dp15"
                                         android:layout_height="@dimen/dp15"
                                         android:layout_gravity="center_vertical"
-                                        android:layout_marginLeft="@dimen/dp5"
                                         android:src="@drawable/ic_circular_next" />
 
                                 </LinearLayout>
